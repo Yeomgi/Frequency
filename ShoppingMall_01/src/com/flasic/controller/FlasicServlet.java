@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.flasic.controller.action.Action;
 
 /**
  * Servlet implementation class FlasicServlet
@@ -26,7 +27,11 @@ public class FlasicServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		String command = request.getParameter("command");
+		System.out.println("FlasicServlet에서 요청을 받음을 확인 : " + command);
+	    ActionFactory af = ActionFactory.getInstance();
+	    Action action = af.getAction(command);
 	}
 
 	/**
