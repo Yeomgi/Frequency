@@ -4,11 +4,6 @@
 	background-color: white;
 }
 
-#hd {
-	border-bottom: 1px solid;000000000000000000000000000000.
-}
-
-
 .clear {clear: both;}
 
 #logo nav#category_menu {
@@ -72,3 +67,10 @@ nav#shopping_menu ul li {
 	text-align: center;
 	font-family: Newtext Bk BT;
 }
+
+footer #copy {
+	text-align: center;
+	margin: 0 auto;	
+	width: 1000px;
+}
+

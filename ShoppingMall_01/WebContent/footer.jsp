@@ -1,12 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
+<div class="clear"></div>
 
+<footer>
+	<hr>
+	<div id="copy">
+	<img alt="foot_LOGO" src="imges/LOGO.png" width=150px;"><br>
+		All contents Copyright 2013 TheFlasic Inc. all rights reserved<br>
+		Contact mail : TheFlasic@TheFlasic.com Tel: +82 64 123 4315 Fax +82 64 123
+		4321
+	</div>
+</footer>
+</div>  <!--header.jsp "wrap" 끝나는부분 -->
 </body>
 </html>

@@ -13,7 +13,7 @@ public class ActionFactory {
 	  public Action getAction(String command) {
 		Action action =null;
 	    if (command.equals("index")) {
-	       
+	    	
 	      }
 		
 		  return action;

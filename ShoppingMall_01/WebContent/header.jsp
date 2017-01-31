@@ -1,20 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta charset="UTF-8">
 <title>The Flasic</title>
 <link href="css/flasic.css" rel="stylesheet">
 </head>
 <body>
-	<div id="wrap">
-		<header id="hd">
+	<div id="wrap"> <!--header.jsp "wrap" ì‹œìž‘í•˜ëŠ” ë¶€ë¶„ -->
+		<header>
 			<div id="logo">
 				<a href="FlasicServlet?command=index">
 				<img alt="TheFlasic" src="imges/LOGO2.png" width="200px">
 				</a>
-			<!--·Î°í ³¡-->
+			<!--ë¡œê³  ë-->
 			<nav id="category_menu">
 				<ul>
 					<li><a href="#">LOGIN</a></li>
@@ -22,12 +22,12 @@
 					<li><a href="#">CART</a></li>
 					<li><a href="#">MYPAGE</a></li>
 				</ul>
-			<!--·Î°í¿Í °°Àº ÅÂ±×¾È Ä«Å×°í¸® ¸Þ´º ³¡  -->
+			<!--ë¡œê³ ì™€ ê°™ì€ íƒœê·¸ì•ˆ ì¹´í…Œê³ ë¦¬ ë©”ë‰´ ë  -->
 			</nav>
 			<a href="#">
 			<img alt="Disigner" src="imges/Disign2.png" width="150px" style="float: right;">
 			</a>
-			<!--°³ÀÎµðÀÚÀÌ³Ê ·Î°í ³¡  -->					
+			<!--ê°œì¸ë””ìžì´ë„ˆ ë¡œê³  ë  -->					
 			</div>
 			<nav id="shopping_menu">
 				<ul>
@@ -41,7 +41,6 @@
 					<li><a href="#">Bag&Acc</a></li>
 				</ul>
 			</nav>
+			<div class="clear"></div>
+			<hr>
 		</header>
-	</div>
-</body>
-</html>
