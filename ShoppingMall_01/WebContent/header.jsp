@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>The Flasic</title>
 <link href="css/flasic.css" rel="stylesheet">
+<script type="text/javascript" src="member/member.js"></script>
 </head>
 <body>
 	<div id="wrap"> <!--header.jsp "wrap" 시작하는 부분 -->
