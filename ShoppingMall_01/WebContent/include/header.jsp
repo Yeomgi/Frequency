@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>The Flasic</title>
-<link href="css/flasic.css" rel="stylesheet">
+<link href="../css/flasic.css" rel="stylesheet">
 <script type="text/javascript" src="member/member.js"></script>
 </head>
 <body>
@@ -13,7 +13,7 @@
 		<header>
 			<div id="logo">
 				<a href="FlasicServlet?command=index">
-				<img alt="TheFlasic" src="imges/LOGO2.png" width="200px">
+				<img alt="TheFlasic" src="../imges/LOGO2.png" width="200px">
 				</a>
 			<!--로고 끝-->
 			<nav id="category_menu">
@@ -26,7 +26,7 @@
 			<!--로고와 같은 태그안 카테고리 메뉴 끝  -->
 			</nav>
 			<a href="#">
-			<img alt="Disigner" src="imges/Disign2.png" width="150px" style="float: right;">
+			<img alt="Disigner" src="../imges/Disign2.png" width="150px" style="float: right;">
 			</a>
 			<!--개인디자이너 로고 끝  -->					
 			</div>

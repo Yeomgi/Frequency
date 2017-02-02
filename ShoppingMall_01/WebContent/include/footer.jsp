@@ -5,8 +5,8 @@
 <footer>
 	<hr>
 	<div id="copy">
-	<img alt="foot_LOGO" src="imges/LOGO.png" width=150px;"><br>
-		All contents Copyright 2013 TheFlasic Inc. all rights reserved<br>
+	<img alt="foot_LOGO" src="../imges/LOGO.png" width=150px;"><br>
+		All contents Copyright 2017 TheFlasic Inc. all rights reserved<br>
 		Contact mail : TheFlasic@TheFlasic.com Tel: +82 64 123 4315 Fax +82 64 123
 		4321
 	</div>

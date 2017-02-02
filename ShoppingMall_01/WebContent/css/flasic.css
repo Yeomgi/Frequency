@@ -74,3 +74,16 @@ footer #copy {
 	width: 1000px;
 }
 
+#mainwrap{
+	margin: 0 auto;	
+	width: 1000px
+}
+#mainpic {
+	margin: 0 auto;
+	width: 1000px;
+}
+#mainpic img {
+	float: left;
+	padding-left: 4px;
+	
+}
