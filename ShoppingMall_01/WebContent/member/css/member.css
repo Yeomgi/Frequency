@@ -23,6 +23,10 @@ div#loginboxwrap {
 	height: 30px;
 	border: none;	
 }
+#loginbtn input:hover {
+	cursor: pointer;
+	background-color: #bbb;	
+}
 
 #findbtn input {
 	width: 245px;

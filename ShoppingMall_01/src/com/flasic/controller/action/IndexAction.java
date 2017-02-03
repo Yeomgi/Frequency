@@ -12,9 +12,9 @@ public class IndexAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String url="index/index.jsp";
+		String url="/index.jsp";
 		
-	    RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+	    RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(url);
 	    dispatcher.forward(request, response);
 	}
 

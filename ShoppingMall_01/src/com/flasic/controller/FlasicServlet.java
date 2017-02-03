@@ -32,6 +32,9 @@ public class FlasicServlet extends HttpServlet {
 		System.out.println("FlasicServlet에서 요청을 받음을 확인 : " + command);
 	    ActionFactory af = ActionFactory.getInstance();
 	    Action action = af.getAction(command);
+	    if (action!=null) {
+			action.execute(request, response);
+		}
 	}
 
 	/**
