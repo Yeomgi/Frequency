@@ -13,5 +13,32 @@
 	padding-left: 4px;
 	
 }
-
+#bestProduct {
+	width: 1000px;
+}
+#bestProduct li{
+	list-style-type: none;	
+	width: 150px;
+	height: 280px;
+	background-color: white;
+	text-align:center;
+	float: left;
+	margin-left: 30px;
+	margin-bottom: 50px;
+}
+#bestProduct li:hover {
+	box-shadow:1px 1px 3px 6px orange;
+	cursor: pointer;
+}
+#bestProduct li img {
+	width:150px; 
+	height:200px;
+}
+#bestProduct li p {
+	font-weight: bold;
+	font-family: 태 나무;
+}
+#bestProduct li p span {
+	font-size: 13px;
+}
 .clear {clear: both;}

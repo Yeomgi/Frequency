@@ -18,8 +18,8 @@
 			<!--로고 끝-->
 			<nav id="category_menu">
 				<ul>
-					<li><a href="#">LOGIN</a></li>
-					<li><a href="#">JOIN</a></li>
+					<li><a href="FlasicServlet?command=login">LOGIN</a></li>
+					<li><a href="FlasicServlet?command=joinform">JOIN</a></li>
 					<li><a href="#">CART</a></li>
 					<li><a href="#">MYPAGE</a></li>
 				</ul>
