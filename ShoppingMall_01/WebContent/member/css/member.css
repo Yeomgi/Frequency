@@ -4,6 +4,8 @@ div#loginboxwrap {
 	text-align: center;
 	padding-top: 150px;
 	padding-bottom: 150px;
+	background-image: url("../imges/3.png");
+	background-size: cover;
 }
 
 #lotitle {
@@ -25,7 +27,7 @@ div#loginboxwrap {
 }
 #loginbtn input:hover {
 	cursor: pointer;
-	background-color: #bbb;	
+	background-color: orange;	
 }
 
 #findbtn input {
@@ -33,7 +35,10 @@ div#loginboxwrap {
 	height: 30px;
 	border: none;
 }
-
+#findbtn input:hover {
+	cursor: pointer;
+	background-color: orange;
+}
 #kakaobtn input {
 	width: 245px;
 	height: 30px;
@@ -70,7 +75,9 @@ div#joinboxwrap {
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 70px;
-	padding-bottom: 100px;
+	padding-bottom: 300px;
+	background-image: url("../imges/1.jpg");
+	background-size: cover;
 }
 
 #table {
@@ -88,11 +95,23 @@ div#joinboxwrap {
 #table td {
 	height: 80px;
 }
-
-#table input {
+ 
+#intext {
 	width: 400px;
 	border: none;
 	border-bottom: 1px solid #bbb;
+}
+
+#ckbtn {
+	width: 100px;
+	height: 50px;
+	border: none;
+	border-radius: 30px;
+	
+}
+#ckbtn:hover {
+	background-color: #bbb;
+	cursor: pointer;
 }
 
 #okbtn {
