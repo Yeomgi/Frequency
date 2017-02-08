@@ -11,10 +11,10 @@
 			</div>
 			<br>
 			<div id="input_login">
-				PW&nbsp;&nbsp;<input type="text" placeholder="패스워드를 입력하세요">
+				PW&nbsp;&nbsp;<input type="password" placeholder="패스워드를 입력하세요">
 			</div>
 			<br>
-			<form action="" method="post">
+			<form action="FlasicServlet?command=login" method="post">
 				<div id="loginbtn">
 					<input type="submit" value="LOGIN">
 					<input type="button" value="JOIN MEMBER" onclick="">

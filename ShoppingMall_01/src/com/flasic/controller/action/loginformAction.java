@@ -7,21 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.flasic.dao.memberDAO;
-
-public class idcheckAction implements Action {
+public class loginformAction implements Action {
 @Override
 public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	// TODO Auto-generated method stub
-	String url ="/member/idcheck.jsp";
-	String id =request.getParameter("id").trim();
+	String url = "/member/login.jsp";
 	
-	memberDAO mDAO = memberDAO.getInstance();
-	int message = memberDAO.confirmID(id);
-	
-    request.setAttribute("message", message);
-    request.setAttribute("id", id);
-    RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+	RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(url);
     dispatcher.forward(request, response);
 }
 }
