@@ -26,10 +26,10 @@
 					<li><a href="FlasicServlet?command=joinform">JOIN</a></li>
 					</c:when>
 					<c:otherwise>
-					 <li style="color:orange">
-        			 ${sessionScope.loginUser.name}(${sessionScope.loginUser.id})
+					 <li style="color:orange" >
+        			(${sessionScope.loginUser.id})
        				</li>
-       				<li><a href="FlasicServlet?command=logout">LOGOUT</a></li>
+       				<li><a href="FlasicServlet?command=loginout">LOGOUT</a></li>
 					</c:otherwise>
 				</c:choose>	
 					<li><a href="#">CART</a></li>

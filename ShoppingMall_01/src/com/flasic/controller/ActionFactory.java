@@ -7,6 +7,7 @@ import com.flasic.controller.action.joinAction;
 import com.flasic.controller.action.joinformAction;
 import com.flasic.controller.action.loginAction;
 import com.flasic.controller.action.loginformAction;
+import com.flasic.controller.action.loginoutAction;
 
 public class ActionFactory {
 	private static ActionFactory instance = new ActionFactory();
@@ -30,6 +31,8 @@ public class ActionFactory {
 			action = new idcheckAction();
 	      }else if (command.equals("login")) {
 			action = new loginAction();
+	      }else if (command.equals("loginout")) {
+			action = new loginoutAction();
 		}
 		
 		  return action;

@@ -6,18 +6,18 @@
 	<section>
 		<div id="loginboxwrap">
 		<h2 id="lotitle">Login !!</h2>
-			<div id="input_login">
-				ID&nbsp;&nbsp;&nbsp;<input type="text" placeholder="아이디를 입력하세요">
-			</div>
-			<br>
-			<div id="input_login">
-				PW&nbsp;&nbsp;<input type="password" placeholder="패스워드를 입력하세요">
-			</div>
-			<br>
 			<form action="FlasicServlet?command=login" method="post">
+			<div id="input_login">
+				ID&nbsp;&nbsp;&nbsp;<input type="text" name="id" placeholder="아이디를 입력하세요">
+			</div>
+			<br>
+			<div id="input_login">
+				PW&nbsp;&nbsp;<input type="password" name="pw" placeholder="패스워드를 입력하세요">
+			</div>
+			<br>
 				<div id="loginbtn">
 					<input type="submit" value="LOGIN">
-					<input type="button" value="JOIN MEMBER" onclick="">
+					<input type="button" value="JOIN MEMBER" onclick="FlasicServlet?command=joinform">
 				</div>
 		</form>
 		<br>

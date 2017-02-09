@@ -79,7 +79,7 @@ public class memberDAO {
 		    Connection connn = null;
 		    PreparedStatement pstmt = null;
 		    ResultSet rs = null;
-
+		    
 		    try {
 		      connn = DBManager.getConnection();
 		      pstmt = connn.prepareStatement(sql);
