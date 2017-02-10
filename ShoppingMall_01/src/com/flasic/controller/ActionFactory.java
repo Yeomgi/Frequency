@@ -1,5 +1,6 @@
 package com.flasic.controller;
 
+import com.flasic.admin.controller.action.adminindexAction;
 import com.flasic.controller.action.Action;
 import com.flasic.controller.action.IndexAction;
 import com.flasic.controller.action.idcheckAction;
@@ -33,6 +34,13 @@ public class ActionFactory {
 			action = new loginAction();
 	      }else if (command.equals("loginout")) {
 			action = new loginoutAction();
+		}
+	    
+	    //adim
+	    if (command.equals("admin_login_form")) {
+			action = new adminindexAction();
+		}else if (command.equals("admin_logout")) {
+			
 		}
 		
 		  return action;
