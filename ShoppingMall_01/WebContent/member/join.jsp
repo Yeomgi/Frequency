@@ -4,7 +4,7 @@
 	request.setCharacterEncoding("UTF-8");
 %>
 <%@include file="../include/header.jsp"%>
-<link href="http://localhost:80/ShoppingMall_01/member/css/member.css" rel="stylesheet">
+<link href="http://localhost:8092/ShoppingMall_01/member/css/member.css" rel="stylesheet">
 <section>
 	<h1 id="title">Be come a Member-</h1>
 	<div id="joinboxwrap">

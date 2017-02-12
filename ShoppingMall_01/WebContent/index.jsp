@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <%@include file="/include/header.jsp" %>
-<link href="http://localhost:80/ShoppingMall_01/css/flasic.css" rel="stylesheet">
+<link href="http://localhost:8092/ShoppingMall_01/css/flasic.css" rel="stylesheet">
 	<div class="clear"></div>
 		<div id="mainwrap">
 			<!--메인사진 부분시작  -->
