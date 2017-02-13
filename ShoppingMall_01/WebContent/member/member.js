@@ -42,6 +42,6 @@ function idcheck() {
 	  var url = "FlasicServlet?command=idcheck&id=" 
 		  + document.formm.id.value;
 		    window.open( url, "_blank_1",
-		  "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=330, height=200");
+		  "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=450, height=200");
 		  
 }

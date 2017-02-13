@@ -2,6 +2,7 @@ package com.flasic.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import com.flasic.dto.memberDTO;
 
@@ -44,4 +45,61 @@ public class memberDAO {
 		return result;
 		 
 	 }
+	 
+	  public static int confirmID(String userid) {
+			int result = -1;
+		    String sql = "select * from membertable1 where id=?";
+		       
+		    Connection connn = null;
+		    PreparedStatement pstmt = null;
+		    ResultSet rs = null;
+		    
+		    try {
+		      connn = DBManager.getConnection();
+		      pstmt = connn.prepareStatement(sql);
+		      pstmt.setString(1, userid);
+		      rs = pstmt.executeQuery();
+		      if (rs.next()) { 
+		        result = 1;
+		      } else { 
+		        result = -1;
+		      }
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    } finally {
+		      DBManager.close(connn, pstmt, rs);
+		    }
+		    return result;
+		  }
+	  
+	  public memberDTO getMember(String id) {       
+		  memberDTO mDTO= null;
+		    String sql = "select * from membertable1 where id=?";
+		     
+		    Connection connn = null;
+		    PreparedStatement pstmt = null;
+		    ResultSet rs = null;
+		    
+		    try {
+		      connn = DBManager.getConnection();
+		      pstmt = connn.prepareStatement(sql);
+		      pstmt.setString(1, id);
+		      rs = pstmt.executeQuery();
+		      if(rs.next()){
+		        mDTO = new memberDTO();
+		        mDTO.setId(rs.getString("id"));
+		        mDTO.setPw(rs.getString("pw"));
+		        mDTO.setName(rs.getString("name"));
+		        mDTO.setBirth(rs.getString("birth"));
+		        mDTO.setPnum(rs.getString("pnum"));
+		        mDTO.setEmail(rs.getString("email"));
+		        mDTO.setAddr(rs.getString("addr"));
+		      } 
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    } finally {
+		      DBManager.close(connn, pstmt, rs);
+		    }
+		    return mDTO;
+		  }
 }

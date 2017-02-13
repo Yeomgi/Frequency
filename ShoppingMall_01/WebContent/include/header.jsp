@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +20,18 @@
 			<!--로고 끝-->
 			<nav id="category_menu">
 				<ul>
-					<li><a href="FlasicServlet?command=login">LOGIN</a></li>
+				<c:choose>
+					<c:when test="${empty sessionScope.loginUser}">
+					<li><a href="FlasicServlet?command=loginform">LOGIN</a></li>
 					<li><a href="FlasicServlet?command=joinform">JOIN</a></li>
+					</c:when>
+					<c:otherwise>
+					 <li style="color:orange" >
+        			(${sessionScope.loginUser.id})
+       				</li>
+       				<li><a href="FlasicServlet?command=loginout">LOGOUT</a></li>
+					</c:otherwise>
+				</c:choose>	
 					<li><a href="#">CART</a></li>
 					<li><a href="#">MYPAGE</a></li>
 				</ul>
