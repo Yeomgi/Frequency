@@ -1,0 +1,11 @@
+#wrap {
+	width: 1000px;
+	margin: 0 auto;
+}
+#logo {
+	position: relative;
+	left: 345px;
+}	
+table {
+	margin: 0 auto;
+}
