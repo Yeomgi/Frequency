@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="admin/css/admin.css">
 <script type="text/javascript" src="admin/product/product.js"></script>
 	<c:choose>
-		<c:when test="${empty workerID}">
+		<c:when test="${empty managerId}">
 			<script type="text/javascript">
 				location.href = 'FlasicServlet?command=admin_login_form';
 			</script>
@@ -26,6 +26,6 @@
 				</a>
 			</div>
 			<input class="btn" type="button" value="logout" style="float: right" 
-			onclick="FlasicServlet?command=admin_logout">
+			onclick="location.href='FlasicServlet?command=admin_logout'">
 		</header>
 		<div class="clear"></div>
