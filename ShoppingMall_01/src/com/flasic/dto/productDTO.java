@@ -3,7 +3,7 @@ package com.flasic.dto;
 import java.sql.Timestamp;
 
 public class productDTO {
-	private String num;
+	private int num;
 	private String name;
 	private String kind;
 	private String color;
@@ -21,7 +21,7 @@ public class productDTO {
 	public productDTO() {
 	}
 	
-	public productDTO(String num, String name, String kind, String color, String productsize, int price1, int price2,
+	public productDTO(int num, String name, String kind, String color, String productsize, int price1, int price2,
 			int price3, String content, String image, int suply, Timestamp date, int hit, String best) {
 		super();
 		this.num = num;
@@ -39,10 +39,10 @@ public class productDTO {
 		this.hit = hit;
 		this.best = best;
 	}
-	public String getNum() {
+	public int getNum() {
 		return num;
 	}
-	public void setNum(String num) {
+	public void setNum(int num) {
 		this.num = num;
 	}
 	public String getName() {

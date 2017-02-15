@@ -2,6 +2,7 @@ package com.flasic.controller;
 
 import com.flasic.admin.controller.action.adminindexAction;
 import com.flasic.admin.controller.action.adminloginAction;
+import com.flasic.admin.controller.action.adminlogoutAction;
 import com.flasic.admin.controller.action.adminproductlistAction;
 import com.flasic.controller.action.Action;
 import com.flasic.controller.action.IndexAction;
@@ -45,6 +46,8 @@ public class ActionFactory {
 			action = new adminloginAction();
 		}else if (command.equals("adminproductlist")) {
 			action = new adminproductlistAction();
+		}else if (command.equals("admin_logout")){
+			action = new  adminlogoutAction();
 		}
 		
 		  return action;

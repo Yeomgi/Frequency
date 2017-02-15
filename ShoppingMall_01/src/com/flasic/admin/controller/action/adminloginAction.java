@@ -33,8 +33,6 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
     } else if (result == -1) {
       msg = "아이디를 확인하세요.";
     }
-    
-    System.out.println("왓다 : "+msg);
     RequestDispatcher dispatcher=request.getRequestDispatcher(url);
     dispatcher.forward(request, response);
 }
