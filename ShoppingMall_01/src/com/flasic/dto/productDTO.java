@@ -14,7 +14,7 @@ public class productDTO {
 	private String content;
 	private String image;
 	private int suply;
-	private Timestamp date;
+	private Timestamp productdate;
 	private int hit;
 	private String best;
 	
@@ -22,7 +22,7 @@ public class productDTO {
 	}
 	
 	public productDTO(int num, String name, String kind, String color, String productsize, int price1, int price2,
-			int price3, String content, String image, int suply, Timestamp date, int hit, String best) {
+			int price3, String content, String image, int suply, Timestamp productdate, int hit, String best) {
 		super();
 		this.num = num;
 		this.name = name;
@@ -35,7 +35,7 @@ public class productDTO {
 		this.content = content;
 		this.image = image;
 		this.suply = suply;
-		this.date = date;
+		this.productdate = productdate;
 		this.hit = hit;
 		this.best = best;
 	}
@@ -105,11 +105,11 @@ public class productDTO {
 	public void setSuply(int suply) {
 		this.suply = suply;
 	}
-	public Timestamp getDate() {
-		return date;
+	public Timestamp getProductdate() {
+		return productdate;
 	}
-	public void setDate(Timestamp date) {
-		this.date = date;
+	public void setProductdate(Timestamp productdate) {
+		this.productdate = productdate;
 	}
 	public int getHit() {
 		return hit;

@@ -102,7 +102,7 @@ public class productDAO {
 	//관리자모드 사용 메서드
 	  public int totalRecord(String productName){
 		int totalPages = 0;
-		String sql = "select count(*) from producttable1 where name like '%'||?||%";
+		String sql = "select count(*) from producttable1 where name like '%'||?||'%'";
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -129,6 +129,7 @@ public class productDAO {
 		}
 		  return totalPages;
 	  }
+	  //페이지 이동 메서드
 	  static int viewRows = 5;
 	  static int counts =5;
 	  public String pageNumber(int tpage, String name){
@@ -170,5 +171,126 @@ public class productDAO {
 		 + pageCount + "&key=" + name + "'>&gt; &gt; </a>&nbsp;&nbsp;";
 			
 		}
-		return null;}
+		return str;
+		}
+	  
+	  public ArrayList<productDTO>listProduct(int tpage, String productName){
+		  ArrayList<productDTO> productList = new ArrayList<productDTO>();
+		  
+		  String str = "select num, productdate, name, price1, price2, best " + 
+		  "from producttable1 where name like '%'||?||'%' order by num desc";
+		  //"from producttable1 where name like '%'||?||'%' order by num desc";
+		  
+		  Connection con = null;
+		  PreparedStatement pstmt = null;
+		  ResultSet rs = null;
+		  
+		  int absolutepage = 1;
+		  
+		  try {
+			con = DBManager.getConnection();
+			absolutepage = (tpage -1) * counts +1;
+			pstmt = con.prepareStatement(str, ResultSet.TYPE_SCROLL_SENSITIVE,
+					ResultSet.CONCUR_UPDATABLE);
+			
+			System.out.println("product name : "+productName);
+			
+			if (productName.equals("")) {
+				pstmt.setString(1, "%");
+			}else {
+				pstmt.setString(1, productName);
+			}
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				rs.absolute(absolutepage);
+				int count = 0;
+				
+				while (count < counts) {
+					productDTO pDTO = new productDTO();
+					pDTO.setNum(rs.getInt(1));
+					pDTO.setProductdate(rs.getTimestamp(2));
+					pDTO.setName(rs.getString(3));
+					pDTO.setPrice1(rs.getInt(4));
+					pDTO.setPrice2(rs.getInt(5));
+					pDTO.setBest(rs.getString(6));
+					productList.add(pDTO);
+					if (rs.isLast()) {
+						break;
+					}
+					rs.next();
+					count++;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		return productList;
+	  }
+	  
+	  public int insertProduct(productDTO pDTO){
+		int result = 0;
+		
+		String sql = "insert into producttable1 (" + 
+		"num, kind, name, price1, price2, price3, color, productsize, suply, content, image) " + 
+				"values(Producttable1sequence1.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = DBManager.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, pDTO.getKind());
+			pstmt.setString(2, pDTO.getName());
+			pstmt.setInt(3, pDTO.getPrice1());
+			pstmt.setInt(4, pDTO.getPrice2());
+			pstmt.setInt(5, pDTO.getPrice3());
+			pstmt.setString(6, pDTO.getColor());
+			pstmt.setString(7, pDTO.getProductsize());
+			pstmt.setInt(8, pDTO.getSuply());
+			pstmt.setString(9, pDTO.getContent());
+			pstmt.setString(10, pDTO.getImage());
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("추가완료");
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt);
+		}
+		return result;
+	  }
+	  
+	  //업데이트 수정해야함
+	  public int updateProduct(productDTO pDTO){
+		  int result = 0;
+		  String sql = "update producttable1 set kind=?, name=?" +
+		  ", price1=?, price2=?, price3=?, content=?, image=?, best=? " +
+				  "where num=?";
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			
+			try {
+				con = DBManager.getConnection();
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, pDTO.getKind());
+				pstmt.setString(2, pDTO.getName());
+				pstmt.setInt(3, pDTO.getPrice1());
+				pstmt.setInt(4, pDTO.getPrice2());
+				pstmt.setInt(5, pDTO.getPrice3());
+				pstmt.setString(6, pDTO.getContent());
+				pstmt.setString(7, pDTO.getImage());
+				pstmt.setString(8, pDTO.getBest());
+				pstmt.setInt(9, pDTO.getNum());
+				result = pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				DBManager.close(con, pstmt);
+			}
+			return result;
+	  }
 }

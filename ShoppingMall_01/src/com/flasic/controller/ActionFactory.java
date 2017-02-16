@@ -4,6 +4,8 @@ import com.flasic.admin.controller.action.adminindexAction;
 import com.flasic.admin.controller.action.adminloginAction;
 import com.flasic.admin.controller.action.adminlogoutAction;
 import com.flasic.admin.controller.action.adminproductlistAction;
+import com.flasic.admin.controller.action.adminproductwriteAction;
+import com.flasic.admin.controller.action.adminproductwriteformAction;
 import com.flasic.controller.action.Action;
 import com.flasic.controller.action.IndexAction;
 import com.flasic.controller.action.idcheckAction;
@@ -48,6 +50,10 @@ public class ActionFactory {
 			action = new adminproductlistAction();
 		}else if (command.equals("admin_logout")){
 			action = new  adminlogoutAction();
+		}else if (command.equals("admin_product_write_form")) {
+			action = new adminproductwriteformAction();
+		}else if (command.equals("admin_product_write")) {
+			action = new adminproductwriteAction();
 		}
 		
 		  return action;

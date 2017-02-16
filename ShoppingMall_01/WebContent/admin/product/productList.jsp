@@ -4,14 +4,15 @@
 <%@ include file="/admin/sub_menu.jsp"%>
 <article>
 	<h1>상품 리스트</h1>
+	<form name="frm" method="post">
 	<table>
 		<tr>
 			<td width="650">
 				상품명
 				<input type="text" name="key">
-     			<input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">
-     			<input class="btn" type="button" name="btn_total" value="전체보기 " onClick="go_total()">
-     			<input class="btn" type="button" name="btn_write" value="상품등록" onClick="go_wrt()">
+     			<input class="btn" type="button" name="btn_search" value="검색" onclick="go_search()">
+     			<input class="btn" type="button" name="btn_total" value="전체보기 " onclick="go_total()">
+     			<input class="btn" type="button" name="btn_write" value="상품등록" onclick="go_wrt()">
 			</td>
 		</tr>
 	</table>
@@ -27,7 +28,6 @@
     		</td>
     	</tr>	
     	</c:when>
-    	</c:choose>
     	<c:otherwise>
     	<c:forEach  items="${productList}" var="productDTO">
      	<tr>
@@ -42,15 +42,17 @@
       		<td><fmt:formatDate value="${productDTO.productdate}"/></td>
       		<td>
       		<c:choose>
-   	 		<c:when test='${productDTO.best=="1"}'>미사용</c:when>
-   	 		<c:otherwise>사용</c:otherwise>   	 		
+   	 		<c:when test='${productDTO.best=="n"}'>일반</c:when>
+   	 		<c:otherwise>베스트</c:otherwise>   	 		
    	 		</c:choose>	 
    	  		</td> 
     	</tr>
     	</c:forEach>
     	<tr><td colspan="6" style="text-align: center;"> ${paging} </td></tr>
     	</c:otherwise>
+    	</c:choose>
 	</table>
+	</form>
 </article>
 <%@ include file="/admin/footer.jsp"%>
 </body>
