@@ -3,7 +3,9 @@ package com.flasic.controller;
 import com.flasic.admin.controller.action.adminindexAction;
 import com.flasic.admin.controller.action.adminloginAction;
 import com.flasic.admin.controller.action.adminlogoutAction;
+import com.flasic.admin.controller.action.adminproductdetailAction;
 import com.flasic.admin.controller.action.adminproductlistAction;
+import com.flasic.admin.controller.action.adminproductupdateformAction;
 import com.flasic.admin.controller.action.adminproductwriteAction;
 import com.flasic.admin.controller.action.adminproductwriteformAction;
 import com.flasic.controller.action.Action;
@@ -54,6 +56,10 @@ public class ActionFactory {
 			action = new adminproductwriteformAction();
 		}else if (command.equals("admin_product_write")) {
 			action = new adminproductwriteAction();
+		}else if (command.equals("admin_product_detail")) {
+			action = new adminproductdetailAction();
+		}else if (command.equals("admin_product_update_form")) {
+			action = new adminproductupdateformAction();
 		}
 		
 		  return action;

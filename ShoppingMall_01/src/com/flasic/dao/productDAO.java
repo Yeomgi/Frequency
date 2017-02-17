@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import com.flasic.dto.productDTO;
 
 import DB.DBManager;
+import oracle.net.aso.p;
 
 public class productDAO {
 	private productDAO(){}
@@ -70,6 +71,45 @@ public class productDAO {
 		}
 		return productList;
 	}
+	
+	public productDTO getProduct(String num){
+		productDTO pDTO = null;
+		String sql = "select * from producttable1 where num=?";
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			con = DBManager.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, num);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				pDTO = new productDTO();
+				pDTO.setNum(rs.getInt("num"));
+				pDTO.setName(rs.getString("name"));
+				pDTO.setKind(rs.getString("kind"));
+				pDTO.setColor(rs.getString("color"));
+				pDTO.setProductsize(rs.getString("productsize"));
+				pDTO.setPrice1(rs.getInt("price1"));
+				pDTO.setPrice2(rs.getInt("price2"));
+				pDTO.setPrice3(rs.getInt("price3"));
+				pDTO.setContent(rs.getString("content"));
+				pDTO.setImage(rs.getString("image"));
+				pDTO.setSuply(rs.getInt("suply"));
+				pDTO.setProductdate(rs.getTimestamp("productdate"));
+				pDTO.setHit(rs.getInt("hit"));
+				pDTO.setBest(rs.getString("best"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt ,rs);
+		}
+		return pDTO;
+	}
+	
 	  public ArrayList<productDTO> listKindProduct(String kind) {
 		    ArrayList<productDTO> productList = new ArrayList<productDTO>();
 		    String sql= "select * from product where kind=?";
@@ -193,7 +233,6 @@ public class productDAO {
 			pstmt = con.prepareStatement(str, ResultSet.TYPE_SCROLL_SENSITIVE,
 					ResultSet.CONCUR_UPDATABLE);
 			
-			System.out.println("product name : "+productName);
 			
 			if (productName.equals("")) {
 				pstmt.setString(1, "%");
