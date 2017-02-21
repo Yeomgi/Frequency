@@ -3,6 +3,7 @@ package com.flasic.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import com.flasic.dto.memberDTO;
 
@@ -102,4 +103,51 @@ public class memberDAO {
 		    }
 		    return mDTO;
 		  }
+	  
+	  public ArrayList<memberDTO> listMember(String member_name){
+			ArrayList<memberDTO> memberList = new ArrayList<memberDTO>();
+			String sql = "select * from membertable1 where name like '%'||?||'%' order by name desc";
+			
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				if (member_name == "") {
+					pstmt.setString(1,"%");
+				}else {
+					pstmt.setString(1, member_name);
+				}
+				rs = pstmt.executeQuery();
+				while (rs.next()) {
+					memberDTO mDTO = new memberDTO();
+					mDTO.setId(rs.getString("id"));
+					mDTO.setPw(rs.getString("pw"));
+					mDTO.setName(rs.getString("name"));
+					mDTO.setBirth(rs.getString("birth"));
+					mDTO.setPnum(rs.getString("pnum"));
+					mDTO.setEmail(rs.getString("email"));
+					mDTO.setAddr(rs.getString("addr"));
+					mDTO.setDesigner(rs.getString("designer"));
+					/*mDTO.setId("id");
+					mDTO.setPw("pw");
+					mDTO.setName("name");
+					mDTO.setBirth("birth");
+					mDTO.setPnum("pnum");
+					mDTO.setEmail("email");
+					mDTO.setAddr("addr");
+					mDTO.setDesigner("designer");*/
+					memberList.add(mDTO);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				DBManager.close(conn, pstmt, rs);
+			}
+			return memberList;
+			
+		}
+	  
 }

@@ -139,27 +139,21 @@ function go_mod_save(tpage, num) {
 	}  else if (theForm.color.value == '') {
 		alert('색상을 입력하세요');
 		theForm.color.focus();
-	} else if (theForm.producctsize.value == '') {
+	} else if (theForm.productsize.value == '') {
 		alert('사이즈를 선택하세요');
-		theForm.producctsize.focus();
+		theForm.productsize.focus();
 	} else if (theForm.suply.value == '') {
 		alert('물량을 입력하세요');
 		theForm.suply.focus();
-	}else if (theForm.content.value == '') {
+	} else if (theForm.content.value == '') {
 		alert('상품상세를 입력하세요');
 		theForm.content.focus();
 	} else {
 		if (confirm('수정하시겠습니까?')) {
-			// [1] 상품을 삭제하지 않는 대신 사용하지 않음을 products 테이블의 useyn 컬럼에 1을 채워 넣기 위해서
-			// useyns hidden 태그에 1을 지정한다.
-			/*if (theForm.useyn.checked == true) {
-				theForm.useyn.value = "y";
-			}*/
 			if(theForm.best.checked == true) {
 				theForm.best.value = "y";
 			}
 			theForm.encoding = "multipart/form-data";
-			// theForm.seq.value=seq;
 			theForm.price1.value = removeComma(theForm.price1);
 			theForm.price2.value = removeComma(theForm.price2);
 			theForm.price3.value = removeComma(theForm.price3);

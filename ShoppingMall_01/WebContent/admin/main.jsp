@@ -35,7 +35,7 @@ function workerCheck() {
       <div id="loginform">
       <form name="frm" method="post" 
 		action="FlasicServlet?command=admin_login">
-      <table>
+      <table id="mainlogin">
         <tr>
           <td> 아 이 디 </td>
           <td> <input type="text" name="managerId" size="10" value="flasic"></td>

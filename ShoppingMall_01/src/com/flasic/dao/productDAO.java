@@ -305,9 +305,9 @@ public class productDAO {
 	  
 	  //업데이트 수정해야함
 	  public int updateProduct(productDTO pDTO){
-		  int result = 0;
+		  int result = -1;
 		  String sql = "update producttable1 set kind=?, name=?" +
-		  ", price1=?, price2=?, price3=?, content=?, image=?, best=? " +
+		  ", price1=?, price2=?, price3=?, color=?, productsize=?, suply=?, content=?, image=?, best=? " +
 				  "where num=?";
 			Connection con = null;
 			PreparedStatement pstmt = null;
@@ -320,10 +320,13 @@ public class productDAO {
 				pstmt.setInt(3, pDTO.getPrice1());
 				pstmt.setInt(4, pDTO.getPrice2());
 				pstmt.setInt(5, pDTO.getPrice3());
-				pstmt.setString(6, pDTO.getContent());
-				pstmt.setString(7, pDTO.getImage());
-				pstmt.setString(8, pDTO.getBest());
-				pstmt.setInt(9, pDTO.getNum());
+				pstmt.setString(6, pDTO.getColor());
+				pstmt.setString(7, pDTO.getProductsize());
+				pstmt.setInt(8, pDTO.getSuply());
+				pstmt.setString(9, pDTO.getContent());
+				pstmt.setString(10, pDTO.getImage());
+				pstmt.setString(11, pDTO.getBest());
+				pstmt.setInt(12, pDTO.getNum());
 				result = pstmt.executeUpdate();
 			} catch (Exception e) {
 				e.printStackTrace();

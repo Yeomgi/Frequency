@@ -97,7 +97,7 @@
 			</td>
 		</tr>
 	</table>
-	<input class="btn" type="button" value="수정" onclick="go_mod_save('${tpage}','${pDTO.num }')">
+	<input class="btn" type="button" value="수정" onclick="go_mod_save('${tpage}','${pDTO.num}')">
 	<input class="btn" type="button" value="취소" onclick="go_mov()">
 	</form>
 </article>
