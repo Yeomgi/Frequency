@@ -25,6 +25,7 @@
 	float: left;
 	margin-left: 30px;
 	margin-bottom: 50px;
+	transition: all 0.4s;
 }
 #bestProduct li:hover {
 	box-shadow:1px 1px 3px 6px orange;

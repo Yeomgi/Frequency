@@ -15,7 +15,7 @@ public class adminproductdetailAction implements Action {
 public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	// TODO Auto-generated method stub
 	String url = "admin/product/productPage.jsp";
-	System.out.println("num :"+request.getParameter("num"));
+	//System.out.println("num :"+request.getParameter("num"));
 	String num = request.getParameter("num").trim();
 	productDAO pDAO = productDAO.getInstance();
 	productDTO pDTO = pDAO.getProduct(num);

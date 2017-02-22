@@ -95,6 +95,7 @@ public class memberDAO {
 		        mDTO.setPnum(rs.getString("pnum"));
 		        mDTO.setEmail(rs.getString("email"));
 		        mDTO.setAddr(rs.getString("addr"));
+		        mDTO.setDesigner(rs.getString("designer"));
 		      } 
 		    } catch (Exception e) {
 		      e.printStackTrace();

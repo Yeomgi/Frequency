@@ -18,6 +18,8 @@ import com.flasic.controller.action.joinformAction;
 import com.flasic.controller.action.loginAction;
 import com.flasic.controller.action.loginformAction;
 import com.flasic.controller.action.loginoutAction;
+import com.flasic.controller.action.mypageAction;
+import com.flasic.controller.action.reqeustdesignerAction;
 
 public class ActionFactory {
 	private static ActionFactory instance = new ActionFactory();
@@ -43,9 +45,13 @@ public class ActionFactory {
 			action = new loginAction();
 	      }else if (command.equals("loginout")) {
 			action = new loginoutAction();
+	      }else if (command.equals("mypage")) {
+			action = new mypageAction();
+	      }else if (command.equals("rqDesigner")) {
+			action = new reqeustdesignerAction();
 		}
 	    
-	    //adim
+	    //admin
 	    if (command.equals("admin_login_form")) {
 			action = new adminindexAction();
 		}else if (command.equals("admin_login")) {

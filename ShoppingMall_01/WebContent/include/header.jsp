@@ -9,6 +9,7 @@
 <title>The Flasic</title>
 <link href="http://localhost:80/ShoppingMall_01/include/css/headerfooter.css" rel="stylesheet">
 <script type="text/javascript" src="member/member.js"></script>
+<script type="text/javascript" src="mypage/mypage.js"></script>
 </head>
 <body>
 	<div id="wrap"> <!--header.jsp "wrap" 시작하는 부분 -->
@@ -33,7 +34,7 @@
 					</c:otherwise>
 				</c:choose>	
 					<li><a href="#">CART</a></li>
-					<li><a href="#">MYPAGE</a></li>
+					<li><a href="FlasicServlet?command=mypage">MYPAGE</a></li>
 				</ul>
 			<!--로고와 같은 태그안 카테고리 메뉴 끝  -->
 			</nav>
