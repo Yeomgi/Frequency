@@ -105,6 +105,46 @@ public class memberDAO {
 		    return mDTO;
 		  }
 	  
+	  public int updateMember(memberDTO mDTO){
+		int result =-1;
+		String sql = "update membertable1 set pnum=?, email=?, addr=? where id=?";
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DBManager.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, mDTO.getPnum());
+			pstmt.setString(2, mDTO.getEmail());
+			pstmt.setString(3, mDTO.getAddr());
+			pstmt.setString(4, mDTO.getId());
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt);
+		}
+		  return result;
+	  }
+	  
+	  public int updateDesigner(memberDTO mDTO){
+		  int result = -1;
+		  String sql = "update membertable1 set designer=? where id=?";
+		  Connection con = null;
+		  PreparedStatement pstmt = null;
+		  try {
+			  con = DBManager.getConnection();
+			  pstmt = con.prepareStatement(sql);
+			  pstmt.setString(1, mDTO.getDesigner());
+			  pstmt.setString(2, mDTO.getId());
+			  result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt);
+		}
+		  return result;
+	  }
+	  
 	  public ArrayList<memberDTO> listMember(String member_name){
 			ArrayList<memberDTO> memberList = new ArrayList<memberDTO>();
 			String sql = "select * from membertable1 where name like '%'||?||'%' order by name desc";

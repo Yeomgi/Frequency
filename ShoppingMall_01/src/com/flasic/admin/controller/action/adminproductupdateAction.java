@@ -30,12 +30,17 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 	System.out.println(request.getParameter("kind"));
 	
 	productDTO pDTO = new productDTO();
+	pDTO.setKind(multi.getParameter("kind"));
 	pDTO.setNum(Integer.parseInt(multi.getParameter("num")));
 	pDTO.setName(multi.getParameter("name"));
 	pDTO.setPrice1(Integer.parseInt(multi.getParameter("price1")));
 	pDTO.setPrice2(Integer.parseInt(multi.getParameter("price2")));
 	pDTO.setPrice3(Integer.parseInt(multi.getParameter("price2"))
 			-Integer.parseInt(multi.getParameter("price1")));
+	pDTO.setColor(multi.getParameter("color"));
+	pDTO.setProductsize(multi.getParameter("productsize"));
+	pDTO.setSuply(Integer.parseInt(multi.getParameter("suply")));
+	pDTO.setBest(multi.getParameter("best"));
 	pDTO.setContent(multi.getParameter("content"));
 	if (multi.getFilesystemName("image")==null) {
 		pDTO.setImage(multi.getParameter("nonmakeImg"));

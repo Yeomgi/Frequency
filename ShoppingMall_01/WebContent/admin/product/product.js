@@ -1,4 +1,4 @@
-function NumFormat(t) // 원 단위, 찍어주기
+function NumFormat(t) 
 {
 	s = t.value;
 	s = s.replace(/\D/g, '');
@@ -11,7 +11,7 @@ function NumFormat(t) // 원 단위, 찍어주기
 	return t;
 }
 
-function go_ab() // 판매가-원가=순매출을 replace해서 계산해 준다.
+function go_ab()
 {
 	var theForm = document.frm;
 	var a = theForm.price2.value.replace(/,/g, '');
@@ -20,8 +20,7 @@ function go_ab() // 판매가-원가=순매출을 replace해서 계산해 준다
 	theForm.price3.value = ab;
 }
 
-// 폼에 입력이 올바른지 판단한다.
-// productWrite.jsp에서 사용한다.
+
 function go_save() 
 {
 	var theForm = document.frm;
@@ -51,28 +50,24 @@ function go_save()
 		alert('상품상세를 입력하세요.');
 		theForm.content.focus();
 	} else if (theForm.image.value == '') {
-		alert('상품이미지들 입력하세요.');
+		alert('상품이미지들 선택하세요.');
 		theForm.image.focus();
 	} else {
 		theForm.encoding = "multipart/form-data";
 		theForm.price1.value = removeComma(theForm.price1);
 		theForm.price2.value = removeComma(theForm.price2);
 		theForm.price3.value = removeComma(theForm.price3);
-
-		// productWrite.jsp 폼 페이지에서 입력받은 값을
-		// 디비에 추가하기 위한 페이지인 product_save.jsp로 이동하되
-		// 입력받은 상품 코드를 쿼리 스트링 형태로 전달한다.
-		// 상품 코드로 폴더를 만들어 거기에 이미지 파일을 업로드한다.
+		
 		theForm.action = "FlasicServlet?command=admin_product_write";
 		theForm.submit();
 	}
 }
 
-function removeComma(input) // ,을 빼고 값을 다시 넣어준다.
+function removeComma(input)
 {
 	return input.value.replace(/,/gi, "");
 }
-// productWrite.jsp에서 사용한다. 상품 리스트로 이동한다.
+
 function go_mov()
 {
 	var theForm = document.frm;
@@ -95,8 +90,7 @@ function go_total() {
 
 function go_detail(tpage, num) {
 	var theForm = document.frm;
-	// 상품 상세 보기 페이지에서 다시 상품 리스트로 돌아왔을 경우 현재 페이지로
-	// 돌아올 수 있도록 하기 위해서 현재 페이지 번호를 쿼리 스트링으로 넘겨준다.
+
 	theForm.action =  "FlasicServlet?command=admin_product_detail&tpage="+tpage+"&num="+num;
 	theForm.submit();
 }
@@ -108,14 +102,14 @@ function go_wrt() {
 }
 function go_list(tpage) {
 	var theForm = document.frm;
-	//상품 리스트로 이동하되 현재 페이지를 쿼리 스트링으로 넘긴다.
+
 	theForm.action = "FlasicServlet?command=admin_product_list&tpage=" + tpage;
 	theForm.submit();
 }
-// **************** productDetail.jsp
+
 function go_mod(tpage, num) {
 	var theForm = document.frm;
-	//현재 페이지를 쿼리 스트링으로 넘긴다.
+
 	theForm.action = "FlasicServlet?command=admin_product_update_form&tpage=" + 
 		              tpage+"&num="+num;
 	theForm.submit();
@@ -157,8 +151,7 @@ function go_mod_save(tpage, num) {
 			theForm.price1.value = removeComma(theForm.price1);
 			theForm.price2.value = removeComma(theForm.price2);
 			theForm.price3.value = removeComma(theForm.price3);
-			// [2] products 테이블의 상품 정보를 수정하는 처리를 하는 product_modsave.jsp 페이지로
-			// 이동하되 상품 코드를 전달해준다. 상품코드로 폴더를 생성해서 그곳에 이미지 파일을 업로드하기 때문이다.			
+						
 			theForm.action = "FlasicServlet?command=admin_product_update";
 			theForm.submit();
 		}

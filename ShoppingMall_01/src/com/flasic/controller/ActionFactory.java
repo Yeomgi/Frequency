@@ -12,12 +12,15 @@ import com.flasic.admin.controller.action.adminproductwriteAction;
 import com.flasic.admin.controller.action.adminproductwriteformAction;
 import com.flasic.controller.action.Action;
 import com.flasic.controller.action.IndexAction;
+import com.flasic.controller.action.designerupdateAction;
 import com.flasic.controller.action.idcheckAction;
 import com.flasic.controller.action.joinAction;
 import com.flasic.controller.action.joinformAction;
 import com.flasic.controller.action.loginAction;
 import com.flasic.controller.action.loginformAction;
 import com.flasic.controller.action.loginoutAction;
+import com.flasic.controller.action.memberupdateAction;
+import com.flasic.controller.action.memberupdateformAction;
 import com.flasic.controller.action.mypageAction;
 import com.flasic.controller.action.reqeustdesignerAction;
 
@@ -49,6 +52,12 @@ public class ActionFactory {
 			action = new mypageAction();
 	      }else if (command.equals("rqDesigner")) {
 			action = new reqeustdesignerAction();
+	      }else if (command.equals("memberupdate")) {
+			action = new memberupdateformAction();
+	      }else if (command.equals("memberupdatesave")) {
+			action = new memberupdateAction();
+	      }else if (command.equals("designerupdate")) {
+			action = new designerupdateAction();
 		}
 	    
 	    //admin
