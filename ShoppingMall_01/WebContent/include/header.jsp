@@ -45,14 +45,14 @@
 			</div>
 			<nav id="shopping_menu">
 				<ul>
-					<li><a href="#">BEST20</a></li>
-					<li><a href="#">Outer</a></li>
-					<li><a href="#">Top</a></li>
-					<li><a href="#">Pants</a></li>
-					<li><a href="#">Skirt</a></li>
-					<li><a href="#">Inner</a></li>
-					<li><a href="#">Shoes</a></li>
-					<li><a href="#">Bag&Acc</a></li>
+					<li><a href="FlasicServlet?command=index">BEST20</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=1">Outer</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=2">Top</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=3">Pants</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=4">Skirt</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=5">Inner</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=6">Shoes</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=7">Bag&Acc</a></li>
 				</ul>
 			</nav>
 			<div class="clear"></div>

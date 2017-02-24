@@ -13,13 +13,13 @@
 			<!--메인 사진부분 끝  -->
 			<div class="clear"></div>
 			<div id="front">
-				<h2>BEST 20</h2>
+				<h2 style="font-family: BernhardFashion BT;">Best 20</h2>
 				<div id="bestproduct">
 					<c:forEach items="${bestProductList}" var="pDTO">
 						<div id="item">
 							<a href="#"><img src="product_image/${pDTO.image}" />
-							<h3>${pDTO.name}</h3>
-							<p>${pDTO.price2}</p>
+							<p style="font-weight: bold;">${pDTO.name}<p>
+							<p style="font-size: 14px;">${pDTO.price2}</p>
 							</a>
 						</div>
 					</c:forEach>

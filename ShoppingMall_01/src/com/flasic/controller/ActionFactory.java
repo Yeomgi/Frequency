@@ -22,6 +22,7 @@ import com.flasic.controller.action.loginoutAction;
 import com.flasic.controller.action.memberupdateAction;
 import com.flasic.controller.action.memberupdateformAction;
 import com.flasic.controller.action.mypageAction;
+import com.flasic.controller.action.productkindAction;
 import com.flasic.controller.action.reqeustdesignerAction;
 
 public class ActionFactory {
@@ -58,7 +59,9 @@ public class ActionFactory {
 			action = new memberupdateAction();
 	      }else if (command.equals("designerupdate")) {
 			action = new designerupdateAction();
-		}
+	      }else if (command.equals("catagory")) {
+			action = new productkindAction();
+	      }
 	    
 	    //admin
 	    if (command.equals("admin_login_form")) {

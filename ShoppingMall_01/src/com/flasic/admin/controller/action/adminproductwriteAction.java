@@ -22,7 +22,7 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 		HttpSession session = request.getSession();
 		
 		int sizeLimit = 5 * 1024 * 1024;
-		String savePath = "/product_image";
+		String savePath = "product_image";
 		ServletContext context = session.getServletContext();
 		String uploadFilePath = context.getRealPath(savePath);
 		
