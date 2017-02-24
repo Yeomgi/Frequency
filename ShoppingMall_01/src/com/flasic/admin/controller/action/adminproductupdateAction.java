@@ -42,14 +42,35 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 	pDTO.setSuply(Integer.parseInt(multi.getParameter("suply")));
 	pDTO.setBest(multi.getParameter("best"));
 	pDTO.setContent(multi.getParameter("content"));
-	if (multi.getFilesystemName("image")==null) {
+	
+	if (!isIamgeExist(multi,"image")) {
+		//if (multi.getFilesystemName("image")==null) {
 		pDTO.setImage(multi.getParameter("nonmakeImg"));
-	}else {
-		pDTO.setImage(multi.getFilesystemName("image"));
-	}
+	}else {pDTO.setImage(multi.getFilesystemName("image"));}
+	
+	if (multi.getFilesystemName("image2")==null) {
+		pDTO.setImage2(multi.getParameter("nonmakeImg"));
+	}else {pDTO.setImage2(multi.getFilesystemName("image2"));}
+	
+	if (multi.getFilesystemName("image3")==null) {
+		pDTO.setImage3(multi.getParameter("nonmakeImg"));
+	}else {pDTO.setImage3(multi.getFilesystemName("image3"));}
+	
+	if (multi.getFilesystemName("image4")==null) {
+		pDTO.setImage4(multi.getParameter("nonmakeImg"));
+	}else {pDTO.setImage4(multi.getFilesystemName("image4"));}
+	
+	if (multi.getFilesystemName("image5")==null) {
+		pDTO.setImage5(multi.getParameter("nonmakeImg"));
+	}else {pDTO.setImage5(multi.getFilesystemName("image5"));}
 	
 	productDAO pDAO = productDAO.getInstance();
 	pDAO.updateProduct(pDTO);
 	response.sendRedirect(url);
 }
+
+	private boolean isIamgeExist(MultipartRequest multi, String str) {
+		if (multi.getFilesystemName(str)==null) return false;
+		else return true;
+	}
 }

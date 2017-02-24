@@ -97,6 +97,10 @@ public class productDAO {
 				pDTO.setPrice3(rs.getInt("price3"));
 				pDTO.setContent(rs.getString("content"));
 				pDTO.setImage(rs.getString("image"));
+				pDTO.setImage2(rs.getString("image2"));
+				pDTO.setImage3(rs.getString("image3"));
+				pDTO.setImage4(rs.getString("image4"));
+				pDTO.setImage5(rs.getString("image5"));
 				pDTO.setSuply(rs.getInt("suply"));
 				pDTO.setProductdate(rs.getTimestamp("productdate"));
 				pDTO.setHit(rs.getInt("hit"));
@@ -274,8 +278,8 @@ public class productDAO {
 		int result = 0;
 		
 		String sql = "insert into producttable1 (" + 
-		"num, kind, name, price1, price2, price3, color, productsize, suply, content, image) " + 
-				"values(Producttable1sequence1.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		"num, kind, name, price1, price2, price3, color, productsize, suply, content, image, image2, image3, image4, image5) " + 
+				"values(Producttable1sequence1.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -293,6 +297,10 @@ public class productDAO {
 			pstmt.setInt(8, pDTO.getSuply());
 			pstmt.setString(9, pDTO.getContent());
 			pstmt.setString(10, pDTO.getImage());
+			pstmt.setString(11, pDTO.getImage2());
+			pstmt.setString(12, pDTO.getImage3());
+			pstmt.setString(13, pDTO.getImage4());
+			pstmt.setString(14, pDTO.getImage5());
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println("추가완료");
@@ -307,7 +315,7 @@ public class productDAO {
 	  public int updateProduct(productDTO pDTO){
 		  int result = -1;
 		  String sql = "update producttable1 set kind=?, name=?" +
-		  ", price1=?, price2=?, price3=?, color=?, productsize=?, suply=?, content=?, image=?, best=? " +
+		  ", price1=?, price2=?, price3=?, color=?, productsize=?, suply=?, content=?, image=?, image2=?, image3=?, image4=?, image5=?, best=? " +
 				  "where num=?";
 			Connection con = null;
 			PreparedStatement pstmt = null;
@@ -325,8 +333,12 @@ public class productDAO {
 				pstmt.setInt(8, pDTO.getSuply());
 				pstmt.setString(9, pDTO.getContent());
 				pstmt.setString(10, pDTO.getImage());
-				pstmt.setString(11, pDTO.getBest());
-				pstmt.setInt(12, pDTO.getNum());
+				pstmt.setString(11, pDTO.getImage2());
+				pstmt.setString(12, pDTO.getImage3());
+				pstmt.setString(13, pDTO.getImage4());
+				pstmt.setString(14, pDTO.getImage5());
+				pstmt.setString(15, pDTO.getBest());
+				pstmt.setInt(16, pDTO.getNum());
 				result = pstmt.executeUpdate();
 			} catch (Exception e) {
 				e.printStackTrace();

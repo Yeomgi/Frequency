@@ -96,6 +96,38 @@
 				<input type="file" name="image">
 			</td>
 		</tr>
+		<tr>
+			<th>상품상세이미지</th>
+			<td colspan="5">
+				<img src="product_image/${pDTO.image2}" width="200pt">
+				<br>
+				<input type="file" name="image2">
+			</td>
+		</tr>
+		<tr>
+			<th>상품상세이미지</th>
+			<td colspan="5">
+				<img src="product_image/${pDTO.image3}" width="200pt">
+				<br>
+				<input type="file" name="image3">
+			</td>
+		</tr>
+		<tr>	
+			<th>상품상세이미지</th>
+			<td colspan="5">
+				<img src="product_image/${pDTO.image4}" width="200pt">
+				<br>
+				<input type="file" name="image4">
+			</td>
+		</tr>
+		<tr>	
+			<th>상품상세이미지</th>
+			<td colspan="5">
+				<img src="product_image/${pDTO.image5}" width="200pt">
+				<br>
+				<input type="file" name="image5">
+			</td>
+		</tr>
 	</table>
 	<input class="btn" type="button" value="수정" onclick="go_mod_save('${tpage}','${pDTO.num}')">
 	<input class="btn" type="button" value="취소" onclick="go_mov()">

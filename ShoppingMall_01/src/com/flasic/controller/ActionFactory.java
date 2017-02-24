@@ -23,6 +23,7 @@ import com.flasic.controller.action.memberupdateAction;
 import com.flasic.controller.action.memberupdateformAction;
 import com.flasic.controller.action.mypageAction;
 import com.flasic.controller.action.productkindAction;
+import com.flasic.controller.action.productpageAction;
 import com.flasic.controller.action.reqeustdesignerAction;
 
 public class ActionFactory {
@@ -61,7 +62,9 @@ public class ActionFactory {
 			action = new designerupdateAction();
 	      }else if (command.equals("catagory")) {
 			action = new productkindAction();
-	      }
+	      }else if (command.equals("producPage")) {
+			action = new productpageAction();
+		}
 	    
 	    //admin
 	    if (command.equals("admin_login_form")) {

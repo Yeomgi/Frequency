@@ -40,6 +40,10 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 		pDTO.setSuply(Integer.parseInt(multi.getParameter("suply")));
 		pDTO.setContent(multi.getParameter("content"));
 		pDTO.setImage(multi.getFilesystemName("image"));
+		pDTO.setImage2(multi.getFilesystemName("image2"));
+		pDTO.setImage3(multi.getFilesystemName("image3"));
+		pDTO.setImage4(multi.getFilesystemName("image4"));
+		pDTO.setImage5(multi.getFilesystemName("image5"));
 		
 		productDAO pDAO = productDAO.getInstance();
 		pDAO.insertProduct(pDTO);

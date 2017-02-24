@@ -17,7 +17,7 @@
 				<div id="bestproduct">
 					<c:forEach items="${bestProductList}" var="pDTO">
 						<div id="item">
-							<a href="#"><img src="product_image/${pDTO.image}" />
+							<a href="FlasicServlet?command=producPage&num=${pDTO.num}"><img src="product_image/${pDTO.image}" />
 							<p style="font-weight: bold;">${pDTO.name}<p>
 							<p style="font-size: 14px;">${pDTO.price2}</p>
 							</a>

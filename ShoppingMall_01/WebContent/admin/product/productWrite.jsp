@@ -65,6 +65,30 @@
 					<input type="file" name="image">
 				</td>
 			</tr>
+			<tr>
+				<th>상품 상세이미지2</th>
+				<td width="345" colspan="5">
+					<input type="file" name="image2">
+				</td>
+			</tr>
+			<tr>
+				<th>상품 상세이미지3</th>
+				<td width="345" colspan="5">
+					<input type="file" name="image3">
+				</td>
+			</tr>
+			<tr>
+				<th>상품 상세이미지4</th>
+				<td width="345" colspan="5">
+					<input type="file" name="image4">
+				</td>
+			</tr>
+			<tr>
+				<th>상품 상세이미지5</th>
+				<td width="345" colspan="5">
+					<input type="file" name="image5">
+				</td>
+			</tr>
 		</table>
 		<input class="btn" type="button" value="저장" onclick="go_save()">
 		<input class="btn" type="button" value="취소" onclick="go_mov()">
