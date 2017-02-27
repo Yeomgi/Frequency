@@ -3,7 +3,7 @@
 <%@include file="../include/header.jsp" %>
 <%@ include file="sub_menu.html" %>
 <link href="http://localhost:80/ShoppingMall_01/css/flasic.css" rel="stylesheet">
-	<article>
+	<article id="kind">
 		<h2 style="font-family: BernhardFashion BT;">theFlasic</h2>
 		<c:forEach items="${productKindList}" var="pDTO">
 		<div id="item">

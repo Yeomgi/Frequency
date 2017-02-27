@@ -5,10 +5,16 @@
 	<div class="clear"></div>
 		<div id="mainwrap">
 			<!--메인사진 부분시작  -->
-			<div id="mainpic">
+			<!-- <div id="mainpic">
 				<img src="imges/main1.jpg" style="width: 600px; height: 300px;">
 				<img src="imges/main2.jpg" style="width: 190px; height: 300px;">
 				<img src="imges/main3.jpg" style="width: 190px; height: 300px;">
+			</div> -->
+			<div id="mainpic">
+				<img src="imges/main1.jpg" style=" height: 300px;">
+				<img src="imges/main2.jpg" style=" height: 300px;">
+				<img src="imges/main3.jpg" style=" height: 300px;">
+				<img src="imges/main4.png" style=" width:106px; height: 300px;">
 			</div>
 			<!--메인 사진부분 끝  -->
 			<div class="clear"></div>

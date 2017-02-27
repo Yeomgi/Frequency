@@ -12,6 +12,7 @@ import com.flasic.admin.controller.action.adminproductwriteAction;
 import com.flasic.admin.controller.action.adminproductwriteformAction;
 import com.flasic.controller.action.Action;
 import com.flasic.controller.action.IndexAction;
+import com.flasic.controller.action.cartAction;
 import com.flasic.controller.action.designerupdateAction;
 import com.flasic.controller.action.idcheckAction;
 import com.flasic.controller.action.joinAction;
@@ -22,9 +23,11 @@ import com.flasic.controller.action.loginoutAction;
 import com.flasic.controller.action.memberupdateAction;
 import com.flasic.controller.action.memberupdateformAction;
 import com.flasic.controller.action.mypageAction;
+import com.flasic.controller.action.orderlistAction;
 import com.flasic.controller.action.productkindAction;
 import com.flasic.controller.action.productpageAction;
 import com.flasic.controller.action.reqeustdesignerAction;
+import com.flasic.controller.action.sellAction;
 
 public class ActionFactory {
 	private static ActionFactory instance = new ActionFactory();
@@ -64,7 +67,13 @@ public class ActionFactory {
 			action = new productkindAction();
 	      }else if (command.equals("producPage")) {
 			action = new productpageAction();
-		}
+	      }else if (command.equals("sell")) {
+			action = new sellAction();
+	      }else if (command.equals("cart")) {
+			action = new cartAction();
+	      }else if (command.equals("order_list")) {
+			action = new orderlistAction();
+	      }
 	    
 	    //admin
 	    if (command.equals("admin_login_form")) {

@@ -12,13 +12,16 @@
 	float: left;
 	padding-left: 4px;
 }
-article {
+article#kind {
 	width: 770px;
 	height: 650px;
 	overflow: auto;
 	border:10px solid #ccc;
 	position: relative;
 	left: 30px;
+}
+#page img {
+	margin-top: 100px;
 }
 #bestproduct {
 	width: 950px;
@@ -50,6 +53,21 @@ article {
 #item img {
 	width: 150px;
 	height: 200px;
+}
+
+.btn {
+	width: 100px;
+	height: 35px;
+	border: none;
+	color: white;
+	background-color: orange;
+	transition: all 0.3s;
+}
+
+.btn:hover {
+	background-color: darkorange;
+	cursor: pointer;
+	border-radius: 30px; 
 }
 
 .clear {clear: both;}
