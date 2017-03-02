@@ -7,7 +7,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Title</title>
+    <title>Frequency</title>
 </head>
 <body>
 <%--

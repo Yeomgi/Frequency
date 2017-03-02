@@ -1,7 +1,5 @@
 package com.frequency.DAO;
 
-import com.guguZine.DTO.*;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -19,9 +17,7 @@ import java.sql.SQLException;
 
 
 // AutoCloseable을 구현해서 try-catch-resource에서 자원이 자동반환 되도록 한다.
-public class DAO <T extends DAO> implements AutoCloseable {
-
-    //private static T Instance = new T();
+public class DAO implements AutoCloseable {
 
     protected Connection con;
     protected PreparedStatement prst;
@@ -37,12 +33,6 @@ public class DAO <T extends DAO> implements AutoCloseable {
         } catch ( SQLException e ) { System.out.println("getConnection Error : "+e);
         }
     }
-
-    protected DAO(T t) {
-
-    }
-
-    //public static T  getInstance() { return Instance; }
 
     // 커서이동가능 PreparedStatement 객체 얻기
     protected PreparedStatement getCursorMovePRST(String query){
@@ -83,27 +73,6 @@ public class DAO <T extends DAO> implements AutoCloseable {
             closeConnection();
         }
         catch ( Exception e ){ System.out.println("DAO Close Error : "+e); }
-    }
-
-    // ResultSet -> DTO 메소드
-    protected DTOMember getMemer(ResultSet rs){
-        try {
-            return new DTOMember(
-                    rs.getString("id"),
-                    rs.getString("pw"),
-                    rs.getString("nickname"),
-                    rs.getString("email"),
-                    rs.getTimestamp("Joindate"),
-                    rs.getInt("grade"),
-                    rs.getInt("gradeexp"),
-                    rs.getTimestamp("banstartdate"),
-                    rs.getInt("banday"),
-                    rs.getTimestamp("banenddate")
-            );
-        }
-        catch ( SQLException e ) { System.out.println("getMember Error"+e); }
-
-        return null;
     }
 
 }

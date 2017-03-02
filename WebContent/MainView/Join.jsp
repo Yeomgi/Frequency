@@ -7,7 +7,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Title</title>
+    <title>Frequency</title>
+    <script>
+        
+    </script>
 </head>
 <body>
 <%--
