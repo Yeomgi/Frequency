@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class DBManager {
 	private static String url="jdbc:oracle:thin:@localhost:1521:XE";
 	private static String uid="hong";
-	private static String upw="1234";
+	private static String upw="hong";
 
 	public static Connection getConnection() {
 		Connection conn =null;

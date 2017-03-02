@@ -9,6 +9,8 @@
 <title>The Flasic</title>
 <link href="http://localhost:8092/ShoppingMall_01/include/css/headerfooter.css" rel="stylesheet">
 <script type="text/javascript" src="member/member.js"></script>
+<script type="text/javascript" src="mypage/mypage.js"></script>
+<script type="text/javascript" src="product/product.js"></script>
 </head>
 <body>
 	<div id="wrap"> <!--header.jsp "wrap" 시작하는 부분 -->
@@ -33,7 +35,7 @@
 					</c:otherwise>
 				</c:choose>	
 					<li><a href="#">CART</a></li>
-					<li><a href="#">MYPAGE</a></li>
+					<li><a href="FlasicServlet?command=mypage">MYPAGE</a></li>
 				</ul>
 			<!--로고와 같은 태그안 카테고리 메뉴 끝  -->
 			</nav>
@@ -44,14 +46,14 @@
 			</div>
 			<nav id="shopping_menu">
 				<ul>
-					<li><a href="#">BEST20</a></li>
-					<li><a href="#">Outer</a></li>
-					<li><a href="#">Top</a></li>
-					<li><a href="#">Pants</a></li>
-					<li><a href="#">Skirt</a></li>
-					<li><a href="#">Inner</a></li>
-					<li><a href="#">Shoes</a></li>
-					<li><a href="#">Bag&Acc</a></li>
+					<li><a href="FlasicServlet?command=index">BEST20</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=1">Outer</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=2">Top</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=3">Pants</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=4">Skirt</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=5">Inner</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=6">Shoes</a></li>
+					<li><a href="FlasicServlet?command=catagory&kind=7">Bag&Acc</a></li>
 				</ul>
 			</nav>
 			<div class="clear"></div>

@@ -3,6 +3,10 @@ package com.flasic.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import com.flasic.dto.memberDTO;
+
 import DB.DBManager;
 
 public class managerDAO {
@@ -11,8 +15,8 @@ public class managerDAO {
 	public static managerDAO getInstance(){
 		return instance;
 	}
-	public int managerCheck(String userid, String userpw) {
-		String sql = "select pwd from managertable1 where id=?";
+	public int managerCheck(String managerId, String managerPwd) {
+		String sql = "select pw from managertable1 where id=?";
 		int result = -1;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -20,12 +24,12 @@ public class managerDAO {
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userid);
+			pstmt.setString(1, managerId);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				result = 0; 
 				String dbPwd = rs.getString(1); 
-				if (dbPwd.equals(userpw)) {
+				if (dbPwd.equals(managerPwd)) {
 					result = 1;
 				}
 			}

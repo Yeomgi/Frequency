@@ -17,23 +17,22 @@ public void execute(HttpServletRequest request, HttpServletResponse response) th
 	// TODO Auto-generated method stub
     String url = "FlasicServlet?command=admin_login_form";  
     String msg = "";
-    String workerId = request.getParameter("workerId").trim();
-    String workerPwd = request.getParameter("workerPwd").trim();
+    String managerId = request.getParameter("managerId").trim();
+    String managerPwd = request.getParameter("managerPwd").trim();
 
-    managerDAO workerDAO = managerDAO.getInstance();
+    managerDAO mDAO = managerDAO.getInstance();
 
-    int result = workerDAO.managerCheck(workerId, workerPwd);
+    int result = mDAO.managerCheck(managerId, managerPwd);
     
-    if (result == 1) {// 로그인 성공
+    if (result == 1) {
       HttpSession session = request.getSession();
-      session.setAttribute("workerId", workerId);
+      session.setAttribute("managerId", managerId);
       url = "FlasicServlet?command=adminproductlist";
     } else if (result == 0) {
       msg = "비밀번호를 확인하세요.";
     } else if (result == -1) {
       msg = "아이디를 확인하세요.";
     }
-    
     RequestDispatcher dispatcher=request.getRequestDispatcher(url);
     dispatcher.forward(request, response);
 }

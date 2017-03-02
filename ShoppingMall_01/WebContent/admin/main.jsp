@@ -10,10 +10,10 @@
 <link rel="stylesheet" href="admin/css/admin.css">
 <script type="text/javascript">
 function workerCheck() {
-	  if(document.frm.workId.value==""){
+	  if(document.frm.managerId.value==""){
 	      alert("아이디를 입력하세요.");
 	      return false;
-	  }else if(document.frm.workPw.value==""){
+	  }else if(document.frm.managerPwd.value==""){
 	     alert("비밀번호를 입력하세요.");
 	      return false;
 	    }
@@ -35,15 +35,15 @@ function workerCheck() {
       <div id="loginform">
       <form name="frm" method="post" 
 		action="FlasicServlet?command=admin_login">
-      <table>
+      <table id="mainlogin">
         <tr>
           <td> 아 이 디 </td>
-          <td> <input type="text" name="workerId" size="10" value="admin"></td>
+          <td> <input type="text" name="managerId" size="10" value="flasic"></td>
         </tr>
         <tr>
           <td> 비밀번호 </td>
           <td> 
-            <input type="password" name="workerPwd" size="10" value="admin">
+            <input type="password" name="managerPwd" size="10" value="flasic">
           </td>
         </tr>
         <tr align="center" >

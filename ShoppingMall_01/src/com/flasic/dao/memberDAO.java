@@ -3,6 +3,7 @@ package com.flasic.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import com.flasic.dto.memberDTO;
 
@@ -94,6 +95,7 @@ public class memberDAO {
 		        mDTO.setPnum(rs.getString("pnum"));
 		        mDTO.setEmail(rs.getString("email"));
 		        mDTO.setAddr(rs.getString("addr"));
+		        mDTO.setDesigner(rs.getString("designer"));
 		      } 
 		    } catch (Exception e) {
 		      e.printStackTrace();
@@ -102,4 +104,91 @@ public class memberDAO {
 		    }
 		    return mDTO;
 		  }
+	  
+	  public int updateMember(memberDTO mDTO){
+		int result =-1;
+		String sql = "update membertable1 set pnum=?, email=?, addr=? where id=?";
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DBManager.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, mDTO.getPnum());
+			pstmt.setString(2, mDTO.getEmail());
+			pstmt.setString(3, mDTO.getAddr());
+			pstmt.setString(4, mDTO.getId());
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt);
+		}
+		  return result;
+	  }
+	  
+	  public int updateDesigner(memberDTO mDTO){
+		  int result = -1;
+		  String sql = "update membertable1 set designer=? where id=?";
+		  Connection con = null;
+		  PreparedStatement pstmt = null;
+		  try {
+			  con = DBManager.getConnection();
+			  pstmt = con.prepareStatement(sql);
+			  pstmt.setString(1, mDTO.getDesigner());
+			  pstmt.setString(2, mDTO.getId());
+			  result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt);
+		}
+		  return result;
+	  }
+	  
+	  public ArrayList<memberDTO> listMember(String member_name){
+			ArrayList<memberDTO> memberList = new ArrayList<memberDTO>();
+			String sql = "select * from membertable1 where name like '%'||?||'%' order by name desc";
+			
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				if (member_name == "") {
+					pstmt.setString(1,"%");
+				}else {
+					pstmt.setString(1, member_name);
+				}
+				rs = pstmt.executeQuery();
+				while (rs.next()) {
+					memberDTO mDTO = new memberDTO();
+					mDTO.setId(rs.getString("id"));
+					mDTO.setPw(rs.getString("pw"));
+					mDTO.setName(rs.getString("name"));
+					mDTO.setBirth(rs.getString("birth"));
+					mDTO.setPnum(rs.getString("pnum"));
+					mDTO.setEmail(rs.getString("email"));
+					mDTO.setAddr(rs.getString("addr"));
+					mDTO.setDesigner(rs.getString("designer"));
+					/*mDTO.setId("id");
+					mDTO.setPw("pw");
+					mDTO.setName("name");
+					mDTO.setBirth("birth");
+					mDTO.setPnum("pnum");
+					mDTO.setEmail("email");
+					mDTO.setAddr("addr");
+					mDTO.setDesigner("designer");*/
+					memberList.add(mDTO);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				DBManager.close(conn, pstmt, rs);
+			}
+			return memberList;
+			
+		}
+	  
 }

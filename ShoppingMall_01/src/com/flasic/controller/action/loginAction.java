@@ -24,8 +24,6 @@ public class loginAction implements Action {
 	    
 	    memberDAO mDAO=memberDAO.getInstance();
 	    memberDTO mDTO=mDAO.getMember(id);
-	    System.out.println(id);
-	    System.out.println(pw);
 	    if(mDTO!=null){
 	      if(mDTO.getPw().equals(pw)){    
 	        session.removeAttribute("id");

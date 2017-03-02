@@ -8,10 +8,11 @@ public class memberDTO {
 	private String pnum;
 	private String email;
 	private String addr;
+	private String designer;
 	public memberDTO() {
 		// TODO Auto-generated constructor stub
 	}
-	public memberDTO(String id, String pw, String name, String birth, String pnum, String email, String addr) {
+	public memberDTO(String id, String pw, String name, String birth, String pnum, String email, String addr, String designer) {
 		super();
 		this.id = id;
 		this.pw = pw;
@@ -20,6 +21,7 @@ public class memberDTO {
 		this.pnum = pnum;
 		this.email = email;
 		this.addr = addr;
+		this.designer= designer;
 	}
 	public String getId() {
 		return id;
@@ -62,5 +64,11 @@ public class memberDTO {
 	}
 	public void setAddr(String addr) {
 		this.addr = addr;
+	}
+	public String getDesigner(){
+		return designer;
+	}
+	public void setDesigner(String designer){
+		this.designer = designer;
 	}
 }
