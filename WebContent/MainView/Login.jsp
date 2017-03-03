@@ -18,6 +18,8 @@
     <input type="text" name="id">
     <input type="text" name="pw">
     <input type="button" name="submit" value="<%--로그인 버튼이름--%>">
+    <input type="button" name="submit" value="<%--로그인 버튼이름--%>">
+    <input type="button" name="submit" value="<%--로그인 버튼이름--%>">
 </form>
 </body>
 </html>
