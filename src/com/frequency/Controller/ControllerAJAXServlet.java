@@ -1,7 +1,8 @@
 package com.frequency.Controller;
 
 import com.frequency.Action.Action;
-import com.frequency.ActionHandler.ActionDoHandler;
+import com.frequency.ActionHandler.ActionAjaxHandler;
+import com.frequency.ActionHandler.ActionHandler;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,20 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Title : '.do' 컨트롤러
+ * Title : '.ajax' 컨트롤러
  * Author : 염형준
- * Date : 2017-03-02 ~
+ * Date : 2017-03-03
  */
 
 
-@WebServlet("*.do")
-public class ControllerDOServlet extends HttpServlet implements Controller{
+@WebServlet("*.ajax")
+public class ControllerAJAXServlet extends HttpServlet implements Controller{
 
     @Override
     public void doProcess(HttpServletRequest request, HttpServletResponse response) {
 
         String command = getCommand(request);
-        Action action = ActionDoHandler.getInstance().getAction( command );
+        Action action = ActionAjaxHandler.getInstance().getAction( command );
 
         action.execute(request,response);
 

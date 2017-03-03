@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
 /**
@@ -48,6 +49,12 @@ public interface Action {
         response.setCharacterEncoding("UTF-8");
     }
 
-
+    default PrintWriter getPrintWirter(HttpServletResponse response){
+        try {
+            return response.getWriter();
+        }
+        catch (IOException e) { System.out.println("getPrintWirter Error : "+e);}
+        return null;
+    }
 
 }

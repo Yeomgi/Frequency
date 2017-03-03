@@ -13,14 +13,14 @@ import java.sql.SQLException;
  * Title : 공통 상속 Super DAO
  * Author : 염형준
  * Date : 2017-02-07
- **/
+ */
 
 
 // AutoCloseable을 구현해서 try-catch-resource에서 자원이 자동반환 되도록 한다.
 public class DAO implements AutoCloseable {
 
     protected Connection con;
-    protected PreparedStatement prst;
+    protected PreparedStatement psmt;
     protected ResultSet rs;
 
     // 생성자에서 connection객체 생성
@@ -35,14 +35,12 @@ public class DAO implements AutoCloseable {
     }
 
     // 커서이동가능 PreparedStatement 객체 얻기
-    protected PreparedStatement getCursorMovePRST(String query){
+    protected PreparedStatement getCursorMovePSMT(String query){
         try {
             return con.prepareStatement( query,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
         }
         catch ( SQLException e ) { System.out.println("getCursorMovePRST Error : "+e); }
-
         return null;
-
     };
 
     // Close 메소드
@@ -54,7 +52,7 @@ public class DAO implements AutoCloseable {
     }
     protected void closePreparedStatement(){
         try {
-            if( prst!=null ) prst.close();
+            if( psmt!=null ) psmt.close();
         }
         catch ( SQLException e ) { System.out.println("PreparedStatement close Error : "+e); }
     }
