@@ -1,0 +1,150 @@
+div#loginboxwrap {
+	/* background-color: gray; */
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	background-image: url("../imges/3.png");
+	background-size: cover;
+}
+
+#lotitle {
+	font-family: Blippo Blk BT;
+	font-size: 40px;	
+}
+
+#input_login input {
+	width: 250px;
+	height: 30px;
+	border:none;
+	border-bottom: 1px solid #bbb;
+}
+
+#loginbtn input {
+	width: 120px;
+	height: 30px;
+	border: none;
+	transition: all 0.4s;	
+}
+#loginbtn input:hover {
+	cursor: pointer;
+	background-color: orange;	
+}
+
+#findbtn input {
+	width: 245px;
+	height: 30px;
+	border: none;
+	transition: all 0.4s;
+}
+#findbtn input:hover {
+	cursor: pointer;
+	background-color: orange;
+}
+#kakaobtn input {
+	width: 245px;
+	height: 30px;
+	text-align:center;
+	border: none;
+	background-color: #fff312;
+	color: #3b1e1e;
+	background-image: url("../imges/kakao_symbol.png");
+	background-size: 18px;
+	background-position: 30px 6px;
+	background-repeat: no-repeat;
+	}
+#kakaobtn input:hover {
+	cursor: pointer;
+}
+#facebtn input {
+	width: 245px;
+	height: 30px;
+	text-align:center;
+	border: none;
+	background-color: #3b5998;
+	color: #ffffff;
+	background-image: url("../imges/facebookIcon.png");
+	background-size: 18px;
+	background-position: 28px 5px;
+	background-repeat: no-repeat;
+}
+#facebtn input:hover {
+	cursor: pointer;
+}
+#title {
+	font-family: BernhardFashion BT;
+	font-size: 40px;
+}
+
+div#joinboxwrap {
+	/* background-color: gray; */
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 70px;
+	padding-bottom: 300px;
+	background-image: url("../imges/1.jpg");
+	background-size: cover;
+}
+
+#table {
+	/* background-color: white; */
+	margin: 0 auto;
+	width: 800px;
+}
+
+#table tr {
+	height: 80px;
+	font-family: Newtext Bk BT;
+	font-size:20px;
+}
+
+#table td {
+	height: 80px;
+}
+ 
+#intext {
+	width: 400px;
+	border: none;
+	border-bottom: 1px solid #bbb;
+}
+
+#ckbtn {
+	width: 100px;
+	height: 50px;
+	border: none;
+	border-radius: 30px;
+	transition: all 0.4s;
+}
+#ckbtn:hover {
+	background-color: #bbb;
+	cursor: pointer;
+}
+
+#okbtn {
+	border: none;
+	width: 150px;
+	height: 50px;
+	color: white;
+	font-size: 20px;
+	background-color: orange;
+	box-shadow: 1px 1px 2px 2px #bbb;
+	transition: all 0.4s;
+}
+#okbtn:hover {
+	background-color: darkorange;
+	cursor: pointer;
+}
+
+#backbtn {
+	border: none;
+	width: 150px;
+	height: 50px;
+	color: white;
+	font-size: 20px;
+	background-color: #CCC;
+	box-shadow: 1px 1px 2px 2px #bbb;
+	
+}
+#backbtn:hover {
+	cursor: pointer;
+}

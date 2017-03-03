@@ -1,0 +1,73 @@
+
+
+#mainwrap{
+	margin: 0 auto;	
+	width: 1000px
+}
+#mainpic {
+	margin: 0 auto;
+	width: 1000px;
+}
+#mainpic img {
+	float: left;
+	padding-left: 4px;
+}
+article#kind {
+	width: 770px;
+	height: 650px;
+	overflow: auto;
+	border:10px solid #ccc;
+	position: relative;
+	left: 30px;
+}
+#page img {
+	margin-top: 100px;
+}
+#bestproduct {
+	width: 950px;
+	height: 650px;
+	overflow: auto;
+	border:10px solid #ccc;
+	position: relative;
+	left: 30px;
+}
+#item {
+	list-style:none;
+	float: left;
+	width: 150px;
+	height: 280px;
+	text-align: center;
+	margin-top:10px;
+	margin-left: 30px;
+	margin-bottom: 50px;
+	transition: all 0.4s;
+}
+#item:hover {
+	box-shadow:1px 1px 3px 6px orange;
+	cursor: pointer;
+}
+#item a {
+	text-decoration: none;
+	color: black;
+}
+#item img {
+	width: 150px;
+	height: 200px;
+}
+
+.btn {
+	width: 100px;
+	height: 35px;
+	border: none;
+	color: white;
+	background-color: orange;
+	transition: all 0.3s;
+}
+
+.btn:hover {
+	background-color: darkorange;
+	cursor: pointer;
+	border-radius: 30px; 
+}
+
+.clear {clear: both;}
