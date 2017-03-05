@@ -16,13 +16,13 @@ import java.io.PrintWriter;
 
 public class ActionAjaxExist implements Action{
 
-    private static ActionAjaxExist ourInstance = new ActionAjaxExist();
+    /*private static ActionAjaxExist ourInstance = new ActionAjaxExist();
 
     private ActionAjaxExist() {}
 
     public static ActionAjaxExist getInstance() {
         return ourInstance;
-    }
+    }*/
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {

@@ -22,9 +22,13 @@ public class ActionDoMain implements Action {
         return ourInstance;
     }*/
 
+    public ActionDoMain() {
+        System.out.println("생성자 생성");
+    }
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("메인 execute");
         doForward(request,response,"/MainView/Main.jsp");
     }
 

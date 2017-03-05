@@ -27,11 +27,12 @@ public class ControllerDOServlet extends HttpServlet implements Controller{
         System.out.println(" 여기옴 ㅋ");
         //String command = getCommand(request);
         //System.out.println(command);
-        //ActionDoHandler actionHandler = ActionDoHandler.getInstance();
-        //System.out.println("핸들러의 상태 :"+actionHandler);
+        ActionDoHandler actionHandler = ActionDoHandler.getInstance();
+        System.out.println("핸들러의 상태 :"+actionHandler);
         //Action action = ActionDoHandler.getInstance().getAction( command );
+        System.out.println("action 생성전");
         Action action = new ActionDoMain();
-
+        System.out.println("액션생성");
         action.execute(request,response);
 
     }

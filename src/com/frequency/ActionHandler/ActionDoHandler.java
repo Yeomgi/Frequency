@@ -30,7 +30,7 @@ public class ActionDoHandler implements ActionHandler{
 
     // 커멘드에 해당하는 Action 인스턴스를 세팅
     private void setActions(){
-        actions.put("main.do", new ActionDoMain());
+        //actions.put("main.do", new ActionDoMain());
         //actions.put("main.do", ActionDoMain.getInstance());
         //actions.put("join.do", ActionDoJoin.getInstance());
     }
@@ -43,8 +43,4 @@ public class ActionDoHandler implements ActionHandler{
         return action;
     }
 
-    @Override
-    public String toString() {
-        return "두 액션 핸들라";
-    }
 }
