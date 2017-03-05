@@ -1,4 +1,4 @@
-package com.frequency.Action.Do;
+package com.frequency.Action;
 
 import com.frequency.Action.Action;
 
@@ -16,7 +16,6 @@ public class ActionDoMain implements Action {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("메인 execute");
         doForward(request,response,"/MainView/Main.jsp");
     }
 

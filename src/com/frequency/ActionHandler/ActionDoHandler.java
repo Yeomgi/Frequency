@@ -1,6 +1,7 @@
 package com.frequency.ActionHandler;
 
 import com.frequency.Action.Action;
+import com.frequency.Action.ActionDoMain;
 
 import java.util.HashMap;
 
@@ -28,7 +29,7 @@ public class ActionDoHandler implements ActionHandler{
 
     // 커멘드에 해당하는 Action 인스턴스를 세팅
     private void setActions(){
-        //actions.put("main.do", new ActionDoMain());
+        actions.put("main.do", new ActionDoMain());
         //actions.put("main.do", ActionDoMain.getInstance());
         //actions.put("join.do", ActionDoJoin.getInstance());
     }

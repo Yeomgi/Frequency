@@ -41,7 +41,7 @@ public class DAO implements AutoCloseable {
         }
         catch ( SQLException e ) { System.out.println("getCursorMovePSMT Error : "+e); }
         return null;
-    };
+    }
 
     // Close 메소드
     protected void closeRS(){

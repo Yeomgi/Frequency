@@ -1,7 +1,6 @@
 package com.frequency.ActionHandler;
 
 import com.frequency.Action.Action;
-import com.frequency.Action.Ajax.ActionAjaxExist;
 
 import java.util.HashMap;
 

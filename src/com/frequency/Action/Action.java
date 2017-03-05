@@ -17,7 +17,7 @@ import java.io.UnsupportedEncodingException;
 public interface Action {
 
     // 공통 실행 메소드
-    public void execute(HttpServletRequest request, HttpServletResponse response);
+    void execute(HttpServletRequest request, HttpServletResponse response);
 
     // Redirect 방식으로 페이지 전환
     default void doRedirect(HttpServletResponse response, String uri){

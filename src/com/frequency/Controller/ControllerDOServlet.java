@@ -2,7 +2,6 @@ package com.frequency.Controller;
 
 import com.frequency.Action.Action;
 import com.frequency.ActionHandler.ActionDoHandler;
-import com.frequency.Action.Do.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,16 +23,14 @@ public class ControllerDOServlet extends HttpServlet implements Controller{
     @Override
     public void doProcess(HttpServletRequest request, HttpServletResponse response) {
 
-        System.out.println(" 여기옴 ㅋ");
-        //String command = getCommand(request);
+        //System.out.println(" 여기옴 ㅋ");
+        String command = getCommand(request);
         //System.out.println(command);
-        ActionDoHandler actionHandler = ActionDoHandler.getInstance();
-        System.out.println("핸들러의 상태 : "+actionHandler);
-        System.out.println("핸들러 테스트 : "+actionHandler.getAction("sdf"));
-        //Action action = ActionDoHandler.getInstance().getAction( command );
-        System.out.println("action 생성전");
-        Action action = new ActionDoMain();
-        System.out.println("액션생성");
+        //ActionDoHandler actionHandler = ActionDoHandler.getInstance();
+        Action action = ActionDoHandler.getInstance().getAction( command );
+        //System.out.println("action 생성전");
+        //Action action = new ActionDoMain();
+        //System.out.println("액션생성");
         action.execute( request,response );
 
     }

@@ -1,4 +1,4 @@
-package com.frequency.Action.Do;
+package com.frequency.Action;
 
 import com.frequency.Action.Action;
 import com.frequency.DAO.DAOJoindone;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 
-public class ActionDoJoindone implements Action{
+public class ActionDoJoindone implements Action {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {

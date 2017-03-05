@@ -1,4 +1,4 @@
-package com.frequency.Action.Do;
+package com.frequency.Action;
 
 import com.frequency.Action.Action;
 

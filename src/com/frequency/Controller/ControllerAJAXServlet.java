@@ -1,8 +1,5 @@
 package com.frequency.Controller;
 
-import com.frequency.Action.Action;
-import com.frequency.ActionHandler.ActionAjaxHandler;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

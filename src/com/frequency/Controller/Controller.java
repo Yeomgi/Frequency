@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public interface Controller{
 
     // 공통 실행 메소드
-    public void doProcess(HttpServletRequest request, HttpServletResponse response);
+    void doProcess(HttpServletRequest request, HttpServletResponse response);
 
     //  Command 문자열을 추출
     default String getCommand(HttpServletRequest request){
