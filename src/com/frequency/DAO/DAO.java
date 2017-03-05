@@ -35,11 +35,11 @@ public class DAO implements AutoCloseable {
     }
 
     // 커서이동가능 PreparedStatement 객체 얻기
-    protected PreparedStatement getCursorMovePSMT(String query){
+    protected PreparedStatement getCursorMovePSMT(String sql){
         try {
-            return con.prepareStatement( query,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
+            return con.prepareStatement( sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE );
         }
-        catch ( SQLException e ) { System.out.println("getCursorMovePRST Error : "+e); }
+        catch ( SQLException e ) { System.out.println("getCursorMovePSMT Error : "+e); }
         return null;
     };
 

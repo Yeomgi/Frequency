@@ -1,4 +1,4 @@
-package com.frequency.Modules;
+package com.frequency.Modules.Json;
 
 
 import org.json.simple.JSONObject;

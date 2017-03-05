@@ -27,8 +27,9 @@ public class ActionAjaxHandler implements ActionHandler{
         return ourInstance;
     }
 
+    // 커멘드에 해당하는 Action 인스턴스를 세팅
     private void setActions(){
-        actions.put("Exist.ajax", ActionAjaxExist.getInstance());
+        actions.put( "Exist.ajax", ActionAjaxExist.getInstance() );
     }
 
     @Override

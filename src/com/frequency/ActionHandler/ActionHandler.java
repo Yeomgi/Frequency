@@ -10,5 +10,6 @@ import com.frequency.Action.Action;
 
 
 public interface ActionHandler {
+    // 커멘드를 넘겨주고 Action 인스턴스를 받는 메소드
     Action getAction(String command);
 }

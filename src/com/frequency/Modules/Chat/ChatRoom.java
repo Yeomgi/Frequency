@@ -1,4 +1,4 @@
-package com.frequency.Chat;
+package com.frequency.Modules.Chat;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -73,7 +73,7 @@ public class ChatRoom {
             if( lastIndex+1 == log.size() )
                 return "";
 
-            // 채팅로그를 JSON 문자열 형태로 전환
+            // 채팅로그를 Json 문자열 형태로 전환
             for (int i = lastIndex+1; i < log.size(); i++){
                 arr= new JSONArray();
                 arr.add(log.get(i).getIp());

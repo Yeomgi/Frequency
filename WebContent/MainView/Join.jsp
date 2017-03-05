@@ -8,7 +8,7 @@
 <html>
 <head>
     <title>Frequency</title>
-    <script src="js/Mylib.js"></script>
+    <script src="js/common/Mylib.js"></script>
     <script src="js/Join.js"></script>
 </head>
 <body>

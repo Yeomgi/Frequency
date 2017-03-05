@@ -14,13 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ActionDoMain implements Action {
 
-    private static ActionDoMain ourInstance = new ActionDoMain();
+    /*private static ActionDoMain ourInstance = new ActionDoMain();
 
     private ActionDoMain() {}
 
     public static ActionDoMain getInstance() {
         return ourInstance;
-    }
+    }*/
+
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {

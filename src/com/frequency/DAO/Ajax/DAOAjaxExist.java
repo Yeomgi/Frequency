@@ -13,8 +13,6 @@ import java.sql.SQLException;
 
 public class DAOAjaxExist extends DAO{
 
-    public DAOAjaxExist() { super(); }
-
     // 해당되는 값의 검색여부로 T/F 반환
     public boolean isExistValue(String column, String value){
 
@@ -34,9 +32,10 @@ public class DAOAjaxExist extends DAO{
             if(rs.next())
                 return true;
 
-        } catch (SQLException e) { System.out.println("DAOAjaxExist getPSMT Error : "+e); }
+        } catch (SQLException e) { System.out.println("DAOAjaxExist PSMT Error : "+e); }
 
         return false;
+
     }
 
 }

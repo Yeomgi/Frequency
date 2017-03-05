@@ -1,4 +1,4 @@
-package com.frequency.Chat;
+package com.frequency.Modules.Chat;
 
 /**
  * Title :
