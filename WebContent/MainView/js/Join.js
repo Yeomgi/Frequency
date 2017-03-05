@@ -59,7 +59,7 @@ function isEqualPw(form) {
 }
 
 // 아이디, 별명 중복체크
-function isExistValue(form, name) {
+function isExistValue(form, name, tag) {
 
     var inputTag;
 

@@ -26,7 +26,7 @@
 <form method="post">
 
     <input type="text" name="id" onkeyup="isRightPatturn(this)">
-    <button type="button" onclick="isExistValue(this.form,'id')"><%--ID중복검사버튼이름--%></button>
+    <button type="button" onclick="isExistValue(this.form,'id',this)"><%--ID중복검사버튼이름--%></button>
     <div id="idMessage"></div>
 
     <input type="text" name="pw" onkeyup="isRightPatturn(this)">
@@ -36,7 +36,7 @@
     <div id="pwreMessage"></div>
 
     <input type="text" name="nickname" onkeyup="isRightPatturn(this)">
-    <button type="button" onclick="isExistValue(this.form,'nickname')"><%--별명중복검사버튼이름--%></button>
+    <button type="button" onclick="isExistValue(this.form,'nickname',this)"><%--별명중복검사버튼이름--%></button>
     <div id="nicknameMessage"></div>
 
     <input type="text" name="email">

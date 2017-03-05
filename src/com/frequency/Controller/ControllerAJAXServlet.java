@@ -24,9 +24,9 @@ public class ControllerAJAXServlet extends HttpServlet implements Controller{
     public void doProcess(HttpServletRequest request, HttpServletResponse response) {
 
         String command = getCommand(request);
-        Action action = ActionAjaxHandler.getInstance().getAction( command );
+        //Action action = ActionAjaxHandler.getInstance().getAction( command );
 
-        action.execute(request,response);
+        //action.execute(request,response);
 
     }
 

@@ -16,14 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ActionDoJoindone implements Action{
 
-    private static ActionDoJoindone ourInstance = new ActionDoJoindone();
-
-    private ActionDoJoindone() {}
-
-    public static ActionDoJoindone getInstance() {
-        return ourInstance;
-    }
-
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
 

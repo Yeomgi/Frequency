@@ -49,6 +49,7 @@ public interface Action {
         response.setCharacterEncoding("UTF-8");
     }
 
+    // Response로 부터 PrintWriter스트림 얻기
     default PrintWriter getPrintWirter(HttpServletResponse response){
         try {
             return response.getWriter();

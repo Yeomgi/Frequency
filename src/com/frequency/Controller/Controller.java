@@ -15,7 +15,6 @@ public interface Controller{
     public void doProcess(HttpServletRequest request, HttpServletResponse response);
 
     //  Command 문자열을 추출
-
     default String getCommand(HttpServletRequest request){
         return request.getRequestURI().substring(request.getRequestURI().lastIndexOf('/')+1);
     }

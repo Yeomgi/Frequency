@@ -14,14 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ActionDoJoin implements Action {
 
-    /*private static ActionDoJoin ourInstance = new ActionDoJoin();
-
-    private ActionDoJoin() {}
-
-    public static ActionDoJoin getInstance() {
-        return ourInstance;
-    }*/
-
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
         doForward(request,response,"/MainView/Join.jsp");
