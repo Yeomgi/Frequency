@@ -19,12 +19,15 @@ public class ActionAjaxExist implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
 
+        // UTF-8로 인코딩
         setRequestCharacterEncoding_UTF8(request);
 
+        // where절에 쓰일 column과 value를 받아온다
         String column = request.getParameter("type");
         String value = request.getParameter("value");
 
         try(
+                // 조회에 쓰일 dao와 Ajax통신에 쓰일 PrintWriter 자원을 가져온다
                 DAOAjaxExist dao = new DAOAjaxExist();
                 PrintWriter printWriter = getPrintWirter(response)
         ){

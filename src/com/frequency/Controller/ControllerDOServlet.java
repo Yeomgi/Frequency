@@ -23,14 +23,11 @@ public class ControllerDOServlet extends HttpServlet implements Controller{
     @Override
     public void doProcess(HttpServletRequest request, HttpServletResponse response) {
 
-        //System.out.println(" 여기옴 ㅋ");
         String command = getCommand(request);
-        //System.out.println(command);
-        //ActionDoHandler actionHandler = ActionDoHandler.getInstance();
+
+        // command에 해당하는 Action을 가져온다
         Action action = ActionDoHandler.getInstance().getAction( command );
-        //System.out.println("action 생성전");
-        //Action action = new ActionDoMain();
-        //System.out.println("액션생성");
+
         action.execute( request,response );
 
     }

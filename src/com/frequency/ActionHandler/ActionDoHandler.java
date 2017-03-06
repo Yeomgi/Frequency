@@ -1,12 +1,12 @@
 package com.frequency.ActionHandler;
 
 import com.frequency.Action.Action;
-import com.frequency.Action.ActionDoMain;
+import com.frequency.Action.DO.*;
 
 import java.util.HashMap;
 
 /**
- * Title : Do Action 관리 클래스
+ * Title : DO Action 관리 클래스
  * Author : 염형준
  * Date : 2017-03-04
  */
@@ -30,8 +30,8 @@ public class ActionDoHandler implements ActionHandler{
     // 커멘드에 해당하는 Action 인스턴스를 세팅
     private void setActions(){
         actions.put("main.do", new ActionDoMain());
-        //actions.put("main.do", ActionDoMain.getInstance());
-        //actions.put("join.do", ActionDoJoin.getInstance());
+        actions.put("join.do", new ActionDoJoin());
+        actions.put("joindone.do", new ActionDoJoindone());
     }
 
     @Override

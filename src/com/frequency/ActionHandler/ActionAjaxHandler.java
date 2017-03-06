@@ -1,6 +1,7 @@
 package com.frequency.ActionHandler;
 
 import com.frequency.Action.Action;
+import com.frequency.Action.Ajax.*;
 
 import java.util.HashMap;
 
@@ -28,8 +29,7 @@ public class ActionAjaxHandler implements ActionHandler{
 
     // 커멘드에 해당하는 Action 인스턴스를 세팅
     private void setActions(){
-        //actions.put( "Exist.ajax", ActionAjaxExist.getInstance() );
-        //actions.put( "Exist.ajax", new ActionAjaxExist() );
+        actions.put( "Exist.ajax", new ActionAjaxExist() );
     }
 
     @Override

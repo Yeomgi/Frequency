@@ -10,25 +10,47 @@
     <title>Frequency</title>
     <link href="css/Main.css" rel="stylesheet">
     <script src="js/Main.js" ></script>
+    <script>
+
+        /*<페이지 이동함수>*/
+        function movePage(tag) {
+
+            // 등록한 타이틀을 받아온다
+            var title = tag.title;
+
+            // 해당하는 타이틀의 페이지로 이동
+            switch ( title ){
+                case 'groupchat' :
+                case 'freeboard' :
+                case 'randomchat' :
+                case 'notice' :
+                case 'login' :
+                case 'join' :
+                    location.href = 'join.do';
+                case 'findinfo' :
+            }
+
+        }
+    </script>
 </head>
 <body>
     <header>
         <p>"만남은 인간의 본능인 것이다"</p>
     </header>
     <section>
-        <div id="logo" class="metroFloat"><a><img id="logoimg" src="resource/image/main/mainLOGO.png" onmouseover="logoOver()" onmouseout="logoOut()"></a></div>
+        <div id="logo" class="metroFloat"><a><img id="logoimg" src="resource/image/main/mainLOGO.png" onmouseover="logoOver()" onmouseout="logoOut()"></span></div>
         <div id="abox" class="metroFloat">
-            <input class="bbtn" type="button">
-            <input class="abtn" type="button">
+            <span title="groupchat" onclick="movePage(this)"><input class="bbtn" type="button"></span>
+            <span title="freeboard" onclick="movePage(this)"><input class="abtn" type="button"></span>
         </div>
         <div id="bbox" class="metroFloat">
-            <input class="abtn" type="button">
-            <input class="bbtn" type="button">
+            <span title="randomchat" onclick="movePage(this)"><input class="abtn" type="button"></span>
+            <span title="notice" onclick="movePage(this)"><input class="bbtn" type="button"></span>
         </div>
         <div id="cbox" class="metroFloat">
-            <input class="cbtn" type="button" value="login">
-            <input class="cbtn" type="button" value="join">
-            <input class="cbtn" type="button" value="find">
+            <span title="login" onclick="movePage(this)"><input class="cbtn" type="button" value="login"></span>
+            <span title="join" onclick="movePage(this)"><input class="cbtn" type="button" value="join"></span>
+            <span title="findinfo" onclick="movePage(this)"><input class="cbtn" type="button" value="find"></span>
         </div>
     </section>
     <div class="clear"></div>

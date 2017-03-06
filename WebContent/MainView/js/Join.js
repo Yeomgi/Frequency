@@ -161,11 +161,7 @@ function isRightPatturn(tag) {
     }
     // 최소 4자리 별명 형식체크 함수
     function isRightNicknamePattern(value){
-        //return value.search( /^.{4,}$/gm );
-        if(value.length>=4)
-            return 0;
-        else
-            return -1;
+        return value.search( /^.{4,}$/gm );
     }
 
 }
