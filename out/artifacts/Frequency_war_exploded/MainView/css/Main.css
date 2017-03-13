@@ -1,0 +1,161 @@
+        body {
+            width: 1400px;
+            /* background-image: url(image/background.gif); */
+            background-color: RGBA(255,89,150,0.1);
+            margin: 0 auto;
+        }
+        section {
+            width: 1000px;
+            margin: 0 auto;
+            padding-top: 150px;
+            
+        }
+        header {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 문체부 쓰기 흘림체;
+        }
+        div.metroFloat{
+            float: left;
+            padding-left: -2px;
+        }
+        #logo {
+            width: 500px;
+            /* background-color: RGBA(255,89,150,0.1); */
+            background-image: url("../resource/image/main/background.gif");
+            margin: 3px;
+            transition: all 0.8s;
+        }
+        #logo:hover {
+        	width:500px;
+        	background-image: url("../resource/image/main/background2.png");
+        	margin: 3px;
+        	cursor: pointer;
+        	transition: all 0.8s;
+        }
+        #abox .abtn {
+            width: 300px;
+            height: 100px;
+            background-color: #8cc6ca;
+            border: none;
+            margin: 3px;
+            background-image: url("../resource/image/main/document-3.png");
+            background-size: 90px;
+            background-repeat: no-repeat;
+            background-position: 105px 5px;
+            transition: background-image 0.8s;
+        }
+        #abox .abtn:hover {
+        	cursor: pointer;
+        	background-image: url("../resource/image/main/board.png");
+            background-size: 250px;
+            background-repeat: no-repeat;
+            background-position: 90px 1px;
+            transition: background-image 0.8s; 
+        }
+        #abox .bbtn {
+            width: 100px;
+            height: 100px;
+            background-color: #fe96a1;
+            border: none;
+            margin: 3px;
+            background-image: url("../resource/image/main/group.png");
+            background-size: 80px;
+            background-repeat: no-repeat;
+            background-position: 10px 10px;
+            transition: background-image 0.8s; 
+        }
+        #abox .bbtn:hover {
+        	cursor: pointer;
+        	background-image: url("../resource/image/main/groupchat.png");
+            background-size: 90px;
+            background-repeat: no-repeat;
+            background-position: 8px 20px;
+            transition: background-image 0.8s; 
+        }
+        #bbox .abtn {
+            width: 300px;
+            height: 100px;
+            background-color: #8cc6ca;
+            border: none;
+            margin: 3px;
+            background-image: url("../resource/image/main/speech-bubble.png");
+            background-size: 90px;
+            background-repeat: no-repeat;
+            background-position: 105px 5px;
+            transition: background-image 0.8s; 
+        }
+        #bbox .abtn:hover {
+        	cursor: pointer;
+        	background-image: url("../resource/image/main/random.png");
+            background-size: 250px;
+            background-repeat: no-repeat;
+            background-position: 50px 1px;
+            transition: background-image 0.8s; 
+        }
+        
+        #bbox .bbtn {
+            width: 100px;
+            height: 100px;
+            background-color: #fe96a1;
+            border: none;
+            margin: 3px;
+            background-image: url("../resource/image/main/notification.png");
+            background-size: 80px;
+            background-repeat: no-repeat;
+            background-position: 10px 10px;
+            transition: background-image 0.8s; 
+        }
+        #bbox .bbtn:hover {
+         	cursor: pointer;
+        	background-image: url("../resource/image/main/headline.png");
+            background-size: 90px;
+            background-repeat: no-repeat;
+            background-position: 8px 20px;
+            transition: background-image 0.8s;       	
+        }
+        #cbox .cbtn { 
+            width: 130px;
+            height: 90px;
+            background-color: #fe96a1;
+            border: none;
+            margin: 3px;
+            color: white;
+            transition: all 1s;
+            /* transition: transform 1s ease; */
+        }
+        #cbox .cbtn:hover {
+        	transform: rotateY(180deg);
+        	background-color: #8cc6ca;
+            transition: all 1s;
+        	
+        }
+        #cbox{padding-bottom: 200px;}
+        .clear {
+           clear: both; 
+        }
+        footer {
+        	width: 1400px;
+        }
+        #foot {
+        	margin: 0 auto;
+            width: 1400px;
+            height: 200px;
+            background-color: RGBA(255,89,150,0.2);
+            text-align: center;
+        }
+        #foot ul {
+        	padding-bottom: 90px;
+        	padding-top: 20px;
+        }
+        #foot ul li {
+        	list-style: none;
+        	float: left;
+        	padding-left: 160px;
+        }
+        #foot ul li img {
+        position: relative;
+        top: 10px;
+        right: 2px;
+        }
