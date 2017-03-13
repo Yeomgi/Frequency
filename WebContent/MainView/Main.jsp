@@ -4,6 +4,7 @@
   Date : 2017-03-02
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -11,24 +12,27 @@
     <link href="css/Main.css" rel="stylesheet">
     <script src="js/Main.js" ></script>
     <script>
-
         /*<페이지 이동함수>*/
         function movePage(tag) {
 
             // 등록한 타이틀을 받아온다
             var title = tag.title;
 
+            // command을 객체로 맵핑해둔다
+            var command = {
+                groupchat : "",
+                freeboard : "",
+                randomchat : "randomchat.do",
+                notice : "",
+                login : "login.do",
+                join : "join.do",
+                findinfo : "",
+                mypage : "",
+                logout : ""
+            };
+
             // 해당하는 타이틀의 페이지로 이동
-            switch ( title ){
-                case 'groupchat' :
-                case 'freeboard' :
-                case 'randomchat' :
-                case 'notice' :
-                case 'login' :
-                case 'join' :
-                    location.href = 'join.do';
-                case 'findinfo' :
-            }
+            location.href = command[title];
 
         }
     </script>
@@ -48,9 +52,17 @@
             <span title="notice" onclick="movePage(this)"><input class="bbtn" type="button"></span>
         </div>
         <div id="cbox" class="metroFloat">
-            <span title="login" onclick="movePage(this)"><input class="cbtn" type="button" value="login"></span>
-            <span title="join" onclick="movePage(this)"><input class="cbtn" type="button" value="join"></span>
-            <span title="findinfo" onclick="movePage(this)"><input class="cbtn" type="button" value="find"></span>
+            <c:choose>
+                <c:when test="${sessionScope.memberinfo==null}">
+                    <span title="login" onclick="movePage(this)"><input class="cbtn" type="button" value="login"></span>
+                    <span title="join" onclick="movePage(this)"><input class="cbtn" type="button" value="join"></span>
+                    <span title="findinfo" onclick="movePage(this)"><input class="cbtn" type="button" value="find"></span>
+                </c:when>
+                <c:otherwise>
+                    <span title="mypage" onclick="movePage(this)"><%--마이페이지태그--%></span>>
+                    <span title="logout" onclick="movePage(this)"><%--로그아웃태그--%></span>>
+                </c:otherwise>
+            </c:choose>
         </div>
     </section>
     <div class="clear"></div>

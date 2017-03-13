@@ -12,11 +12,11 @@ var rightPatternNick = false;
 // form 태크 값 체크
 function checkFormValue(form) {
 
-    if( form.id.value==""){
+    if( form.id.value=="" ){
         focusForm(form.id);
         return;
     }
-    if( form.pw.value==""){
+    if( form.pw.value=="" ){
         focusForm(form.pw);
         return;
     }
@@ -24,7 +24,7 @@ function checkFormValue(form) {
         focusForm(form.pwre);
         return;
     }
-    if( form.nickname.value==""){
+    if( form.nickname.value=="" ){
         focusForm(form.nickname);
         return;
     }
@@ -45,8 +45,10 @@ function checkFormValue(form) {
         focusForm(form.pw);
         return;
     }
+
     form.action = "joindone.do";
     form.submit();
+
 }
 
 // Pw일치여부 검사
@@ -79,7 +81,7 @@ function isExistValue(form, name, tag) {
     //  값의 종류와 옳은 패턴의 값인지 검사
     if( (inputTag.name=="id" && rightPatternId) || (inputTag.name=="nickname" && rightPatternNick) ){
         getAjax(
-            "Exist.ajax",
+            "exist.ajax",
             value,
             function (data) {
                 // 중복여부를 받아와 사용자에게 출력

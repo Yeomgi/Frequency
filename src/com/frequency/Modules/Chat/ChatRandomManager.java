@@ -14,13 +14,12 @@ import java.util.Random;
 
 public class ChatRandomManager {
 
+    private static ChatRandomManager ourInstance = new ChatRandomManager();
     private LinkedList<String> waitline;                // 접속대기자
     private HashMap<String,ChatRoom> chatRooms;         // 개설된 방
     private HashMap<String,Boolean> otherExiter;        // 한쪽에서 연결을 종료하여 남겨진 다른 접속자들
-    private Random rand;
-    private Thread matching;
-
-    private static ChatRandomManager ourInstance = new ChatRandomManager();
+    private Random rand;                                // 랜덤매칭용 랜덤함수
+    private Thread matching;                            // 방을 계속 매치시켜주는 Thread
 
     private ChatRandomManager() {
         this.waitline = new LinkedList<String>();
@@ -55,6 +54,7 @@ public class ChatRandomManager {
                                 waitline.remove(idx);
 
                                 creareRoom(firstIP,secondIP);
+
                             }
                         }
                     }

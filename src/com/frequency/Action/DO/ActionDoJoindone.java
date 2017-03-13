@@ -35,12 +35,9 @@ public class ActionDoJoindone implements Action {
         member.setNickname(nickname);
         member.setEmail(email);
 
-        // DAO 자원을 생성 하고 전달하여 DB에값을 넣는다
-        try(
-                DAOJoindone dao = new DAOJoindone()
-        ){
-            dao.join(member);
-        }
+        // DAO 자원을 생성 하고 전달하여 DB에 값을 넣는다
+        try( DAOJoindone dao = new DAOJoindone() )
+        { dao.join(member);}
 
         // 가입 환영 메세지를 위한 별명정보 셋팅
         request.setAttribute("nickname",nickname);

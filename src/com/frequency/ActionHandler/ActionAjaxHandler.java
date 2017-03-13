@@ -2,6 +2,7 @@ package com.frequency.ActionHandler;
 
 import com.frequency.Action.Action;
 import com.frequency.Action.Ajax.*;
+import com.frequency.Action.Ajax.ActionAjaxRandomChat;
 
 import java.util.HashMap;
 
@@ -14,9 +15,9 @@ import java.util.HashMap;
 
 public class ActionAjaxHandler implements ActionHandler{
 
+    private static ActionAjaxHandler ourInstance = new ActionAjaxHandler();
     // key : command , value : Action instance
     private HashMap<String,Action> actions;
-    private static ActionAjaxHandler ourInstance = new ActionAjaxHandler();
 
     private ActionAjaxHandler() {
         actions = new HashMap<String,Action>();
@@ -29,7 +30,10 @@ public class ActionAjaxHandler implements ActionHandler{
 
     // 커멘드에 해당하는 Action 인스턴스를 세팅
     private void setActions(){
-        actions.put( "Exist.ajax", new ActionAjaxExist() );
+        actions.put( "exist.ajax", new ActionAjaxExist() );
+        actions.put( "randomWrite.ajax", new ActionAjaxRandomChat() );
+        actions.put( "randomRead.ajax", actions.get("randomwrite.ajax") );
+        actions.put( "randomExit.ajax", actions.get("randomwrite.ajax") );
     }
 
     @Override

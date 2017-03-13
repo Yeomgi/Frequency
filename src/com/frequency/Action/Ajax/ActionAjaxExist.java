@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
 /**
- * Title : ID,Nickname 중복검사
+ * Title : ID,Nickname 중복검사 Ajax
  * Author : 염형준
  * Date : 2017-03-03
  */
@@ -32,7 +32,7 @@ public class ActionAjaxExist implements Action{
                 PrintWriter printWriter = getPrintWirter(response)
         ){
 
-            // 자바스크립트의 T/F로 대응되는 1/0으로 값을 전송한다
+            // 값을 체크하고 자바스크립트의 T/F로 대응되는 1/0으로 값을 전송한다
             if ( dao.isExistValue(column,value) )
                 printWriter.print(1);
             else

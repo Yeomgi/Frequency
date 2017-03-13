@@ -29,10 +29,10 @@
     <button type="button" onclick="isExistValue(this.form,'id',this)"><%--ID중복검사버튼이름--%></button>
     <div id="idMessage"></div>
 
-    <input type="text" name="pw" onkeyup="isRightPatturn(this)">
+    <input type="password" name="pw" onkeyup="isRightPatturn(this)">
     <div id="pwMessage"></div>
 
-    <input type="text" name="pwre" onkeyup="isEqualPw(this.form)">
+    <input type="password" name="pwre" onkeyup="isEqualPw(this.form)">
     <div id="pwreMessage"></div>
 
     <input type="text" name="nickname" onkeyup="isRightPatturn(this)">
@@ -41,7 +41,7 @@
 
     <input type="text" name="email">
 
-    <input type="button" name="submit" value="<%--가입 버튼이름--%>" onclick="checkFormValue(this.form)">
+    <input type="button" value="<%--가입 버튼이름--%>" onclick="checkFormValue(this.form)">
 
 </form>
 </body>

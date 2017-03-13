@@ -29,10 +29,11 @@ public class DAOAjaxExist extends DAO{
 
             rs = psmt.executeQuery();
 
-            if(rs.next())
+            if( !rs.next() )
                 return true;
 
-        } catch (SQLException e) { System.out.println("DAOAjaxExist PSMT Error : "+e); }
+
+        } catch (SQLException e) { System.out.println("isExistValue PSMT Error : "+e); }
 
         return false;
 

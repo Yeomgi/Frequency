@@ -14,9 +14,9 @@ import java.util.HashMap;
 
 public class ActionDoHandler implements ActionHandler{
 
+    private static ActionDoHandler ourInstance = new ActionDoHandler();
     // key : command , value : Action instance
     private HashMap<String,Action> actions;
-    private static ActionDoHandler ourInstance = new ActionDoHandler();
 
     private ActionDoHandler() {
         actions = new HashMap<String,Action>();
@@ -29,9 +29,12 @@ public class ActionDoHandler implements ActionHandler{
 
     // 커멘드에 해당하는 Action 인스턴스를 세팅
     private void setActions(){
-        actions.put("main.do", new ActionDoMain());
-        actions.put("join.do", new ActionDoJoin());
-        actions.put("joindone.do", new ActionDoJoindone());
+        actions.put( "main.do", new ActionDoMain() );
+        actions.put( "join.do", new ActionDoJoin() );
+        actions.put( "joindone.do", new ActionDoJoindone() );
+        actions.put( "login.do", new ActionDoLogin() );
+        actions.put( "logindone.do", new ActionDoLogindone() );
+        actions.put( "randomchat.do", new ActionDoRandomChat() );
     }
 
     @Override

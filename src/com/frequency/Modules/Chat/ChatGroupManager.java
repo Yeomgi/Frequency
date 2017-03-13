@@ -10,10 +10,10 @@ package com.frequency.Modules.Chat;
 public class ChatGroupManager {
     private static ChatGroupManager ourInstance = new ChatGroupManager();
 
-    public static ChatGroupManager getInstance() {
-        return ourInstance;
+    private ChatGroupManager() {
     }
 
-    private ChatGroupManager() {
+    public static ChatGroupManager getInstance() {
+        return ourInstance;
     }
 }

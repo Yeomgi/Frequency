@@ -20,18 +20,6 @@ public class ChatRoom {
     private ArrayList<ChatLog> log;                  // 채팅로그
     private HashMap<String,ChatMember> logCount;     // key : 채팅 접속자 ip, value : 마지막으로 가져간 log 인덱스 기록
 
-    /*private static ChatRoom ourInstance = new ChatRoom();
-
-    private ChatRoom() {
-        log = new ArrayList<ChatLog>();
-        log.ensureCapacity(2000);
-        logCount = new HashMap<String,ChatMember>();
-    }
-
-    public static ChatRoom getInstance() {
-        return ourInstance;
-    }*/
-
     public ChatRoom() {
         log = new ArrayList<ChatLog>();
         log.ensureCapacity(2000);
@@ -103,8 +91,12 @@ public class ChatRoom {
     }
 
     private void registIP(String ip){
-        if(logCount.get(ip)==null)
-            logCount.put(ip, new ChatMember(log.size()-1));
+        if(logCount.get(ip)==null){
+            logCount.put(
+                    ip,
+                    new ChatMember((log.size()-1), System.currentTimeMillis())
+                    );
+        }
     }
 
     private void extendLog(){
@@ -127,8 +119,8 @@ public class ChatRoom {
 
             return data.toString();
 
-        } catch ( IOException e) { System.out.println("readLine Error : "+e);
         }
+        catch ( IOException e) { System.out.println("readLine Error : "+e); }
 
         return null;
 
@@ -137,9 +129,11 @@ public class ChatRoom {
     private class ChatMember{
 
         private int lastIndex;
+        private long startTime;
 
-        public ChatMember(int lastIndex) {
+        public ChatMember(int lastIndex, long starttime) {
             this.lastIndex = lastIndex;
+            this.startTime = starttime;
         }
 
         public int getLastIndex() {
@@ -148,6 +142,10 @@ public class ChatRoom {
 
         public void setLastIndex(int lastIndex) {
             this.lastIndex = lastIndex;
+        }
+
+        public long getStartTime() {
+            return startTime;
         }
 
     }
