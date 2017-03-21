@@ -18,9 +18,11 @@ public class ActionAjaxGetIP implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
 
+        // UT8-8 인코딩
         setResponseCharacterEncoding_UTF8(response);
 
         try(
+                // Ajax통신에 쓰일 PrintWriter 자원을 가져온다
                 PrintWriter printWriter = getPrintWirter(response);
         ){
             // IP를 반환한다

@@ -11,6 +11,7 @@
     <link href="include/css/headerFooter.css" rel="stylesheet">
     <link href="css/random.css" rel="stylesheet">
     <script src="js/common/Mylib.js"></script>
+    <script src="js/common/PageMoving.js"></script>
     <script src="js/RandomChat.js"></script>
 </head>
 <body>

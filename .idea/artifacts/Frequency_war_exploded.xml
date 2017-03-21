@@ -7,6 +7,8 @@
           <element id="module-output" name="Frequency" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="ojdbc6" />
+          <element id="library" level="project" name="jstl-1.2" />
           <element id="library" level="project" name="json-simple-1.1.1" />
         </element>
       </element>

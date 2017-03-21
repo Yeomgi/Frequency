@@ -70,7 +70,6 @@ public class ChatGroupManager {
 
     }
 
-
     /****채팅방 얻기****/
     public ChatGroupRoom getChatRoom(HttpServletRequest request){
 

@@ -16,8 +16,7 @@ import java.util.HashMap;
 public class ActionAjaxHandler implements ActionHandler{
 
     private static ActionAjaxHandler ourInstance = new ActionAjaxHandler();
-    // key : command , value : Action instance
-    private HashMap<String,Action> actions;
+    private HashMap<String,Action> actions;     // key : command , value : Action instance
 
     private ActionAjaxHandler() {
         actions = new HashMap<String,Action>();

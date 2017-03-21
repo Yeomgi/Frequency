@@ -25,10 +25,10 @@ public class ControllerDOServlet extends HttpServlet implements Controller{
     @Override
     public void doProcess(HttpServletRequest request, HttpServletResponse response) {
 
-        System.out.println("do controller IN");
 
         String command = getCommand(request);
 
+        System.out.println("do controller IN");
         System.out.println(command);
 
         // command에 해당하는 Action을 가져온다

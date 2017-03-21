@@ -4,7 +4,7 @@
   Date : 2017-03-02
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -18,7 +18,7 @@
         <p>"만남은 인간의 본능인 것이다"</p>
     </header>
     <section>
-        <div id="logo" class="metroFloat"><a><img id="logoimg" src="resource/image/main/mainLOGO.png" onmouseover="logoOver()" onmouseout="logoOut()"></span></div>
+        <div id="logo" class="metroFloat"><img id="logoimg" src="resource/image/main/mainLOGO.png" onmouseover="logoOver()" onmouseout="logoOut()"></div>
         <div id="abox" class="metroFloat">
             <span title="groupchat" onclick="movePage(this)"><input class="bbtn" type="button"></span>
             <span title="freeboard" onclick="movePage(this)"><input class="abtn" type="button"></span>

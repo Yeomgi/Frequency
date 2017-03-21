@@ -81,6 +81,7 @@ public class ChatSingleRoom implements ChatRoom {
         logCount.remove(request.getRemoteAddr());
     }
 
+    // Manager에서 사용하기위한 IpList를 반환한다
     public String[] getIPlist(){
         String[] iplist = new String[logCount.size()];
         Iterator keys = logCount.keySet().iterator();
@@ -99,11 +100,13 @@ public class ChatSingleRoom implements ChatRoom {
         }
     }
 
+    // 채팅 로그 확장
     protected void extendLog(){
         if(log.size()==2000)
             log.ensureCapacity(log.size()+2000);
     }
 
+    // POST 방식으로 넘어온 값을 단일 문자열로 바꾸어준다
     protected String getDatafromBody(HttpServletRequest request){
 
         StringBuffer data = new StringBuffer();
@@ -125,6 +128,7 @@ public class ChatSingleRoom implements ChatRoom {
 
     }
 
+    // 현재 채팅중인 사용자 정보를 담고있는 로컬 클래스
     protected class ChatMember{
 
         private int lastIndex;
@@ -152,6 +156,7 @@ public class ChatSingleRoom implements ChatRoom {
 
     }
 
+    //채팅 로그용 로컬 클래스 (한 사용자의 한마디가 기준단위)
     protected class ChatLog {
 
         private String ip;

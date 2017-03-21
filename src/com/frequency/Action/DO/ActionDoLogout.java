@@ -23,7 +23,7 @@ public class ActionDoLogout implements Action {
         session.removeAttribute("memberinfo");
 
         //메인페이지로 이동
-        doForward( request,response,"main.do" );
+        doForward(request,response,"/MainView/Main.jsp");
 
     }
 

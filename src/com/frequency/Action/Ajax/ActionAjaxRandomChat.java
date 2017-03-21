@@ -26,10 +26,14 @@ public class ActionAjaxRandomChat implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
 
+        // UTF-8 인코딩
         setRequestCharacterEncoding_UTF8(request);
         setResponseCharacterEncoding_UTF8(response);
 
+        // command를 재추출해 사용한다
         String command = getCommand(request);
+
+        // 랜덤채팅Manager를 얻어와 사용자에 해당하는 채팅방을 가져온다
         ChatRandomManager manager = ChatRandomManager.getInstance();
         ChatRoom room = manager.getChatRoom(request);
 
@@ -37,10 +41,13 @@ public class ActionAjaxRandomChat implements Action {
                 // Ajax통신에 사용될 printwriter를 가져옴
                 PrintWriter printWriter = getPrintWirter(response);
         ){
-            // 채팅 상태 열거형 일 경우
+            // 채팅 상태 열거형 반환시
             if( room instanceof ChatSatuse ){
+
+                // Type Casting
                 ChatSatuse satuse = (ChatSatuse) room;
 
+                // 채팅이 매치되지 않았을때 / 상대방의 종료 
                 switch ( satuse ){
                     case NOMATCH :
                         printWriter.print(-2);
@@ -51,10 +58,13 @@ public class ActionAjaxRandomChat implements Action {
                 }
 
             }
-            // 일반 채팅방일 경우
+            // 사용자 채팅방 반환시
             else if( room instanceof ChatSingleRoom ){
+
+                // Type Casting
                 ChatSingleRoom randomRoom = (ChatSingleRoom) room;
 
+                // 쓰기 / 가져오기 / 종료
                 switch ( command ){
                     case "randomWrite.ajax" :
                         randomRoom.addLog(request);

@@ -13,6 +13,7 @@ import java.sql.SQLException;
 
 public class DAOJoindone extends DAO{
 
+    // 회원 정보를 DB에 넣음
     public void join(DTOMember member){
 
         String sql =

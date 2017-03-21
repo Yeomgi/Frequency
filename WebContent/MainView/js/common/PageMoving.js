@@ -18,11 +18,10 @@ function movePage(tag) {
         randomchat : "randomchat.do",
         notice : "",
         login : "login.do",
-        logiout : "logout.do",
+        logout : "logout.do",
         join : "join.do",
         findinfo : "",
-        mypage : "",
-        logout : ""
+        mypage : ""
     };
 
     // 해당하는 타이틀의 페이지로 이동

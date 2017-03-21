@@ -15,8 +15,7 @@ import java.util.HashMap;
 public class ActionDoHandler implements ActionHandler{
 
     private static ActionDoHandler ourInstance = new ActionDoHandler();
-    // key : command , value : Action instance
-    private HashMap<String,Action> actions;
+    private HashMap<String,Action> actions;     // key : command , value : Action instance
 
     private ActionDoHandler() {
         actions = new HashMap<String,Action>();

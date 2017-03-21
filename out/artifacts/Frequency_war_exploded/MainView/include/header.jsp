@@ -13,8 +13,8 @@
 					<input id="btn6" type="button" title="join" onclick="movePage(this)">
 				</c:when>
 				<c:otherwise>
-					<input id="btn5" type="button" title="mypage" onclick="movePage(this)">
-					<input id="btn6" type="button" title="logout" onclick="movePage(this)">
+					<input id="btn7" type="button" title="logout" onclick="movePage(this)">
+					<input id="btn8" type="button" title="mypage" onclick="movePage(this)">
 				</c:otherwise>
 			</c:choose>
 		</div>
