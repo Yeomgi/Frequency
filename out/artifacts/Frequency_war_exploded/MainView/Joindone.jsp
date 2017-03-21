@@ -8,12 +8,20 @@
 <html>
 <head>
     <title>Frequency</title>
+    <link href="include/css/headerFooter.css" rel="stylesheet">
+    <link href="css/join.css" rel="stylesheet">
+    <script src="js/common/Mylib.js"></script>
+    <script src="js/common/PageMoving.js" ></script>
 </head>
 <body>
-<%--
-    1. 'XX님의 가입을 축하드립니다' 같은 축하메세지가 보여짐
-    2. 메인페이지 / 마이페이지 이동 버튼 추가
---%>
-${requestScope.nickname}
+    <jsp:include page="include/header.jsp"/>
+    <div id="doneform">
+        <p><span style="font-size: 50px;">"
+        ${requestScope.nickname} "</span>님 회원가입을 축하드립니다.<br>
+        이곳에서 새로운 인연을 만들어 보십시오.
+        </p><br>
+        <input class="donebtn" title="main" type="button" value="메인으로" onclick="movePage(this)">>
+        <input class="donebtn" title="mypage" type="button" value="마이페이지" onclick="movePage(this)">>
+    </div>
 </body>
 </html>

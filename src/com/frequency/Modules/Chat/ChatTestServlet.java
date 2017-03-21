@@ -28,7 +28,7 @@ public class ChatTestServlet extends HttpServlet {
 
         String command = getCommand(request);
 
-        /*ChatRoom chat = ChatRoom.getInstance();
+        /*ChatSingleRoom chat = ChatSingleRoom.getInstance();
 
         switch ( command ){
             case "write.ChatTest" :

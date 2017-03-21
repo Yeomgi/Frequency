@@ -28,9 +28,8 @@ public class JsonHandler {
                 BufferedReader reader = request.getReader()
         ){
 
-            while ( (line=reader.readLine())!=null ){
+            while ( (line=reader.readLine())!=null )
                 json.append(line);
-            }
 
             jsonParser = new JSONParser();
             jsonObject = (JSONObject) jsonParser.parse(json.toString());

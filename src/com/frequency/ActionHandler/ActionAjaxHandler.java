@@ -32,8 +32,9 @@ public class ActionAjaxHandler implements ActionHandler{
     private void setActions(){
         actions.put( "exist.ajax", new ActionAjaxExist() );
         actions.put( "randomWrite.ajax", new ActionAjaxRandomChat() );
-        actions.put( "randomRead.ajax", actions.get("randomwrite.ajax") );
-        actions.put( "randomExit.ajax", actions.get("randomwrite.ajax") );
+        actions.put( "randomRead.ajax", actions.get("randomWrite.ajax") );
+        actions.put( "randomExit.ajax", actions.get("randomWrite.ajax") );
+        actions.put( "getIP.ajax", new ActionAjaxGetIP() );
     }
 
     @Override

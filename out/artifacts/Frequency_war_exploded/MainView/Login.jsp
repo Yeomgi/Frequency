@@ -8,36 +8,25 @@
 <html>
 <head>
     <title>Frequency</title>
+    <link href="include/css/headerFooter.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
     <script src="js/common/Mylib.js"></script>
-    <script>
-        function login(form) {
-
-            // 값의 공백여부 체크
-            if( form.id.value=="" ){
-                focusForm(form.id);
-                return;
-            }
-            if( form.pw.value=="" ){
-                focusForm(form.pw);
-                return;
-            }
-
-            // 페이지 이동
-            form.action = "logindone.do";
-            form.submit();
-
-        }
-    </script>
+    <script src="js/common/PageMoving.js"></script>
+    <script src="js/Login.js"></script>
 </head>
 <body>
-<%--
-    1. 아이디, 비밀번호 input
-    2. 로그인버튼추가후 클릭시 메인페이지 이동
---%>
-<form method="post">
-    <input type="text" name="id">
-    <input type="password" name="pw">
-    <input type="button" value="<%--로그인 버튼이름--%>" onclick="login(this.form)">
-</form>
-</body>
+    <jsp:include page="include/header.jsp"/>
+    <form method="post">
+        <fieldset>
+            <legend>LOGIN</legend>
+            <label>아이디</label>
+            <input type="text" name="id"><br>
+            <label>비밀번호</label>
+            <input type="password" name="pw">
+            <br>
+            <input class="abtn" type="button" value="로그인" onclick="login(this.form)">
+            <input class="abtn" type="button" value="회원가입" title="join" onclick="movePage(this)">
+            <input class="abtn" type="button" value="아이디찾기">
+        </fieldset>
+    </form>
 </html>

@@ -3,7 +3,7 @@ package com.frequency.Modules.MemberInfo;
 import java.sql.Timestamp;
 
 /**
- * Title : 세션에 사용할 멤버 정보 클래스
+ * Title : 세션에 사용할 로그인한 유저의 정보 클래스
  * Author : 염형준
  * Date : 2017-03-06
  */

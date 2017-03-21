@@ -44,7 +44,7 @@ public class ActionDoLogindone implements Action{
             if( dao.isExistLoginInfo(member) ){
 
                 // session에 사용할 회원 정보객체를 올린다
-                HttpSession session = request.getSession();
+                HttpSession session = getSessioin(request);
                 MemberInfo memberInfo = dao.getMemeberInfo(member);
                 session.setAttribute("memberinfo",memberInfo);
 

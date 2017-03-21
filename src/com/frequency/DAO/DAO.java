@@ -4,10 +4,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * Title : 공통 상속 Super DAO
@@ -17,7 +14,7 @@ import java.sql.SQLException;
 
 
 // AutoCloseable을 구현해서 try-catch-resource에서 자원이 자동반환 되도록 한다.
-public class DAO implements AutoCloseable {
+public abstract class DAO implements AutoCloseable {
 
     protected Connection con;
     protected PreparedStatement psmt;
@@ -64,13 +61,14 @@ public class DAO implements AutoCloseable {
     }
 
     @Override
-    public void close(){
+    public void close() {
         try {
             closeRS();
             closePreparedStatement();
             closeConnection();
-        }
-        catch ( Exception e ){ System.out.println("DAO Close Error : "+e); }
+        } catch (Exception e) { System.out.println("DAO Close Error : " + e); }
     }
 
 }
+
+

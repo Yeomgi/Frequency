@@ -8,41 +8,38 @@
 <html>
 <head>
     <title>Frequency</title>
+    <link href="include/css/headerFooter.css" rel="stylesheet">
+    <link href="css/join.css" rel="stylesheet">
     <script src="js/common/Mylib.js"></script>
     <script src="js/Join.js"></script>
 </head>
 <body>
-<%--
-    1. 아이디, 비밀번호, 비밀번호확인, 닉네임, 이메일 input태그
-        1-1. input태그 근처에 유효성 고정 메세지 필요
-            ID : 영문으로 시작하고 영문+숫자로 구성된 최소 6자리
-            PW : 영문+숫자+특문 포함 최소 8자리
-            NICKNAME : 최소 4자리
-    2. 아이디, 비밀번호, 닉네임 유효성 적합여부 실시간 메세지변환 div태그 & 비밀번호 동일여부 실시간 메세지변환 div태그
-    3. 아이디, 닉네임 중복체크 버튼 (사용가능하다면 input태그 readonly 속성추가 / backgroundColor = "#EEE" 추가 )
-    4. 가입 버튼 클릭시 휴효성 검사후 Joindone으로 이동
-        4-1. 가입 유효성 검사에 걸리는 항목시 태그에 파란 테두리 생기는 함수적용 (CSS 수정가능)
---%>
-<form method="post">
-
-    <input type="text" name="id" onkeyup="isRightPatturn(this)">
-    <button type="button" onclick="isExistValue(this.form,'id',this)"><%--ID중복검사버튼이름--%></button>
-    <div id="idMessage"></div>
-
-    <input type="password" name="pw" onkeyup="isRightPatturn(this)">
-    <div id="pwMessage"></div>
-
-    <input type="password" name="pwre" onkeyup="isEqualPw(this.form)">
-    <div id="pwreMessage"></div>
-
-    <input type="text" name="nickname" onkeyup="isRightPatturn(this)">
-    <button type="button" onclick="isExistValue(this.form,'nickname',this)"><%--별명중복검사버튼이름--%></button>
-    <div id="nicknameMessage"></div>
-
-    <input type="text" name="email">
-
-    <input type="button" value="<%--가입 버튼이름--%>" onclick="checkFormValue(this.form)">
-
-</form>
+    <jsp:include page="include/header.jsp"/>
+    <form method="post">
+        <h2>JOIN Member-</h2>
+        <fieldset>
+            <legend>ID&PW</legend>
+            <label>아이디</label>
+            <input type="text" name="id" onkeyup="isRightPatturn(this)">
+            <button class="abtn" type="button" onclick="isExistValue(this.form,'id',this)">Check</button>
+            <div id="idMessage"></div>
+            <label>비밀번호</label>
+            <input type="password" name="pw" onkeyup="isRightPatturn(this)">
+            <div id="pwMessage"></div>
+            <label>비밀번호 확인</label>
+            <input type="password" name="pwre" onkeyup="isEqualPw(this.form)">
+            <div id="pwreMessage"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Info</legend>
+            <label>닉네임</label>
+            <input type="text" name="nickname" onkeyup="isRightPatturn(this)">
+            <button class="abtn" type="button" onclick="isExistValue(this.form,'nickname',this)">Check</button>
+            <div id="nicknameMessage"></div>
+            <label>이메일</label>
+            <input type="text" name="email">
+        </fieldset>
+        <input id="bbtn" type="button" name="join" value="함께하기" onclick="checkFormValue(this.form)">
+    </form>
 </body>
 </html>

@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public class ActionDoJoindone implements Action {
-
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
 

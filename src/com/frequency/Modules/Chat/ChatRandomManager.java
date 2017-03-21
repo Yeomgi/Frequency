@@ -1,9 +1,11 @@
 package com.frequency.Modules.Chat;
 
+import com.frequency.Modules.Chat.ChatRoom.ChatRoom;
+import com.frequency.Modules.Chat.ChatRoom.ChatSatuse;
+import com.frequency.Modules.Chat.ChatRoom.ChatSingleRoom;
+
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Title : 랜덤채팅 Manager Class
@@ -15,19 +17,23 @@ import java.util.Random;
 public class ChatRandomManager {
 
     private static ChatRandomManager ourInstance = new ChatRandomManager();
-    private LinkedList<String> waitline;                // 접속대기자
-    private HashMap<String,ChatRoom> chatRooms;         // 개설된 방
+
+    private LinkedList<String> templine;                // 매칭용 변수
+    private HashSet<String> waitline;                   // 매칭 대기라인
+    private HashMap<String,ChatSingleRoom> chatRooms;   // 개설된 방
     private HashMap<String,Boolean> otherExiter;        // 한쪽에서 연결을 종료하여 남겨진 다른 접속자들
     private Random rand;                                // 랜덤매칭용 랜덤함수
-    private Thread matching;                            // 방을 계속 매치시켜주는 Thread
+    private Timer mainTimer;                            // 방을 계속 매치시켜주는 Thread
 
     private ChatRandomManager() {
-        this.waitline = new LinkedList<String>();
-        this.chatRooms = new HashMap<String,ChatRoom>();
+
+        this.waitline = new HashSet<String>();
+        this.chatRooms = new HashMap<String,ChatSingleRoom>();
         this.otherExiter = new HashMap<String,Boolean>();
         this.rand = new Random();
-        rand.setSeed(System.currentTimeMillis());
-        this.matching = new Thread(new Runnable() {
+        this.rand.setSeed(System.currentTimeMillis());
+        this.mainTimer = new Timer();
+        this.mainTimer.schedule(new TimerTask() {
 
             @Override
             public void run() {
@@ -36,35 +42,42 @@ public class ChatRandomManager {
                 int idx;
                 String firstIP;
                 String secondIP;
+                Iterator itr;
 
-                while (true){
-                    synchronized (this){
-                        lineSize = waitline.size();
-                        //if( lineSize>2 && lineSize/2==0 ){
-                            //while (waitline.size()!=0){
-                        if( lineSize>2 ){
-                            while (waitline.size()<=1){
+                synchronized (this){
+                    lineSize = waitline.size();
+                    if( lineSize>=2 ){
 
-                                idx = rand.nextInt()/waitline.size();
-                                firstIP = waitline.get( idx );
-                                waitline.remove(idx);
+                        templine = new LinkedList<String>();
+                        itr = waitline.iterator();
 
-                                idx = rand.nextInt()/waitline.size();
-                                secondIP = waitline.get( idx );
-                                waitline.remove(idx);
-
-                                creareRoom(firstIP,secondIP);
-
-                            }
+                        while (itr.hasNext()) {
+                            templine.add((String) itr.next());
                         }
+                        waitline.clear();
+
+                        while (templine.size()>=2){
+
+                            idx = rand.nextInt(templine.size());
+                            firstIP = templine.get( idx );
+                            templine.remove(idx);
+
+
+                            idx = rand.nextInt(templine.size());
+                            secondIP = templine.get( idx );
+                            templine.remove(idx);
+
+                            creareRoom(firstIP,secondIP);
+
+                        }
+                        templine = null;
                     }
-                    threadSleep(200);
                 }
 
             }
 
-        });
-        matching.start();
+        },100,500);
+
     }
 
     public static ChatRandomManager getInstance() {
@@ -78,56 +91,71 @@ public class ChatRandomManager {
     public ChatRoom getChatRoom(HttpServletRequest request){
 
         String ip = request.getRemoteAddr();
+        ChatRoom room = ChatSatuse.NOMATCH;
+
+        if( otherExiter.get(ip)!=null ){
+            otherExiter.remove(ip);
+            waitline.remove(ip);
+            return ChatSatuse.EXIT;
+        }
+
         registWaitLine(ip);
-        ChatRoom room = null;
 
-        if(otherExiter.get(ip)!=null)
-            return null;
-
-        while(room!=null){
+        if ( chatRooms.get(ip)!=null ){
             room = chatRooms.get(ip);
-            threadSleep(100);
+            return room;
         }
 
         return room;
+
     }
 
+    /****채팅 종료****/
     public void exitChat(HttpServletRequest request){
 
-        ChatRoom room = chatRooms.get(request.getRemoteAddr());
+        String ip = request.getRemoteAddr();
+        ChatSingleRoom room = chatRooms.get(ip);
         String[] iplist = room.getIPlist();
+        Iterator irt;
 
-        for(int i=0; i<iplist.length; i++)
+        for(int i=0; i<iplist.length; i++) {
+
+            synchronized (this){
+                irt = waitline.iterator();
+                while (irt.hasNext()){
+                    if( iplist[i].equals(irt.next() )){
+                        waitline.remove(iplist[i]);
+                    }
+                }
+            }
+
             chatRooms.remove(iplist[i]);
 
-        if(iplist[0]==request.getRemoteAddr())
+        }
+
+        if( iplist[0].equals(ip) )
             otherExiter.put(iplist[1],true);
         else
             otherExiter.put(iplist[0],true);
 
-
     }
 
     /**** 랜덤채팅 신청자를 등록 ****/
-    private void registWaitLine(String ip){
-        synchronized(this) {
-            if (chatRooms.get(ip) == null)
+    private void registWaitLine(String ip) {
+        if (chatRooms.get(ip) == null){
+            synchronized (this) {
                 waitline.add(ip);
+            }
         }
     }
 
     /**** 두명의 신청자에게 채팅방을 부여 ****/
     private void creareRoom(String firstIP,String secondIP){
         if( chatRooms.get(firstIP)==null && chatRooms.get(secondIP)==null ){
-            ChatRoom room = new ChatRoom();
+            ChatSingleRoom room = new ChatSingleRoom();
             chatRooms.put(firstIP,room);
             chatRooms.put(secondIP,room);
         }
-    }
-
-    private void threadSleep(long ms){
-        try{  Thread.sleep(ms);  }
-        catch (InterruptedException e){System.out.println("ChatRandomManager Sleep Error : "+e); }
     }
 
 }

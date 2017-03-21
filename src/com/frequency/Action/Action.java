@@ -4,6 +4,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -16,7 +17,7 @@ import java.io.UnsupportedEncodingException;
 
 public interface Action {
 
-    // 공통 실행 메소드
+    // 공통 실행 추상 메소드
     void execute(HttpServletRequest request, HttpServletResponse response);
 
     // Redirect 방식으로 페이지 전환
@@ -56,6 +57,11 @@ public interface Action {
         }
         catch (IOException e) { System.out.println("getPrintWirter Error : "+e);}
         return null;
+    }
+
+    // Request로 부터 세션 객체 얻기
+    default HttpSession getSessioin(HttpServletRequest request){
+        return request.getSession();
     }
 
 }

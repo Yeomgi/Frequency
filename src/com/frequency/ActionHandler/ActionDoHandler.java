@@ -33,6 +33,7 @@ public class ActionDoHandler implements ActionHandler{
         actions.put( "join.do", new ActionDoJoin() );
         actions.put( "joindone.do", new ActionDoJoindone() );
         actions.put( "login.do", new ActionDoLogin() );
+        actions.put( "logout.do", new ActionDoLogout() );
         actions.put( "logindone.do", new ActionDoLogindone() );
         actions.put( "randomchat.do", new ActionDoRandomChat() );
     }

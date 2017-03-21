@@ -104,6 +104,19 @@ function addDOMContentLoaded(fx) {
     );
 }
 
+/*페이지 종료시 함수 적용*/
+/*
+* <종료전 확인창 띄우는 법>
+* 1. 콜백함수의 매개변수로 event를 받고 event.returnValue 에 문자열을 대입하면 종료전 확인창을 띄울수 있다
+* 2. 또는 return 값으로 문자열을 주어도 가능하다;
+*/
+function addbeforeunload(fx) {
+    window.addEventListener(
+        "beforeunload",
+        fx
+    );
+}
+
 /*일시정지 함수*/
 function sleep(ms) {
     var now = new Date();

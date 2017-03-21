@@ -131,6 +131,36 @@
             transition: all 1s;
         	
         }
+        #cbox .dbtn {
+            width: 250px;
+            height: 90px;
+            background-color: #fe96a1;
+            border: none;
+            margin: 3px;
+            color: white;
+            transition: all 1s;
+            font-size: 20px;
+        }
+        #cbox .dbtn:hover {
+        	transform: rotateX(180deg);
+        	background-color: #8cc6ca;
+            transition: all 1s;
+        }
+        #cbox .ebtn {
+            width: 150px;
+            height: 90px;
+            background-color: #fe96a1;
+            border: none;
+            margin: 3px;
+            color: white;
+            transition: all 1s;
+            font-size: 20px;
+        }
+        #cbox .ebtn:hover {
+        	transform: rotateY(180deg);
+        	background-color: #8cc6ca;
+            transition: all 1s;
+        }           
         #cbox{padding-bottom: 200px;}
         .clear {
            clear: both; 

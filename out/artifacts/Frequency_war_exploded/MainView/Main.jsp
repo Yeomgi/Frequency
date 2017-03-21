@@ -11,31 +11,7 @@
     <title>Frequency</title>
     <link href="css/Main.css" rel="stylesheet">
     <script src="js/Main.js" ></script>
-    <script>
-        /*<페이지 이동함수>*/
-        function movePage(tag) {
-
-            // 등록한 타이틀을 받아온다
-            var title = tag.title;
-
-            // command을 객체로 맵핑해둔다
-            var command = {
-                groupchat : "",
-                freeboard : "",
-                randomchat : "randomchat.do",
-                notice : "",
-                login : "login.do",
-                join : "join.do",
-                findinfo : "",
-                mypage : "",
-                logout : ""
-            };
-
-            // 해당하는 타이틀의 페이지로 이동
-            location.href = command[title];
-
-        }
-    </script>
+    <script src="js/common/PageMoving.js" ></script>
 </head>
 <body>
     <header>
@@ -59,8 +35,8 @@
                     <span title="findinfo" onclick="movePage(this)"><input class="cbtn" type="button" value="find"></span>
                 </c:when>
                 <c:otherwise>
-                    <span title="mypage" onclick="movePage(this)"><%--마이페이지태그--%></span>>
-                    <span title="logout" onclick="movePage(this)"><%--로그아웃태그--%></span>>
+                    <span title="mypage" onclick="movePage(this)"><input class="dbtn" type="button" value="마이페이지"></span>
+                    <span title="logout" onclick="movePage(this)"><input class="ebtn" type="button" value="로그아웃"></span>
                 </c:otherwise>
             </c:choose>
         </div>
