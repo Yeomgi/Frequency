@@ -4,7 +4,7 @@
 		<div id="head">
 			<span title="main" onclick="movePage(this)"><img id="Logo" src="resource/image/sub/subLOGO2.png" width="100"></span>
 			<input id="btn1" type="button" title="randomchat" onclick="movePage(this)">
-			<input id="btn2" type="button" title="" onclick="movePage(this)">
+			<input id="btn2" type="button" title="groupchat" onclick="movePage(this)">
 			<input id="btn3" type="button" title="" onclick="movePage(this)">
 			<input id="btn4" type="button" title="" onclick="movePage(this)">
 			<c:choose>

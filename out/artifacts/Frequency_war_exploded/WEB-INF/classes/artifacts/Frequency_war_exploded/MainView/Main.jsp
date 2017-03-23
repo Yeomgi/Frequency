@@ -4,14 +4,14 @@
   Date : 2017-03-02
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 <head>
     <title>Frequency</title>
-    <link href="css/Main.css" rel="stylesheet">
-    <script src="js/Main.js" ></script>
-    <script src="js/common/PageMoving.js" ></script>
+    <link href="resource/css/Main.css" rel="stylesheet">
+    <script src="resource/js/Main.js" ></script>
+    <script src="resource/js/common/PageMoving.js" ></script>
 </head>
 <body>
     <header>

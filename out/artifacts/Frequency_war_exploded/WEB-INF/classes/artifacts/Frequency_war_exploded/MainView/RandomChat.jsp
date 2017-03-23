@@ -9,10 +9,10 @@
 <head>
     <title>Frequency</title>
     <link href="include/css/headerFooter.css" rel="stylesheet">
-    <link href="css/random.css" rel="stylesheet">
-    <script src="js/common/Mylib.js"></script>
-    <script src="js/common/PageMoving.js"></script>
-    <script src="js/RandomChat.js"></script>
+    <link href="resource/css/random.css" rel="stylesheet">
+    <script src="resource/js/common/Mylib.js"></script>
+    <script src="resource/js/common/PageMoving.js"></script>
+    <script src="resource/js/RandomChat.js"></script>
 </head>
 <body>
     <jsp:include page="include/header.jsp"/>

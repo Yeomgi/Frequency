@@ -9,9 +9,9 @@
 <html>
 <head>
     <title>Frequency</title>
-    <link href="css/Main.css" rel="stylesheet">
-    <script src="js/Main.js" ></script>
-    <script src="js/common/PageMoving.js" ></script>
+    <link href="resource/css/Main.css" rel="stylesheet">
+    <script src="resource/js/Main.js" ></script>
+    <script src="resource/js/common/PageMoving.js" ></script>
 </head>
 <body>
     <header>
