@@ -18,7 +18,7 @@
     <jsp:include page="include/header.jsp"/>
     <div id="clear"></div>
     <div id="random">
-        <p>랜.덤.채.팅</p>
+        <img id="liveimg" src="resource/image/sub/liveoff.png" >
         <div id="chatBox"></div>
         <div id="input">
             <input id="message" type="text" >
@@ -26,5 +26,6 @@
         </div>
         <br>
     </div>
+</body>
 </body>
 </html>

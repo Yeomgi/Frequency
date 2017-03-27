@@ -1,0 +1,182 @@
+#group {
+	width: 1000px;
+	margin: 0 auto;
+	background-image: url("../image/sub/chatback2.png");
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position: 1px -25px;
+	text-align: center;
+}
+#menu {
+	position: relative;
+	top:250px;
+	left:20px;
+	float: left;
+	width: 1000px;
+}
+#refresh {
+	float: left;
+	width: 50px;
+	height: 55px;
+	background-color: #dd4e42;
+	background-image: url("../image/sub/refresh.png");
+	background-size: 50px;
+	background-repeat: no-repeat;
+	background-position: right;
+	text-overflow:clip;
+	text-indent: 65px;
+	font-size:35px;
+	color:#dd4e42;
+	overflow:hidden;
+	border-top-right-radius: 15px;
+	transition: all 0.5s;
+}
+#refresh:HOVER {
+	width:300px;
+	color:white;
+	cursor:pointer;
+	transition: all 0.5s;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: RGBA(0,0,0);
+	background-color: RGBA(0,0,0,0.4);
+}
+.modalcontent {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+#bdiv {
+	float: left;
+	width: 55px;
+	height: 55px;
+	background-color: #f1bb2e;
+	background-image: url("../image/sub/plus.png");
+	background-size: 50px;
+	background-repeat: no-repeat;
+	background-position: right;
+	text-overflow:clip;
+	text-indent: 60px;
+	font-size:35px;
+	color:#f1bb2e;
+	overflow:hidden;
+	border-top-right-radius: 15px;
+	transition: all 0.5s;
+}
+#bdiv:HOVER {
+	width:300px;
+	color:white;
+	cursor:pointer;
+	transition: all 0.5s;
+}
+#sbnt {
+	float: left;
+	width: 300px;
+	height: 55px;
+	background-color: #ebf02f;
+	border-top-right-radius: 15px;
+}
+
+#keyword {
+	width: 70%;
+	height: 75%;
+	border-radius: 5px;
+}
+#search {
+	margin:4px;
+	width: 15%;
+	height: 80%;
+	background-color: orange;
+}
+#roomlist {
+	position: relative;
+	padding-left:20px;
+	top:250px;
+	margin: 0 auto;
+	width: 950px;
+	height: 780px;
+	background-image: url("../image/sub/groupback.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	margin-bottom: 200px;
+	overflow: auto;
+	border-radius: 5px;
+}
+.room {
+	text-align:center;
+	float: left;
+	width: 300px;
+	height: 250px;
+	background-color: RGBA(255,255,255,0.9);
+	margin: 5px;
+	transition: all 1s;
+	background-image: url("../image/sub/door.png");
+	background-repeat: no-repeat;
+	background-size: 100px;
+	background-position: -10px 130px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+}
+.room:HOVER {
+	cursor: pointer;
+	transition: all 0.5s;
+	background-image: url("../image/sub/door2.png");
+	background-repeat: no-repeat;
+	background-size: 100px;
+	background-position: -10px 130px;
+}
+.room:ACTIVE {
+	background-color: RGBA(255,255,255,0.9);
+	transform: rotateY(30deg);
+	transition: all 0.5s;
+}
+.clear {
+	clear: both;
+}
+.room .p1 {
+	font-size: 25px;
+	position: relative;
+	bottom: 20px;
+}
+.room .p2 {
+	position: relative;
+	top: 10px;
+	margin:0 auto;
+	text-align:center;
+	width:290px;
+	height:30px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: 1px solid;
+}
+.room .p3 {
+	position:relative;
+	top:70px;
+	font-size: 25px;
+}

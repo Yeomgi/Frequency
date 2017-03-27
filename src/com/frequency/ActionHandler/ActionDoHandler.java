@@ -1,6 +1,7 @@
 package com.frequency.ActionHandler;
 
 import com.frequency.Action.Action;
+import com.frequency.Action.DO.ActionDoJoindone;
 import com.frequency.Action.DO.*;
 
 import java.util.HashMap;
@@ -32,9 +33,12 @@ public class ActionDoHandler implements ActionHandler{
         actions.put( "join.do", new ActionDoJoin() );
         actions.put( "joindone.do", new ActionDoJoindone() );
         actions.put( "login.do", new ActionDoLogin() );
+        actions.put( "logindone.do", new ActionDoLoginDone() );
         actions.put( "logout.do", new ActionDoLogout() );
-        actions.put( "logindone.do", new ActionDoLogindone() );
         actions.put( "randomchat.do", new ActionDoRandomChat() );
+        actions.put( "groupchat.do", new ActionDoGroupChat() );
+        actions.put( "groupchatRoomCreate.do", new ActionDoGroupChatRoomCreate() );
+        actions.put( "groupchatRoomJoin.do", new ActionDoGroupChatRoomJoin() );
     }
 
     @Override

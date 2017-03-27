@@ -9,13 +9,22 @@
 <html>
 <head>
     <title>Frequency</title>
-    <link href="css/Main.css" rel="stylesheet">
-    <script src="js/Main.js" ></script>
-    <script src="js/common/PageMoving.js" ></script>
+    <link href="resource/css/Main.css" rel="stylesheet">
+    <script src="resource/js/Main.js" ></script>
+    <script src="resource/js/common/PageMoving.js" ></script>
 </head>
 <body>
+
+
+
+
+
+
+    <video autoplay loop poster="loading.gif">
+        <source src="resource/image/main/back5.mp4" type="video/mp4">
+    </video>
     <header>
-        <p>"만남은 인간의 본능인 것이다"</p>
+        <img src="resource/image/main/chatback.png" width="800">
     </header>
     <section>
         <div id="logo" class="metroFloat"><img id="logoimg" src="resource/image/main/mainLOGO.png" onmouseover="logoOver()" onmouseout="logoOut()"></div>

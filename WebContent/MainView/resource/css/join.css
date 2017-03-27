@@ -1,0 +1,118 @@
+form {
+	width: 700px;
+	margin: 0 auto;
+	margin-top: 200px;
+}
+
+form fieldset {
+	background-color: RGBA(235,135,112,0.9);
+	border:none;
+	border-bottom: 10px solid #ea5445;
+	border-bottom-left-radius: 10px;
+	border-right: 10px solid #ea5445;
+	border-top-right-radius: 10px;
+	background-image: url("../image/sub/joinback.png");
+}
+
+form fieldset legend {
+	font-size: 40px;
+	padding: 5px 0;
+	color: #364558;
+	font-weight: bold;
+}
+
+form fieldset label {
+	width: 140px;
+	float: left;
+	color: white;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size: 15px;
+	position: relative;
+	top: 7px;
+}
+
+form fieldset input {
+	width: 400px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	border-radius: 6px;
+}
+
+form .abtn {
+	font-weight:bold;
+	color:#364558;
+	width: 60px;
+	height:20px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	border-radius: 6px;
+	background-color: #f2d1ae;
+	transition: all 0.8s;
+}
+form .abtn:hover {
+	background-color: #ea5445;
+	transition: all 0.8s;
+	color:white;
+}
+.sysm {
+	text-align:center;
+	background-color: RGBA(255,255,255,0.5);
+	color: red;
+	font-size: 15px;
+	font-weight: bold;
+	position: relative;
+	top: -10px;
+}
+
+#bbtn {
+	font-weight:bold;
+	color:#364558;
+	margin-top: 20px;
+	width: 100px;
+	height: 50px;
+	margin-left: 300px;
+	background-color: #f2d1ae;
+	transition: all 0.8s;
+}
+#bbtn:hover {
+	color:white;
+	background-color: #ea5445;
+	transition: all 0.8s;
+}
+
+#doneform {
+	width: 700px;
+	height:300px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: RGBA(234,84,69,0.5);
+	background-image: url("../image/sub/joinback.png");
+	border-bottom: 5px solid 	#ea5445;
+	border-right: 5px solid #ea5445;
+	border-radius:10px;
+	margin-top: 300px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+#doneform p {
+	position: relative;
+	top: 50px;
+}
+#doneform .donebtn {
+	margin-top: 50px;
+	width: 80px;
+	height: 40px;
+	border: none;
+	background-color: #f2d1ae;
+	font-weight:bold;
+	color:#364558;
+	transition: all 0.8s;
+}
+#doneform .donebtn:hover {
+	color:white;
+	background-color: #ea5445;
+	transition: all 0.8s;
+}

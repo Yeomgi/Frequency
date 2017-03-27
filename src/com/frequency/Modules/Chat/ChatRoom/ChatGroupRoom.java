@@ -1,5 +1,6 @@
 package com.frequency.Modules.Chat.ChatRoom;
 
+import com.frequency.Modules.ControlHelper;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -21,7 +22,7 @@ public class ChatGroupRoom extends ChatSingleRoom{
 
         synchronized (this) {
 
-            String ip = request.getRemoteAddr();
+            String ip = ControlHelper.getIP(request);
             String content = getDatafromBody(request);
 
             registIP(ip,nickname);
@@ -48,7 +49,7 @@ public class ChatGroupRoom extends ChatSingleRoom{
 
         synchronized (this) {
 
-            String ip = request.getRemoteAddr();
+            String ip = ControlHelper.getIP(request);
 
             JSONObject json= new JSONObject();
             JSONArray arr;
@@ -86,6 +87,8 @@ public class ChatGroupRoom extends ChatSingleRoom{
         }
     }
 
+    /*접속자 목록 가져오기*/
+    // 그룹채팅방에 맞게 override
     public String[] getMemberlist(){
 
         String[] memberlist = new String[logCount.size()];

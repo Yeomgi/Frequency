@@ -9,16 +9,16 @@
 <head>
     <title>Frequency</title>
     <link href="include/css/headerFooter.css" rel="stylesheet">
-    <link href="css/random.css" rel="stylesheet">
-    <script src="js/common/Mylib.js"></script>
-    <script src="js/common/PageMoving.js"></script>
-    <script src="js/RandomChat.js"></script>
+    <link href="resource/css/random.css" rel="stylesheet">
+    <script src="resource/js/common/Mylib.js"></script>
+    <script src="resource/js/common/PageMoving.js"></script>
+    <script src="resource/js/RandomChat.js"></script>
 </head>
 <body>
     <jsp:include page="include/header.jsp"/>
     <div id="clear"></div>
     <div id="random">
-        <p>랜.덤.채.팅</p>
+        <img id="liveimg" src="resource/image/sub/liveoff.png" >
         <div id="chatBox"></div>
         <div id="input">
             <input id="message" type="text" >
@@ -26,5 +26,6 @@
         </div>
         <br>
     </div>
+</body>
 </body>
 </html>
