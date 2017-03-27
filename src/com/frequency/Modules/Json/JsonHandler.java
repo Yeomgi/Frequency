@@ -17,9 +17,19 @@ import java.io.IOException;
 
 public class JsonHandler {
 
+    // 문자열을 JSON 객체로 전환
+    public static JSONObject stringToJson(String jsonString){
+        try {
+            JSONParser jsonParser = new JSONParser();
+            return (JSONObject) jsonParser.parse( jsonString );
+        }
+        catch ( ParseException e ) {System.out.println( "Json parsing Error : "+e ); }
+        return null;
+    }
+
+    // Request에서 문자열을 추출해
     public static JSONObject getJSONfromBody(HttpServletRequest request){
 
-        JSONParser jsonParser;
         JSONObject jsonObject;
         StringBuffer json = new StringBuffer();
         String line;
@@ -31,14 +41,12 @@ public class JsonHandler {
             while ( (line=reader.readLine())!=null )
                 json.append(line);
 
-            jsonParser = new JSONParser();
-            jsonObject = (JSONObject) jsonParser.parse(json.toString());
+            jsonObject = stringToJson(json.toString());
 
             return jsonObject;
 
-        } catch ( IOException e) { System.out.println("readLine Error : "+e);
-        } catch ( ParseException e) { System.out.println("Json parsing Error : "+e);
         }
+        catch ( IOException e) { System.out.println("readLine Error : "+e); }
 
         return null;
 

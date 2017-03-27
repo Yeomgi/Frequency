@@ -29,11 +29,16 @@ public class ActionAjaxHandler implements ActionHandler{
 
     // 커멘드에 해당하는 Action 인스턴스를 세팅
     private void setActions(){
-        actions.put( "exist.ajax", new ActionAjaxExist() );
+        actions.put( "joinExist.ajax", new ActionAjaxJoinValueExist() );
+        actions.put( "logincheck.ajax", new ActiocAjaxLoginCheck() );
         actions.put( "randomWrite.ajax", new ActionAjaxRandomChat() );
         actions.put( "randomRead.ajax", actions.get("randomWrite.ajax") );
         actions.put( "randomExit.ajax", actions.get("randomWrite.ajax") );
         actions.put( "getIP.ajax", new ActionAjaxGetIP() );
+        actions.put( "chatRoomNameExist.ajax", new ActionAjaxGroupChatRoomNameExist() );
+        actions.put( "chatRoomIsChatingUser.ajax", new ActionAjaxGroupChatCheckJoinUser() );
+        actions.put( "chatRoomListRefresh.ajax", new ActionAjaxGroupChatRoomLIstRefresh() );
+        actions.put( "chatRoomListSearch.ajax", new ActionAjaxGroupChatRoomListSearch() );
     }
 
     @Override

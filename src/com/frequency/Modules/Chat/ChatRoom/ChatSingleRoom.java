@@ -1,5 +1,6 @@
 package com.frequency.Modules.Chat.ChatRoom;
 
+import com.frequency.Modules.ControlHelper;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -31,7 +32,7 @@ public class ChatSingleRoom implements ChatRoom {
 
         synchronized (this) {
 
-            String ip = request.getRemoteAddr();
+            String ip = ControlHelper.getIP(request);
             String content = getDatafromBody(request);
 
             registIP(ip);
@@ -48,7 +49,7 @@ public class ChatSingleRoom implements ChatRoom {
 
         synchronized (this) {
 
-            String ip = request.getRemoteAddr();
+            String ip = ControlHelper.getIP(request);
 
             JSONObject json= new JSONObject();
             JSONArray arr;

@@ -20,7 +20,8 @@ addDOMContentLoaded(function () {
     elements = {
         chatBox : document.getElementById("chatBox"),
         message : document.getElementById("message"),
-        button : document.getElementById("send")
+        button : document.getElementById("send"),
+        liveimg : document.getElementById("liveimg")
     };
 
     /*함수 선언*/
@@ -76,6 +77,7 @@ addDOMContentLoaded(function () {
                             else if (joinMessage) {
                                 elements.chatBox.innerHTML = '';
                                 elements.chatBox.innerHTML += '<div id="mesage">채팅을 시작합니다.<div>';
+                                elements.liveimg.setAttribute("src","resource/image/sub/liveon.png");
                                 joinMessage = false;
                             }
                             else if (data != "") {
@@ -83,7 +85,7 @@ addDOMContentLoaded(function () {
                                 var text;
                                 for (key in json) {
                                     if ( myIP == json[key][0] )
-                                        text = '<div class="mychat">' + json[key][1] + '</div>';
+                                        text = '<div class="mychat">' +json[key][1] + '</div>';
                                     else
                                         text = '<div class="youchat">' + ' 낮선상대 : ' + json[key][1] + '</div>';
                                     elements.chatBox.innerHTML += text;
@@ -125,11 +127,12 @@ addDOMContentLoaded(function () {
             }
         },
 
-        // 전역변수 초기화
+        // 전역변수 및 이미지 초기화
         valueInit : function () {
             chat = false;
             joinMessage = true;
             startMessage = true;
+            elements.liveimg.setAttribute("src","resource/image/sub/liveoff.png");
         },
 
         // 버튼 변환 함수
@@ -159,16 +162,16 @@ addDOMContentLoaded(function () {
 
     };
 
-    // 이벤트함수를 등록
-    elements.message.onkeyup = functionObject.inputMessage;
-    elements.button.onclick = functionObject.startchat;
-
     // 종료버튼을 누르지않고 페이지전환,종료,뒤로가기,새로고침을 했을시 채팅종료를 위한 처리
     addBeforeUnload(
         function (){
             functionObject.stopChat();
         }
     );
+
+    // 이벤트함수를 등록
+    elements.message.onkeyup = functionObject.inputMessage;
+    elements.button.onclick = functionObject.startchat;
 
 });
 

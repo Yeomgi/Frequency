@@ -81,7 +81,7 @@ function isExistValue(form, name, tag) {
     //  값의 종류와 옳은 패턴의 값인지 검사
     if( (inputTag.name=="id" && rightPatternId) || (inputTag.name=="nickname" && rightPatternNick) ){
         getAjax(
-            "exist.ajax",
+            "joinExist.ajax",
             value,
             function (data) {
                 // 중복여부를 받아와 사용자에게 출력
@@ -155,7 +155,7 @@ function isRightPatturn(tag) {
 
     // 영문으로 시작하고 영문+숫자로 구성된 최소 6자리 ID 형식체크 함수
     function isRightIdPattern(value){
-        return value.search( /^(?=^[a-zA-Z])[0-9a-zA-Z]{6,}$/gm );
+        return value.search( /^(?=^[a-zA-Z])(?=.*\d)[0-9a-zA-Z]{6,}$/gm );
     }
     // 영문+숫자+특문 포함 최소 8자리 PW 형식체크 함수
     function isRightPwPattern(value){

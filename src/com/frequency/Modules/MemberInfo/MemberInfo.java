@@ -19,7 +19,7 @@ public class MemberInfo {
     private Timestamp banstartdate;
     private int banday;
     private Timestamp banenddate;
-    private boolean ban;
+    private boolean ban;                    // 밴여부
 
     public MemberInfo() {}
 

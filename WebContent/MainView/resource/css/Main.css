@@ -4,6 +4,17 @@
             background-color: RGBA(255,89,150,0.1);
             margin: 0 auto;
         }
+        video {
+        position : absolute;
+        top : 0;
+        left : 0;
+        min-width : 100%;
+        min-height : 100%;
+        margin: 0 auto;
+        width : 1400px;
+        height : auto;
+        z-index : -1;
+}
         section {
             width: 1000px;
             margin: 0 auto;
@@ -11,25 +22,25 @@
             
         }
         header {
-            text-align: center;
-            font-size: 40px;
-            font-weight: bold;
-            font-family: 문체부 쓰기 흘림체;
+        	text-align: center;
+        	margin-top: -20px
         }
         div.metroFloat{
             float: left;
             padding-left: -2px;
+            background-color: RGBA(255,255,255,0.5);
         }
         #logo {
             width: 500px;
             /* background-color: RGBA(255,89,150,0.1); */
-            background-image: url("../resource/image/main/background.gif");
+            background-image: url("../image/main/background.gif");
+            background-color: RGBA(255,255,255,0.5);
             margin: 3px;
             transition: all 0.8s;
         }
         #logo:hover {
         	width:500px;
-        	background-image: url("../resource/image/main/background2.png");
+        	background-image: url("../image/main/background2.png");
         	margin: 3px;
         	cursor: pointer;
         	transition: all 0.8s;
@@ -40,7 +51,7 @@
             background-color: #8cc6ca;
             border: none;
             margin: 3px;
-            background-image: url("../resource/image/main/document-3.png");
+            background-image: url("../image/main/document-3.png");
             background-size: 90px;
             background-repeat: no-repeat;
             background-position: 105px 5px;
@@ -48,7 +59,7 @@
         }
         #abox .abtn:hover {
         	cursor: pointer;
-        	background-image: url("../resource/image/main/board.png");
+        	background-image: url("../image/main/board.png");
             background-size: 250px;
             background-repeat: no-repeat;
             background-position: 90px 1px;
@@ -60,7 +71,7 @@
             background-color: #fe96a1;
             border: none;
             margin: 3px;
-            background-image: url("../resource/image/main/group.png");
+            background-image: url("../image/main/group.png");
             background-size: 80px;
             background-repeat: no-repeat;
             background-position: 10px 10px;
@@ -68,7 +79,7 @@
         }
         #abox .bbtn:hover {
         	cursor: pointer;
-        	background-image: url("../resource/image/main/groupchat.png");
+        	background-image: url("../image/main/groupchat.png");
             background-size: 90px;
             background-repeat: no-repeat;
             background-position: 8px 20px;
@@ -80,7 +91,7 @@
             background-color: #8cc6ca;
             border: none;
             margin: 3px;
-            background-image: url("../resource/image/main/speech-bubble.png");
+            background-image: url("../image/main/speech-bubble.png");
             background-size: 90px;
             background-repeat: no-repeat;
             background-position: 105px 5px;
@@ -88,7 +99,7 @@
         }
         #bbox .abtn:hover {
         	cursor: pointer;
-        	background-image: url("../resource/image/main/random.png");
+        	background-image: url("../image/main/random.png");
             background-size: 250px;
             background-repeat: no-repeat;
             background-position: 50px 1px;
@@ -101,7 +112,7 @@
             background-color: #fe96a1;
             border: none;
             margin: 3px;
-            background-image: url("../resource/image/main/notification.png");
+            background-image: url("../image/main/notification.png");
             background-size: 80px;
             background-repeat: no-repeat;
             background-position: 10px 10px;
@@ -109,7 +120,7 @@
         }
         #bbox .bbtn:hover {
          	cursor: pointer;
-        	background-image: url("../resource/image/main/headline.png");
+        	background-image: url("../image/main/headline.png");
             background-size: 90px;
             background-repeat: no-repeat;
             background-position: 8px 20px;
@@ -123,6 +134,7 @@
             margin: 3px;
             color: white;
             transition: all 1s;
+            font-size: 25px;
             /* transition: transform 1s ease; */
         }
         #cbox .cbtn:hover {
@@ -161,7 +173,7 @@
         	background-color: #8cc6ca;
             transition: all 1s;
         }           
-        #cbox{padding-bottom: 200px;}
+        #cbox{margin-bottom:  200px;}
         .clear {
            clear: both; 
         }
@@ -171,8 +183,8 @@
         #foot {
         	margin: 0 auto;
             width: 1400px;
-            height: 200px;
-            background-color: RGBA(255,89,150,0.2);
+            height: 270px;
+            background-color: RGBA(255,89,150,0.7);
             text-align: center;
         }
         #foot ul {

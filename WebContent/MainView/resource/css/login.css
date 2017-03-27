@@ -11,7 +11,7 @@ form fieldset {
 	border-bottom-left-radius: 10px;
 	border-right: 10px solid #8cc6ca;
 	border-top-right-radius: 10px;
-	background-image: url("../resource/image/sub/loginboxicon.png");
+	background-image: url("../image/sub/loginboxicon.png");
 	background-size: 300px;
 	background-repeat:no-repeat;
 	background-position:right bottom;

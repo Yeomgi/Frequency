@@ -46,15 +46,17 @@ public class ActionAjaxRandomChat implements Action {
 
                 // Type Casting
                 ChatSatuse satuse = (ChatSatuse) room;
-
-                // 채팅이 매치되지 않았을때 / 상대방의 종료 
+                // 채팅이 매치되지 않았을때 / 상대방의 종료
                 switch ( satuse ){
+
                     case NOMATCH :
                         printWriter.print(-2);
                         break;
+
                     case EXIT:
                         printWriter.print(-1);
                         break;
+
                 }
 
             }
@@ -63,19 +65,21 @@ public class ActionAjaxRandomChat implements Action {
 
                 // Type Casting
                 ChatSingleRoom randomRoom = (ChatSingleRoom) room;
-
                 // 쓰기 / 가져오기 / 종료
                 switch ( command ){
+
                     case "randomWrite.ajax" :
                         randomRoom.addLog(request);
                         break;
+
                     case "randomRead.ajax" :
-                        String log = randomRoom.getlog(request);
-                        printWriter.print(log);
+                        printWriter.print( randomRoom.getlog(request) );
                         break;
+
                     case "randomExit.ajax" :
                         manager.exitChat(request);
                         break;
+
                 }
 
             }
