@@ -4,8 +4,6 @@ import com.frequency.Action.Action;
 import com.frequency.Modules.Chat.ChatGroupManager;
 import com.frequency.Modules.Json.JsonHandler;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,6 +37,7 @@ public class ActionDoGroupChat implements Action {
         manager.createRoom("test5");
         manager.createRoom("test5");
 
+        */
 
         manager.createRoom("가가나나다다");
         manager.createRoom("가가나다다다");
@@ -52,7 +51,6 @@ public class ActionDoGroupChat implements Action {
         manager.createRoom("나나나나나나");
         manager.createRoom("다다다다다다");
         manager.createRoom("라라라라라라");
-        */
 
 
         // 방 리스트를 가져온다

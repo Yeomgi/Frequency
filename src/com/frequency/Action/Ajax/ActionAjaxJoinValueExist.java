@@ -14,7 +14,7 @@ import java.io.PrintWriter;
  */
 
 
-public class ActionAjaxExist implements Action{
+public class ActionAjaxJoinValueExist implements Action{
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
