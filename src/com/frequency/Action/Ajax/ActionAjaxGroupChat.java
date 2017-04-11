@@ -21,6 +21,10 @@ public class ActionAjaxGroupChat implements Action {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) {
 
+        // UTF-8 인코딩
+        setRequestCharacterEncoding_UTF8(request);
+        setResponseCharacterEncoding_UTF8(response);
+
         // 커맨드를 분리한다
         String command = getCommand(request);
 
@@ -34,24 +38,23 @@ public class ActionAjaxGroupChat implements Action {
         // 유저에 해당하는 채팅방을 가져온다
         ChatGroupRoom room = manager.getChatRoom(request);
 
-
         try (
                 // Ajax통신에 사용될 printwriter를 가져옴
                 PrintWriter printWriter = getPrintWirter(response);
         ){
 
-            // 쓰기 / 가져오기 / 종료
+            // 쓰기 / 읽기 / 종료
             switch ( command ){
 
-                case "randomWrite.ajax" :
+                case "groupWrite.ajax" :
                     room.addLog(request,nickname);
                     break;
 
-                case "randomRead.ajax" :
+                case "groupRead.ajax" :
                     printWriter.print( room.getlog(request,nickname) );
                     break;
 
-                case "randomExit.ajax" :
+                case "groupExit.ajax" :
                     manager.exitChat(request);
                     break;
 

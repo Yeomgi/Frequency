@@ -70,15 +70,17 @@ public class DAOLogindone extends DAO{
 
             psmt.setString(1,member.getId());
 
+            rs = psmt.executeQuery();
+
                 // 0이상은 밴(권한정지)이 없거나 밴 종료날짜를 지난 상태
                 // 음수는 밴 중인 상태
 
             boolean ban;
 
             if( rs.next() && rs.getInt("ban")>=0 )
-                ban = true;
-            else
                 ban = false;
+            else
+                ban = true;
 
 
             // 3.MemberInfo 객체로 만들어 return 한다

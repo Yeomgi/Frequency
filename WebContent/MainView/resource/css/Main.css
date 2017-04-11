@@ -1,203 +1,199 @@
-        body {
-            width: 1400px;
-            /* background-image: url(image/background.gif); */
-            background-color: RGBA(255,89,150,0.1);
-            margin: 0 auto;
-        }
-        video {
-        position : absolute;
-        top : 0;
-        left : 0;
-        min-width : 100%;
-        min-height : 100%;
-        margin: 0 auto;
-        width : 1400px;
-        height : auto;
-        z-index : -1;
+body {
+    width: 1400px;
+    /* background-image: url(image/background.gif); */
+    background-color: RGBA(255,89,150,0.1);
+    margin: 0 auto;
 }
-        section {
-            width: 1000px;
-            margin: 0 auto;
-            padding-top: 150px;
-            
-        }
-        header {
-        	text-align: center;
-        	margin-top: -20px
-        }
-        div.metroFloat{
-            float: left;
-            padding-left: -2px;
-            background-color: RGBA(255,255,255,0.5);
-        }
-        #logo {
-            width: 500px;
-            /* background-color: RGBA(255,89,150,0.1); */
-            background-image: url("../image/main/background.gif");
-            background-color: RGBA(255,255,255,0.5);
-            margin: 3px;
-            transition: all 0.8s;
-        }
-        #logo:hover {
-        	width:500px;
-        	background-image: url("../image/main/background2.png");
-        	margin: 3px;
-        	cursor: pointer;
-        	transition: all 0.8s;
-        }
-        #abox .abtn {
-            width: 300px;
-            height: 100px;
-            background-color: #8cc6ca;
-            border: none;
-            margin: 3px;
-            background-image: url("../image/main/document-3.png");
-            background-size: 90px;
-            background-repeat: no-repeat;
-            background-position: 105px 5px;
-            transition: background-image 0.8s;
-        }
-        #abox .abtn:hover {
-        	cursor: pointer;
-        	background-image: url("../image/main/board.png");
-            background-size: 250px;
-            background-repeat: no-repeat;
-            background-position: 90px 1px;
-            transition: background-image 0.8s; 
-        }
-        #abox .bbtn {
-            width: 100px;
-            height: 100px;
-            background-color: #fe96a1;
-            border: none;
-            margin: 3px;
-            background-image: url("../image/main/group.png");
-            background-size: 80px;
-            background-repeat: no-repeat;
-            background-position: 10px 10px;
-            transition: background-image 0.8s; 
-        }
-        #abox .bbtn:hover {
-        	cursor: pointer;
-        	background-image: url("../image/main/groupchat.png");
-            background-size: 90px;
-            background-repeat: no-repeat;
-            background-position: 8px 20px;
-            transition: background-image 0.8s; 
-        }
-        #bbox .abtn {
-            width: 300px;
-            height: 100px;
-            background-color: #8cc6ca;
-            border: none;
-            margin: 3px;
-            background-image: url("../image/main/speech-bubble.png");
-            background-size: 90px;
-            background-repeat: no-repeat;
-            background-position: 105px 5px;
-            transition: background-image 0.8s; 
-        }
-        #bbox .abtn:hover {
-        	cursor: pointer;
-        	background-image: url("../image/main/random.png");
-            background-size: 250px;
-            background-repeat: no-repeat;
-            background-position: 50px 1px;
-            transition: background-image 0.8s; 
-        }
-        
-        #bbox .bbtn {
-            width: 100px;
-            height: 100px;
-            background-color: #fe96a1;
-            border: none;
-            margin: 3px;
-            background-image: url("../image/main/notification.png");
-            background-size: 80px;
-            background-repeat: no-repeat;
-            background-position: 10px 10px;
-            transition: background-image 0.8s; 
-        }
-        #bbox .bbtn:hover {
-         	cursor: pointer;
-        	background-image: url("../image/main/headline.png");
-            background-size: 90px;
-            background-repeat: no-repeat;
-            background-position: 8px 20px;
-            transition: background-image 0.8s;       	
-        }
-        #cbox .cbtn { 
-            width: 130px;
-            height: 90px;
-            background-color: #fe96a1;
-            border: none;
-            margin: 3px;
-            color: white;
-            transition: all 1s;
-            font-size: 25px;
-            /* transition: transform 1s ease; */
-        }
-        #cbox .cbtn:hover {
-        	transform: rotateY(180deg);
-        	background-color: #8cc6ca;
-            transition: all 1s;
-        	
-        }
-        #cbox .dbtn {
-            width: 250px;
-            height: 90px;
-            background-color: #fe96a1;
-            border: none;
-            margin: 3px;
-            color: white;
-            transition: all 1s;
-            font-size: 20px;
-        }
-        #cbox .dbtn:hover {
-        	transform: rotateX(180deg);
-        	background-color: #8cc6ca;
-            transition: all 1s;
-        }
-        #cbox .ebtn {
-            width: 150px;
-            height: 90px;
-            background-color: #fe96a1;
-            border: none;
-            margin: 3px;
-            color: white;
-            transition: all 1s;
-            font-size: 20px;
-        }
-        #cbox .ebtn:hover {
-        	transform: rotateY(180deg);
-        	background-color: #8cc6ca;
-            transition: all 1s;
-        }           
-        #cbox{margin-bottom:  200px;}
-        .clear {
-           clear: both; 
-        }
-        footer {
-        	width: 1400px;
-        }
-        #foot {
-        	margin: 0 auto;
-            width: 1400px;
-            height: 270px;
-            background-color: RGBA(255,89,150,0.7);
-            text-align: center;
-        }
-        #foot ul {
-        	padding-bottom: 90px;
-        	padding-top: 20px;
-        }
-        #foot ul li {
-        	list-style: none;
-        	float: left;
-        	padding-left: 160px;
-        }
-        #foot ul li img {
-        position: relative;
-        top: 10px;
-        right: 2px;
-        }
+video {
+    position : absolute;
+    margin: 0 auto;
+    width : 1400px;
+    height : auto;
+    z-index : -1;
+}
+section {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 263px;
+
+}
+header {
+    text-align: center;
+    margin-top: -20px
+}
+div.metroFloat{
+    float: left;
+    padding-left: -2px;
+    background-color: RGBA(255,255,255,0.5);
+}
+#logo {
+    width: 500px;
+    /* background-color: RGBA(255,89,150,0.1); */
+    background-image: url("../image/main/background.gif");
+    background-color: RGBA(255,255,255,0.5);
+    margin: 3px;
+    transition: all 0.8s;
+}
+#logo:hover {
+    width:500px;
+    background-image: url("../image/main/background2.png");
+    margin: 3px;
+    cursor: pointer;
+    transition: all 0.8s;
+}
+#abox .abtn {
+    width: 300px;
+    height: 100px;
+    background-color: #8cc6ca;
+    border: none;
+    margin: 3px;
+    background-image: url("../image/main/document-3.png");
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 105px 5px;
+    transition: background-image 0.8s;
+}
+#abox .abtn:hover {
+    cursor: pointer;
+    background-image: url("../image/main/board.png");
+    background-size: 250px;
+    background-repeat: no-repeat;
+    background-position: 80px 1px;
+    transition: background-image 0.8s;
+}
+#abox .bbtn {
+    width: 100px;
+    height: 100px;
+    background-color: #fe96a1;
+    border: none;
+    margin: 3px;
+    background-image: url("../image/main/group.png");
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    transition: background-image 0.8s;
+}
+#abox .bbtn:hover {
+    cursor: pointer;
+    background-image: url("../image/main/groupchat.png");
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 8px 30px;
+    transition: background-image 0.8s;
+}
+#bbox .abtn {
+    width: 300px;
+    height: 100px;
+    background-color: #8cc6ca;
+    border: none;
+    margin: 3px;
+    background-image: url("../image/main/speech-bubble.png");
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 105px 5px;
+    transition: background-image 0.8s;
+}
+#bbox .abtn:hover {
+    cursor: pointer;
+    background-image: url("../image/main/random.png");
+    background-size: 250px;
+    background-repeat: no-repeat;
+    background-position: 50px 1px;
+    transition: background-image 0.8s;
+}
+
+#bbox .bbtn {
+    width: 100px;
+    height: 100px;
+    background-color: #fe96a1;
+    border: none;
+    margin: 3px;
+    background-image: url("../image/main/notification.png");
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    transition: background-image 0.8s;
+}
+#bbox .bbtn:hover {
+    cursor: pointer;
+    background-image: url("../image/main/headline.png");
+    background-size: 90px;
+    background-repeat: no-repeat;
+    background-position: 8px 30px;
+    transition: background-image 0.8s;
+}
+#cbox .cbtn {
+    width: 130px;
+    height: 90px;
+    background-color: #fe96a1;
+    border: none;
+    margin: 3px;
+    color: white;
+    transition: all 1s;
+    font-size: 25px;
+    /* transition: transform 1s ease; */
+}
+#cbox .cbtn:hover {
+    transform: rotateY(180deg);
+    background-color: #8cc6ca;
+    transition: all 1s;
+
+}
+#cbox .dbtn {
+    width: 250px;
+    height: 90px;
+    background-color: #fe96a1;
+    border: none;
+    margin: 3px;
+    color: white;
+    transition: all 1s;
+    font-size: 20px;
+}
+#cbox .dbtn:hover {
+    transform: rotateX(180deg);
+    background-color: #8cc6ca;
+    transition: all 1s;
+}
+#cbox .ebtn {
+    width: 150px;
+    height: 90px;
+    background-color: #fe96a1;
+    border: none;
+    margin: 3px;
+    color: white;
+    transition: all 1s;
+    font-size: 20px;
+}
+#cbox .ebtn:hover {
+    transform: rotateY(180deg);
+    background-color: #8cc6ca;
+    transition: all 1s;
+}
+#cbox{margin-bottom:  200px;}
+.clear {
+    clear: both;
+}
+footer {
+    width: 1400px;
+}
+#foot {
+    margin: 0 auto;
+    width: 1400px;
+    height: 270px;
+    background-color: RGBA(255,89,150,0.7);
+    text-align: center;
+}
+#foot ul {
+    padding-bottom: 90px;
+    padding-top: 20px;
+}
+#foot ul li {
+    list-style: none;
+    float: left;
+    padding-left: 160px;
+}
+#foot ul li img {
+    position: relative;
+    top: 10px;
+    right: 2px;
+}

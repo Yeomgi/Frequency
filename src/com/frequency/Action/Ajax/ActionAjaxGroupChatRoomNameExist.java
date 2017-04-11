@@ -3,6 +3,7 @@ package com.frequency.Action.Ajax;
 import com.frequency.Action.Action;
 import com.frequency.Modules.Chat.ChatGroupManager;
 import com.frequency.Modules.ControlHelper;
+import com.frequency.Modules.MemberInfo.MemberInfo;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,6 +27,9 @@ public class ActionAjaxGroupChatRoomNameExist implements Action {
         // 그룹채팅 매니저를 얻어온다
         ChatGroupManager manager = ChatGroupManager.getInstance();
 
+        // 회원정보객체를 가져운다
+        MemberInfo memberInfo = ControlHelper.getMemberInfo(request);
+
         try(
                 // Ajax통신에 쓰일 PrintWriter 자원을 가져온다
                 PrintWriter printWriter = getPrintWirter(response)
@@ -33,13 +37,16 @@ public class ActionAjaxGroupChatRoomNameExist implements Action {
 
             // 비로그인 / 그룹채팅진행 여부 / 방이름 중복을 체크해 반환
             /*
-            * 비로그인: -2
+            * 비로그인 : -3
+            * 밴처리된 유저 : -2
             * 이미 채팅 진행중인 방이 있음 : -1
             * 방 이름이 중복 되어 생성불가능 : 0
             * 방 이름이 중복 안되어 생성가능 : 1
             */
 
-            if( !ControlHelper.isLogin(request) )
+            if ( !ControlHelper.isLogin(request) )
+                printWriter.print(-3);
+            else if ( memberInfo.isBan() )
                 printWriter.print(-2);
             else if ( manager.isExistUser(request) )
                 printWriter.print(-1);

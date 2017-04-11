@@ -29,6 +29,9 @@ function login(form) {
         function (data){
             data = window.Number(data);
             switch (data){
+                case -1:
+                    alert("이미 로그인중인 유저입니다.");
+                    break;
                 case 0:
                     alert("잘못된 정보를 입력하셨습니다.");
                     break;

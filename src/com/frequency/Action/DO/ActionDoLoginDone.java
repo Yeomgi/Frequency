@@ -4,6 +4,7 @@ import com.frequency.Action.Action;
 import com.frequency.DAO.DAOLogindone;
 import com.frequency.DTO.DTOMember;
 import com.frequency.Modules.MemberInfo.MemberInfo;
+import com.frequency.Modules.MemberInfo.MemberInfoHandler;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,10 +42,16 @@ public class ActionDoLoginDone implements Action {
                 PrintWriter printWriter = getPrintWirter(response)
         ){
 
-            // session에 사용할 회원 정보객체를 올린다
-            HttpSession session = getSessioin(request);
+            // 회원정보객체를 만든다
             MemberInfo memberInfo = dao.getMemeberInfo(member);
+
+            // session에 회원 정보객체를 올리고
+            HttpSession session = getSessioin(request);
             session.setAttribute("memberinfo",memberInfo);
+
+            // 회원정보관리 객체에도 올린다
+            MemberInfoHandler memberInfoHandler = MemberInfoHandler.getInstance();
+            memberInfoHandler.add(memberInfo);
 
             // 메인페이지로 포워딩
             doForward(request,response,"/MainView/Main.jsp");

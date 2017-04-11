@@ -1,5 +1,6 @@
 package com.frequency.Modules.MemberInfo;
 
+import java.lang.reflect.Field;
 import java.sql.Timestamp;
 
 /**
@@ -110,4 +111,42 @@ public class MemberInfo {
         this.ban = ban;
     }
 
+    @Override
+    public int hashCode() {
+        return 31*(id.hashCode()+ pw.hashCode()+ nickname.hashCode()+ email.hashCode());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if(obj==null)
+            return false;
+        else if (!(obj instanceof MemberInfo))
+            return false;
+        else if (obj==this)
+            return true;
+
+        // 리플렉션을 통해 이객체와 비교객체의 필드를 배열로 가져온다
+        Class thisClass = this.getClass();
+        Field[] thisField = thisClass.getDeclaredFields();
+
+        Class otherClass = obj.getClass();
+        Field[] otherField = otherClass.getDeclaredFields();
+
+        // 순차적으로 비교
+        try {
+
+            for(int i=0; i<thisField.length; i++)
+                if(thisField[i].get(this)!=otherField[i].get(obj))
+                    return false;
+
+        }
+        catch ( IllegalAccessException e ) {
+            // 필드의 값을 가져오는데 문제가 있을경우도 false 반환
+            System.out.println("MemberInfo Equals getField Error : "+e);
+            return false;
+        }
+
+        return true;
+    }
 }

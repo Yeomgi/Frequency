@@ -46,7 +46,7 @@ public class JsonHandler {
             return jsonObject;
 
         }
-        catch ( IOException e) { System.out.println("readLine Error : "+e); }
+        catch ( IOException e) { System.out.println("JsonBufferReader readLine Error : "+e); }
 
         return null;
 

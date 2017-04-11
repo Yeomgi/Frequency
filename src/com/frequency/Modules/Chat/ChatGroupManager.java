@@ -98,13 +98,13 @@ public class ChatGroupManager {
         String ip = ControlHelper.getIP(request);
         ChatGroupRoom room = getChatRoom(request);
 
-        String nickName = room.getNikcName(ip);
-        room.addSystemLog( nickName+"님이 대화방에서 나가셨습니다." );
+        String nickname = room.getNikcName(ip);
+        room.addSystemLog( "'"+nickname+"'님이 대화방에서 나가셨습니다." );
         room.exitChat(request);
         chatRooms.remove(ip);
 
-        // 채팅방 폐쇄와 리스트 가져가기는 동시에 이루어지면 안된다
-        synchronized (this){ distoryRoom(room); }
+        // 자동 폐쇄
+        distoryRoom(room);
 
         // +++종료시 마지막 사용자일경우 반환값을 다르게하여 return문 작성+++
 
@@ -113,12 +113,17 @@ public class ChatGroupManager {
     /*채팅방 자동 폐쇄*/
     public void distoryRoom(ChatGroupRoom room){
 
-        if( room.getMemberlist().length==0 ){
-            for (int i=0; i<roomInfos.size(); i++){
-                if (room == roomInfos.get(i).getRoom())
-                    roomInfos.remove(i);
+        // 채팅방 폐쇄와 리스트 가져가기는 동시에 이루어지면 안된다
+        synchronized (this){
+            if( room.getMemberlist().length==0 ){
+                for (int i=0; i<roomInfos.size(); i++){
+                    if (room == roomInfos.get(i).getRoom()) {
+                        roomInfos.remove(i);
+                    }
+                }
             }
         }
+
 
     }
 

@@ -35,10 +35,16 @@ public class ActionAjaxHandler implements ActionHandler{
         actions.put( "randomRead.ajax", actions.get("randomWrite.ajax") );
         actions.put( "randomExit.ajax", actions.get("randomWrite.ajax") );
         actions.put( "getIP.ajax", new ActionAjaxGetIP() );
+        actions.put( "getNickName.ajax", new ActionAjaxGetNickName() );
         actions.put( "chatRoomNameExist.ajax", new ActionAjaxGroupChatRoomNameExist() );
-        actions.put( "chatRoomIsChatingUser.ajax", new ActionAjaxGroupChatCheckJoinUser() );
+        actions.put( "chatRoomCheckJoinUser.ajax", new ActionAjaxGroupChatCheckJoinUser() );
         actions.put( "chatRoomListRefresh.ajax", new ActionAjaxGroupChatRoomLIstRefresh() );
         actions.put( "chatRoomListSearch.ajax", new ActionAjaxGroupChatRoomListSearch() );
+        actions.put( "chatRoomGetMemberList.ajax", new ActionAjaxGroupChatGetMemberList() );
+        actions.put( "groupWrite.ajax", new ActionAjaxGroupChat() );
+        actions.put( "groupRead.ajax", actions.get("groupWrite.ajax") );
+        actions.put( "groupExit.ajax", actions.get("groupWrite.ajax") );
+        actions.put( "sendMessage.ajax", new ActionAjaxSendMessage() );
     }
 
     @Override

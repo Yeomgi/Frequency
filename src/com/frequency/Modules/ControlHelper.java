@@ -28,8 +28,4 @@ public class ControlHelper {
         return (MemberInfo) request.getSession().getAttribute("memberinfo");
     }
 
-    public static String gettest(){
-        return "";
-    }
-
 }

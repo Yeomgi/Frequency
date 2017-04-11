@@ -5,6 +5,7 @@ import com.frequency.DAO.DAOLogindone;
 import com.frequency.DTO.DTOMember;
 import com.frequency.Modules.Json.JsonHandler;
 import com.frequency.Modules.MemberInfo.MemberInfo;
+import com.frequency.Modules.MemberInfo.MemberInfoHandler;
 import org.json.simple.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,18 +33,23 @@ public class ActiocAjaxLoginCheck implements Action{
         String id = (String) json.get("id");
         String pw = (String) json.get("pw");
 
-        System.out.println(id+pw);
-
-        // DTO에 정보를 넣음
-        DTOMember member = new DTOMember();
-        member.setId(id);
-        member.setPw(pw);
-
         try(
                 // 조회에 쓰일 dao와 PrintWriter 자원을 가져온다
                 DAOLogindone dao = new DAOLogindone();
                 PrintWriter printWriter = getPrintWirter(response)
         ){
+
+            // 이미 로그인된 유저인지 확인한다.
+            MemberInfoHandler memberInfoHandler = MemberInfoHandler.getInstance();
+            if(memberInfoHandler.isLoginID(id)) {
+                printWriter.print(-1);
+                return;
+            }
+
+            // DTO에 정보를 넣음
+            DTOMember member = new DTOMember();
+            member.setId(id);
+            member.setPw(pw);
 
             // 값을 체크하여 전송한다.
             if( dao.isExistLoginInfo(member) )

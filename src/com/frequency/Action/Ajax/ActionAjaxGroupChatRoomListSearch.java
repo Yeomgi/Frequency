@@ -38,8 +38,6 @@ public class ActionAjaxGroupChatRoomListSearch implements Action{
         // 페이지 포워딩
         doForward(request,response,"/MainView/ajaxPage/GroupChatNewRoomList.jsp");
 
-
-
     }
 
 }

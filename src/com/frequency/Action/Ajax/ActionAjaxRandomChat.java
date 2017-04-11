@@ -65,7 +65,7 @@ public class ActionAjaxRandomChat implements Action {
 
                 // Type Casting
                 ChatSingleRoom randomRoom = (ChatSingleRoom) room;
-                // 쓰기 / 가져오기 / 종료
+                // 쓰기 / 읽기 / 종료
                 switch ( command ){
 
                     case "randomWrite.ajax" :

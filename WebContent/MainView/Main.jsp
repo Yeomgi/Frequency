@@ -14,17 +14,11 @@
     <script src="resource/js/common/PageMoving.js" ></script>
 </head>
 <body>
-
-
-
-
-
-
     <video autoplay loop poster="loading.gif">
         <source src="resource/image/main/back5.mp4" type="video/mp4">
     </video>
     <header>
-        <img src="resource/image/main/chatback.png" width="800">
+        <%--<img src="resource/image/main/chatback.png" width="800">--%>
     </header>
     <section>
         <div id="logo" class="metroFloat"><img id="logoimg" src="resource/image/main/mainLOGO.png" onmouseover="logoOver()" onmouseout="logoOut()"></div>

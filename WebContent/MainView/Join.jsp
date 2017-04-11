@@ -23,20 +23,20 @@
             <label>아이디</label>
             <input type="text" name="id" onkeyup="isRightPatturn(this)">
             <button class="abtn" type="button" onclick="isExistValue(this.form,'id',this)">Check</button>
-            <div id="idMessage"></div>
+            <div class="sysm" id="idMessage"></div>
             <label>비밀번호</label>
             <input type="password" name="pw" onkeyup="isRightPatturn(this)">
-            <div id="pwMessage"></div>
+            <div class="sysm" id="pwMessage"></div>
             <label>비밀번호 확인</label>
             <input type="password" name="pwre" onkeyup="isEqualPw(this.form)">
-            <div id="pwreMessage"></div>
+            <div class="sysm" id="pwreMessage"></div>
         </fieldset>
         <fieldset>
             <legend>Info</legend>
             <label>닉네임</label>
             <input type="text" name="nickname" onkeyup="isRightPatturn(this)">
             <button class="abtn" type="button" onclick="isExistValue(this.form,'nickname',this)">Check</button>
-            <div id="nicknameMessage"></div>
+            <div class="sysm" id="nicknameMessage"></div>
             <label>이메일</label>
             <input type="text" name="email">
         </fieldset>

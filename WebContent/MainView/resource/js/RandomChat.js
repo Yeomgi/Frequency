@@ -30,7 +30,7 @@ addDOMContentLoaded(function () {
         // 메시지 입력 함수
         inputMessage : function (event) {
             // onkeyup시 엔터키를 누르고 값이 존재하며 chat이 시작되었을경우 서버로 전송
-            if (event.keyCode === 13 && message.value != "" && chat) {
+            if (event.keyCode === 13 && elements.message.value != "" && chat) {
                 postAjax(
                     'randomWrite.ajax',
                     elements.message.value,

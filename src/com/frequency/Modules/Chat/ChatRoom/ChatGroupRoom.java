@@ -38,7 +38,7 @@ public class ChatGroupRoom extends ChatSingleRoom{
 
         synchronized (this) {
             extendLog();
-            log.add(new ChatLog(null, "시스템", message));
+            log.add(new ChatLog(null, "system", message));
         }
 
     }
@@ -65,6 +65,7 @@ public class ChatGroupRoom extends ChatSingleRoom{
             // 채팅로그를 Json 문자열 형태로 전환
             for (int i = lastIndex+1; i < log.size(); i++){
                 arr= new JSONArray();
+                arr.add(log.get(i).getIp());
                 arr.add(log.get(i).getNickName());
                 arr.add(log.get(i).getContent());
                 json.put(i+1,arr);
@@ -99,8 +100,9 @@ public class ChatGroupRoom extends ChatSingleRoom{
 
         while (values.hasNext()){
             member = (ChatMember) values.next();
-            memberlist[idx++] =member.getNickName();
+            memberlist[idx++] = member.getNickName();
         }
+
         return memberlist;
 
     }

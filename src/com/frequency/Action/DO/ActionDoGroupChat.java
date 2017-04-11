@@ -39,6 +39,7 @@ public class ActionDoGroupChat implements Action {
 
         */
 
+        /*manager.createRoom("나나나나나나");
         manager.createRoom("가가나나다다");
         manager.createRoom("가가나다다다");
         manager.createRoom("가가나나라라");
@@ -48,9 +49,8 @@ public class ActionDoGroupChat implements Action {
         manager.createRoom("가가다다다다");
         manager.createRoom("가가나나나나");
         manager.createRoom("가가가가가가");
-        manager.createRoom("나나나나나나");
         manager.createRoom("다다다다다다");
-        manager.createRoom("라라라라라라");
+        manager.createRoom("라라라라라라");*/
 
 
         // 방 리스트를 가져온다

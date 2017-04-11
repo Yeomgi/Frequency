@@ -22,8 +22,7 @@
             <label>아이디</label>
             <input type="text" name="id"><br>
             <label>비밀번호</label>
-            <input type="password" name="pw">
-            <br>
+            <input type="password" name="pw"><br>
             <input class="abtn" type="button" value="로그인" onclick="login(this.form)">
             <input class="abtn" type="button" value="회원가입" title="join" onclick="movePage(this)">
             <input class="abtn" type="button" value="아이디찾기">
