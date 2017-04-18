@@ -39,6 +39,7 @@ public class ActionDoHandler implements ActionHandler{
         actions.put( "groupchat.do", new ActionDoGroupChat() );
         actions.put( "groupchatRoomCreate.do", new ActionDoGroupChatRoomCreate() );
         actions.put( "groupchatRoomJoin.do", new ActionDoGroupChatRoomJoin() );
+        actions.put( "freeboard.do", new ActionDoFreeBoard() );
     }
 
     @Override

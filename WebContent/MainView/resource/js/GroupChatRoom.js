@@ -134,6 +134,7 @@ addOnload(function () {
             var name = memberlistObject.nickname.innerHTML;
             if(memberlistObject.chatControlList[name]===memberlistObject.listStatus.open)
                 memberlistObject.chatControlList[name] = memberlistObject.listStatus.out;
+            memberlistObject.letterMessage.value = "";
             memberlistObject.modal.style.display = "none";
         },
 

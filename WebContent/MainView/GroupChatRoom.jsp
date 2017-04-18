@@ -17,18 +17,16 @@
 </head>
 <body>
     <jsp:include page="include/header.jsp"/>
-    <form action="">
-        <div id="letterWindow" class="modal">
-            <div class="modalcontent">
-                <span class="close">&times;</span>
-                쪽지보내기/차단<br>
-                <div id="nickname">"USER"<%--닉네임삽입--%></div>
-                <textarea id="letterMessage" rows="20" cols="30"></textarea><br>
-                <input id="send" type="button" value="전송">
-                <input id="block" type="button" value="차단">
-            </div>
+    <div id="letterWindow" class="modal">
+        <div class="modalcontent">
+            <span class="close">&times;</span>
+            쪽지보내기/차단<br>
+            <div id="nickname"></div>
+            <textarea id="letterMessage" rows="20" cols="30"></textarea><br>
+            <input id="send" type="button" value="전송">
+            <input id="block" type="button" value="차단">
         </div>
-    </form>
+    </div>
     <div id="img"><img src="resource/image/sub/chatback4.png"> </div>
     <div id="group">
         <div id="roomName">${requestScope.roomname}</div>

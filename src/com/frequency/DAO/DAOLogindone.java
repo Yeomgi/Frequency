@@ -7,7 +7,7 @@ import com.frequency.Modules.ReseltsetToDTO.ReseltsetToDTO;
 import java.sql.SQLException;
 
 /**
- * Title : Logindone Action에 사용하는 메소드
+ * Title : Login DAO
  * Author : 염형준
  * Date : 2017-03-06
  */

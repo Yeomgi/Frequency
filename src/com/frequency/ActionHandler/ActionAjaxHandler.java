@@ -45,6 +45,7 @@ public class ActionAjaxHandler implements ActionHandler{
         actions.put( "groupRead.ajax", actions.get("groupWrite.ajax") );
         actions.put( "groupExit.ajax", actions.get("groupWrite.ajax") );
         actions.put( "sendMessage.ajax", new ActionAjaxSendMessage() );
+        actions.put( "isLogin.ajax", new ActionAjaxIsLogin() );
     }
 
     @Override

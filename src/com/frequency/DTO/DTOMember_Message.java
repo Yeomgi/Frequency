@@ -3,7 +3,7 @@ package com.frequency.DTO;
 import java.sql.Timestamp;
 
 /**
- * Title : MEMBER_MESSAGE 테이블 DTO
+ * Title : MEMBER_MESSAGE 테이블 DTOFreeBoard
  * Author : 염형준
  * Date : 2017-04-10
  */

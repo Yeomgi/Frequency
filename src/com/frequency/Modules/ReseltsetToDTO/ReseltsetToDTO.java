@@ -1,5 +1,6 @@
 package com.frequency.Modules.ReseltsetToDTO;
 
+import com.frequency.DTO.DTOFreeBoard;
 import com.frequency.DTO.DTOMember;
 
 import java.sql.ResultSet;
@@ -29,6 +30,25 @@ public class ReseltsetToDTO {
                     );
         }
         catch (SQLException e) { System.out.println("getDTOmember Error : "+e); }
+        return null;
+    }
+
+    // Resultset에서 FreeBoard 테이블 정보를 가져옴
+    public static DTOFreeBoard getDTOFreeBoard(ResultSet rs){
+        try {
+            return new DTOFreeBoard(
+                    rs.getInt("idx"),
+                    rs.getString("id"),
+                    rs.getString("pw"),
+                    rs.getString("title"),
+                    rs.getString("content"),
+                    rs.getTimestamp("writedate"),
+                    rs.getInt("hit"),
+                    rs.getInt("up"),
+                    rs.getInt("down")
+            );
+        }
+        catch (SQLException e) { System.out.println("getDTOFreeBoard Error : "+e); }
         return null;
     }
 

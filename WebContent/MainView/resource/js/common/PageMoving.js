@@ -14,9 +14,9 @@ function movePage(tag) {
     var command = {
         main : "main.do",
         groupchat : "groupchat.do",
-        freeboard : "",
+        freeboard : "freeboard.do",
         randomchat : "randomchat.do",
-        notice : "",
+        notice : "notice.do",
         login : "login.do",
         logout : "logout.do",
         join : "join.do",

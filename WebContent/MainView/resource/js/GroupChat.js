@@ -177,11 +177,11 @@ addDOMContentLoaded(function () {
                 keyword,
                 function (data) {
                     roomlist.list.innerHTML = data;
+
+                    // 리스트에 대해 함수를 재동록
                     roomlist.registFx();
                 }
             );
-
-            // 리스트에 대해 함수를 재동록
 
         },
 
